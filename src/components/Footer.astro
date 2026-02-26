@@ -1,0 +1,124 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <span class="footer__logo">La Boteca</span>
+      <p class="footer__tagline">Taller de asistentes conversacionales</p>
+    </div>
+
+    <nav class="footer__nav" aria-label="Navegación pie">
+      <ul>
+        <li><a href="/servicios">Servicios</a></li>
+        <li><a href="/formulas">Fórmulas</a></li>
+        <li><a href="/casos">Casos</a></li>
+        <li><a href="/contacto">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer__contact">
+      <a href="mailto:hola@laboteca.es">hola@laboteca.es</a>
+      <p>C/ Virgen del Valle, 28 · 41011 Sevilla</p>
+    </div>
+
+    <div class="footer__legal">
+      <p>&copy; {year} La Boteca. Todos los derechos reservados.</p>
+      <div class="footer__legal-links">
+        <a href="/legal/aviso-legal">Aviso legal</a>
+        <a href="/legal/privacidad">Privacidad</a>
+        <a href="/legal/cookies">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--color-bg-dark);
+    color: #ccc;
+    padding: var(--space-xl) 0 var(--space-lg);
+    margin-top: var(--space-2xl);
+  }
+
+  .footer__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--space-xl);
+  }
+
+  .footer__logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+
+  .footer__tagline {
+    font-size: 0.85rem;
+    margin-top: var(--space-xs);
+    color: #999;
+  }
+
+  .footer__nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .footer__nav a,
+  .footer__contact a {
+    color: #ccc;
+    font-size: 0.9rem;
+  }
+
+  .footer__nav a:hover,
+  .footer__contact a:hover {
+    color: var(--color-primary);
+  }
+
+  .footer__contact p {
+    font-size: 0.85rem;
+    color: #999;
+    margin-top: var(--space-xs);
+  }
+
+  .footer__legal {
+    grid-column: 1 / -1;
+    border-top: 1px solid #333;
+    padding-top: var(--space-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #666;
+  }
+
+  .footer__legal-links {
+    display: flex;
+    gap: var(--space-md);
+  }
+
+  .footer__legal-links a {
+    color: #666;
+    font-size: 0.8rem;
+  }
+
+  .footer__legal-links a:hover {
+    color: var(--color-primary);
+  }
+
+  @media (max-width: 768px) {
+    .footer__inner {
+      grid-template-columns: 1fr;
+      gap: var(--space-lg);
+    }
+
+    .footer__legal {
+      flex-direction: column;
+      gap: var(--space-sm);
+      text-align: center;
+    }
+  }
+</style>

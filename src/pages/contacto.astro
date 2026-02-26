@@ -1,0 +1,121 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Base title="Contacto" description="Contacta con La Boteca. Diagnóstico gratuito de 30 minutos.">
+  <Header slot="header" />
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Contacto</h1>
+      <p>30 minutos de diagnóstico gratis. Sin compromiso, sin PowerPoint.</p>
+    </div>
+  </section>
+
+  <section class="container page-content">
+    <div class="contact-grid">
+      <div class="contact-form">
+        <form action="https://formspree.io/f/TODO" method="POST">
+          <div class="form-group">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="message">¿En qué podemos ayudarte?</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary">Enviar</button>
+        </form>
+      </div>
+      <div class="contact-info">
+        <h3>También puedes escribirnos</h3>
+        <p><a href="mailto:hola@laboteca.es">hola@laboteca.es</a></p>
+        <h3>Dónde estamos</h3>
+        <p>Diseñadero<br />C/ Virgen del Valle, 28<br />41011 Sevilla</p>
+      </div>
+    </div>
+    <!-- TODO: Embed bot Botpress aquí -->
+  </section>
+
+  <Footer slot="footer" />
+</Base>
+
+<style>
+  .page-header {
+    padding: var(--space-2xl) 0 var(--space-xl);
+    background: var(--color-bg-alt);
+  }
+  .page-header p {
+    color: var(--color-text-secondary);
+    font-size: 1.15rem;
+    margin-top: var(--space-sm);
+  }
+  .page-content {
+    padding: var(--space-xl) 0;
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-xl);
+  }
+  .form-group {
+    margin-bottom: var(--space-md);
+  }
+  .form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: var(--space-xs);
+    font-size: 0.9rem;
+  }
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: 2px solid var(--color-primary);
+    border-color: transparent;
+  }
+  .btn--primary {
+    display: inline-block;
+    padding: 0.75rem 1.75rem;
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background var(--transition-base);
+  }
+  .btn--primary:hover {
+    background: var(--color-primary-dark);
+  }
+  .contact-info h3 {
+    margin-bottom: var(--space-sm);
+    font-size: 1rem;
+  }
+  .contact-info h3:not(:first-child) {
+    margin-top: var(--space-lg);
+  }
+  .contact-info p {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+  }
+  @media (max-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,38 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Base title="Quiénes somos" description="El equipo detrás de La Boteca: Jose Ruibérriz, Fermín Sánchez y Txiki López.">
+  <Header slot="header" />
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Quiénes somos</h1>
+      <p>Un taller, tres personas, cero bullshit corporativo.</p>
+    </div>
+  </section>
+
+  <section class="container page-content">
+    <!-- TODO: Trasladar contenido de Boteca/Quiénes somos.md -->
+    <p>Contenido en desarrollo.</p>
+  </section>
+
+  <Footer slot="footer" />
+</Base>
+
+<style>
+  .page-header {
+    padding: var(--space-2xl) 0 var(--space-xl);
+    background: var(--color-bg-alt);
+  }
+  .page-header p {
+    color: var(--color-text-secondary);
+    font-size: 1.15rem;
+    margin-top: var(--space-sm);
+  }
+  .page-content {
+    padding: var(--space-xl) 0;
+  }
+</style>

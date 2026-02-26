@@ -1,0 +1,133 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Base title="Inicio" description="La Boteca — Taller de asistentes conversacionales con IA para pymes y tercer sector. Chatbots artesanales en Sevilla.">
+  <Header slot="header" />
+
+  <section class="hero">
+    <div class="container">
+      <h1>Chatbots que funcionan.<br />Sin humo.</h1>
+      <p class="hero__subtitle">Diseñamos asistentes conversacionales con IA para que tu negocio atienda mejor, capture más y pierda menos tiempo.</p>
+      <div class="hero__cta">
+        <a href="/contacto" class="btn btn--primary">Hablemos</a>
+        <a href="/formulas" class="btn btn--outline">Ver fórmulas</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="servicios-preview">
+    <div class="container">
+      <h2>Lo que hacemos</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Fórmulas magistrales</h3>
+          <p>Bots llave en mano, diseñados para tu caso. No plantillas genéricas.</p>
+          <a href="/formulas">Ver catálogo</a>
+        </div>
+        <div class="card">
+          <h3>Tratamiento continuado</h3>
+          <p>Tu bot evoluciona contigo. Mantenimiento, métricas, mejoras.</p>
+          <a href="/servicios">Cómo funciona</a>
+        </div>
+        <div class="card">
+          <h3>Diagnóstico</h3>
+          <p>¿Ya tienes un bot que no rinde? Lo auditamos y te decimos qué falla.</p>
+          <a href="/contacto">Pedir cita</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Base>
+
+<style>
+  .hero {
+    padding: var(--space-2xl) 0;
+    background: var(--color-bg-alt);
+  }
+
+  .hero h1 {
+    margin-bottom: var(--space-md);
+  }
+
+  .hero__subtitle {
+    font-size: 1.2rem;
+    color: var(--color-text-secondary);
+    max-width: 550px;
+    margin-bottom: var(--space-xl);
+  }
+
+  .hero__cta {
+    display: flex;
+    gap: var(--space-md);
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 1.75rem;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all var(--transition-base);
+  }
+
+  .btn--primary {
+    background: var(--color-primary);
+    color: white;
+  }
+
+  .btn--primary:hover {
+    background: var(--color-primary-dark);
+    color: white;
+  }
+
+  .btn--outline {
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  .btn--outline:hover {
+    background: var(--color-primary);
+    color: white;
+  }
+
+  .servicios-preview {
+    padding: var(--space-2xl) 0;
+  }
+
+  .servicios-preview h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-lg);
+  }
+
+  .card {
+    padding: var(--space-lg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    transition: box-shadow var(--transition-base);
+  }
+
+  .card:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  }
+
+  .card h3 {
+    margin-bottom: var(--space-sm);
+    color: var(--color-primary-dark);
+  }
+
+  .card p {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-md);
+    font-size: 0.95rem;
+  }
+</style>
