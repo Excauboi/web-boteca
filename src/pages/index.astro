@@ -9,12 +9,19 @@ import Footer from '../components/Footer.astro';
 
   <!-- Hero -->
   <section class="hero">
-    <div class="container">
-      <h1>Chatbots de<br />f&oacute;rmula magistral</h1>
-      <p class="hero__subtitle">Sin humo. Hiperpersonalizados. Preparados para tu negocio, no para una demo.</p>
-      <div class="hero__cta">
-        <a href="/contacto" class="btn btn--primary">Hablemos</a>
-        <a href="/formulas" class="btn btn--outline">Ver f&oacute;rmulas</a>
+    <div class="container hero__inner">
+      <div class="hero__text">
+        <h1>Chatbots de<br />f&oacute;rmula magistral</h1>
+        <p class="hero__subtitle">Sin humo. Hiperpersonalizados. Preparados para tu negocio, no para una demo.</p>
+        <div class="hero__cta">
+          <a href="/contacto" class="btn btn--primary">Hablemos</a>
+          <a href="/formulas" class="btn btn--outline">Ver f&oacute;rmulas</a>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <video autoplay loop muted playsinline>
+          <source src="/img/boteca-hero.mp4" type="video/mp4" />
+        </video>
       </div>
     </div>
   </section>
@@ -186,6 +193,28 @@ import Footer from '../components/Footer.astro';
   .hero {
     padding: var(--space-2xl) 0;
     background: var(--color-bg-alt);
+  }
+
+  .hero__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-xl);
+  }
+
+  .hero__text {
+    flex: 1;
+  }
+
+  .hero__visual {
+    flex-shrink: 0;
+  }
+
+  .hero__visual video {
+    width: 280px;
+    height: 280px;
+    border-radius: var(--radius-lg);
+    object-fit: cover;
   }
 
   .hero h1 {
@@ -541,10 +570,26 @@ import Footer from '../components/Footer.astro';
   }
 
   /* ---- Responsive ---- */
+  @media (max-width: 768px) {
+    .hero__inner {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .hero__visual video {
+      width: 200px;
+      height: 200px;
+    }
+
+    .hero__cta {
+      justify-content: center;
+    }
+  }
+
   @media (max-width: 600px) {
     .hero__cta {
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
     }
 
     .steps {
