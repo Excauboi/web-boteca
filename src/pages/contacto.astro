@@ -44,6 +44,12 @@ import Footer from '../components/Footer.astro';
               <label for="message">&iquest;En qu&eacute; podemos ayudarte?</label>
               <textarea id="message" name="message" rows="5" required></textarea>
             </div>
+            <div class="form-group form-group--checkbox">
+              <label>
+                <input type="checkbox" name="privacy" required />
+                He le&iacute;do y acepto la <a href="/legal/privacidad" target="_blank">pol&iacute;tica de privacidad</a>
+              </label>
+            </div>
             <button type="submit" class="btn btn--primary">Enviar</button>
           </form>
         </div>
@@ -54,10 +60,11 @@ import Footer from '../components/Footer.astro';
 
           <h3>D&oacute;nde estamos</h3>
           <p>
-            <strong>Dise&ntilde;adero</strong><br />
+            <a href="https://www.disenadero.com/" target="_blank" rel="noopener"><strong>Dise&ntilde;adero</strong></a><br />
             C/ Virgen del Valle, 28<br />
             41011 Sevilla
           </p>
+          <p class="contact-info__note">La Boteca es la trastienda de Dise&ntilde;adero.</p>
 
           <h3>Visitas</h3>
           <p>Con cita previa. Esc&iacute;benos y quedamos.</p>
@@ -246,6 +253,25 @@ import Footer from '../components/Footer.astro';
     font-size: 0.95rem;
   }
 
+  .form-group--checkbox label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+  }
+
+  .form-group--checkbox input[type="checkbox"] {
+    width: auto;
+    margin-top: 0.2rem;
+    accent-color: var(--color-primary);
+  }
+
+  .form-group--checkbox a {
+    color: var(--color-primary);
+  }
+
   .form-group input:focus,
   .form-group textarea:focus {
     outline: 2px solid var(--color-primary);
@@ -287,6 +313,16 @@ import Footer from '../components/Footer.astro';
     color: var(--color-text-secondary);
     font-size: 0.95rem;
     line-height: 1.7;
+  }
+
+  .contact-info__note {
+    font-size: 0.85rem !important;
+    font-style: italic;
+    margin-top: var(--space-xs);
+  }
+
+  .contact-info a {
+    color: var(--color-primary);
   }
 
   /* Bot section */

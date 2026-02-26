@@ -1,0 +1,140 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Base title="Pol&iacute;tica de cookies" description="Pol&iacute;tica de cookies de La Boteca. Qu&eacute; cookies usamos y c&oacute;mo gestionarlas.">
+  <Header slot="header" />
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Pol&iacute;tica de cookies</h1>
+    </div>
+  </section>
+
+  <section class="legal">
+    <div class="container container--narrow">
+
+      <h2>1. &iquest;Qu&eacute; son las cookies?</h2>
+      <p>Las cookies son peque&ntilde;os archivos de texto que los sitios web almacenan en tu navegador. Sirven para recordar preferencias, analizar el uso del sitio o facilitar funcionalidades t&eacute;cnicas.</p>
+
+      <h2>2. Cookies que utilizamos</h2>
+      <p>Este sitio web utiliza &uacute;nicamente cookies <strong>t&eacute;cnicas y estrictamente necesarias</strong>:</p>
+
+      <div class="cookie-table-wrap">
+        <table class="cookie-table">
+          <thead>
+            <tr>
+              <th>Cookie</th>
+              <th>Tipo</th>
+              <th>Finalidad</th>
+              <th>Duraci&oacute;n</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Cookies de sesi&oacute;n de Netlify</td>
+              <td>T&eacute;cnica</td>
+              <td>Funcionamiento del formulario de contacto y balanceo de carga</td>
+              <td>Sesi&oacute;n</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p><strong>No utilizamos cookies de an&aacute;lisis, publicidad ni de terceros</strong> con fines de seguimiento o perfilado.</p>
+
+      <h2>3. Base legal</h2>
+      <p>Las cookies t&eacute;cnicas est&aacute;n exentas del requisito de consentimiento seg&uacute;n el art&iacute;culo 22.2 de la LSSI-CE, al ser estrictamente necesarias para la prestaci&oacute;n del servicio.</p>
+
+      <h2>4. C&oacute;mo gestionar las cookies</h2>
+      <p>Puedes configurar tu navegador para bloquear o eliminar cookies. Ten en cuenta que desactivar las cookies t&eacute;cnicas puede afectar al funcionamiento del formulario de contacto.</p>
+      <ul>
+        <li><strong>Chrome</strong>: Configuraci&oacute;n &rarr; Privacidad y seguridad &rarr; Cookies</li>
+        <li><strong>Firefox</strong>: Ajustes &rarr; Privacidad y seguridad &rarr; Cookies</li>
+        <li><strong>Safari</strong>: Preferencias &rarr; Privacidad</li>
+        <li><strong>Edge</strong>: Configuraci&oacute;n &rarr; Cookies y permisos del sitio</li>
+      </ul>
+
+      <h2>5. Actualizaciones</h2>
+      <p>Si en el futuro incorporamos herramientas de an&aacute;lisis (como Plausible Analytics), actualizaremos esta pol&iacute;tica. Plausible no utiliza cookies &mdash; funciona sin ellas.</p>
+
+      <p class="legal__updated">&Uacute;ltima actualizaci&oacute;n: febrero 2026</p>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Base>
+
+<style>
+  .page-header {
+    padding: var(--space-2xl) 0 var(--space-xl);
+    background: var(--color-bg-alt);
+  }
+
+  .legal {
+    padding: var(--space-xl) 0 var(--space-2xl);
+  }
+
+  .legal h2 {
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-md);
+    font-size: 1.15rem;
+  }
+
+  .legal p,
+  .legal li {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+  }
+
+  .legal ul {
+    padding-left: 1.5rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .legal li {
+    margin-bottom: var(--space-xs);
+  }
+
+  .legal a {
+    color: var(--color-primary);
+  }
+
+  .cookie-table-wrap {
+    overflow-x: auto;
+    margin: var(--space-md) 0;
+  }
+
+  .cookie-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+
+  .cookie-table th,
+  .cookie-table td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .cookie-table th {
+    font-weight: 600;
+    color: var(--color-text);
+    background: var(--color-bg-alt);
+  }
+
+  .cookie-table td {
+    color: var(--color-text-secondary);
+  }
+
+  .legal__updated {
+    margin-top: var(--space-2xl);
+    font-size: 0.85rem !important;
+    font-style: italic;
+    color: #999 !important;
+  }
+</style>

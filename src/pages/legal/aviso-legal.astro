@@ -1,0 +1,104 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Base title="Aviso legal" description="Aviso legal de La Boteca. Datos identificativos, condiciones de uso y responsabilidades.">
+  <Header slot="header" />
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Aviso legal</h1>
+    </div>
+  </section>
+
+  <section class="legal">
+    <div class="container container--narrow">
+
+      <h2>1. Datos identificativos</h2>
+      <p>En cumplimiento del art&iacute;culo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Informaci&oacute;n y de Comercio Electr&oacute;nico (LSSI-CE), se informa:</p>
+      <ul>
+        <li><strong>Titular</strong>: Jos&eacute; Mar&iacute;a Ruib&eacute;rriz de Torres</li>
+        <li><strong>NIF</strong>: 53275955C</li>
+        <li><strong>Domicilio</strong>: <a href="https://www.disenadero.com/" target="_blank" rel="noopener">Dise&ntilde;adero</a> &mdash; C/ Virgen del Valle, 28 &mdash; 41011 Sevilla</li>
+        <li><strong>Email</strong>: <a href="mailto:hola@laboteca.es">hola@laboteca.es</a></li>
+        <li><strong>Nombre comercial</strong>: La Boteca</li>
+        <li><strong>Actividad</strong>: Desarrollo de asistentes conversacionales con inteligencia artificial</li>
+      </ul>
+
+      <h2>2. Objeto</h2>
+      <p>Este sitio web tiene como finalidad informar sobre los servicios de La Boteca y facilitar el contacto con potenciales clientes. No se realizan transacciones comerciales a trav&eacute;s de esta web.</p>
+
+      <h2>3. Condiciones de uso</h2>
+      <p>El usuario se compromete a hacer un uso adecuado de los contenidos y servicios ofrecidos, absteni&eacute;ndose de:</p>
+      <ul>
+        <li>Reproducir, copiar o distribuir contenidos sin autorizaci&oacute;n.</li>
+        <li>Utilizar los contenidos con fines il&iacute;citos o contrarios a lo establecido en este aviso.</li>
+        <li>Introducir virus u otros elementos que puedan alterar o da&ntilde;ar los sistemas inform&aacute;ticos.</li>
+      </ul>
+
+      <h2>4. Propiedad intelectual e industrial</h2>
+      <p>Todos los contenidos de este sitio web (textos, im&aacute;genes, dise&ntilde;o, logotipos, c&oacute;digo fuente) son propiedad del titular o cuenta con las licencias correspondientes. Queda prohibida su reproducci&oacute;n total o parcial sin autorizaci&oacute;n expresa.</p>
+
+      <h2>5. Exclusi&oacute;n de responsabilidad</h2>
+      <p>El titular no se hace responsable de:</p>
+      <ul>
+        <li>Errores u omisiones en los contenidos.</li>
+        <li>Da&ntilde;os derivados del uso de la web o de la imposibilidad de acceder a ella.</li>
+        <li>Contenidos de sitios web de terceros a los que se pueda acceder mediante enlaces.</li>
+      </ul>
+
+      <h2>6. Legislaci&oacute;n aplicable</h2>
+      <p>Este aviso legal se rige por la legislaci&oacute;n espa&ntilde;ola. Para cualquier controversia, las partes se someten a los juzgados y tribunales de Sevilla.</p>
+
+      <p class="legal__updated">Última actualizaci&oacute;n: febrero 2026</p>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Base>
+
+<style>
+  .page-header {
+    padding: var(--space-2xl) 0 var(--space-xl);
+    background: var(--color-bg-alt);
+  }
+
+  .legal {
+    padding: var(--space-xl) 0 var(--space-2xl);
+  }
+
+  .legal h2 {
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-md);
+    font-size: 1.15rem;
+  }
+
+  .legal p,
+  .legal li {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+  }
+
+  .legal ul {
+    padding-left: 1.5rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .legal li {
+    margin-bottom: var(--space-xs);
+  }
+
+  .legal a {
+    color: var(--color-primary);
+  }
+
+  .legal__updated {
+    margin-top: var(--space-2xl);
+    font-size: 0.85rem !important;
+    font-style: italic;
+    color: #999 !important;
+  }
+</style>
