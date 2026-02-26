@@ -4,75 +4,237 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Base title="Contacto" description="Contacta con La Boteca. Diagnóstico gratuito de 30 minutos.">
+<Base title="Contacto" description="Contacta con La Boteca. 30 minutos para entender qu&eacute; necesitas. Sin compromiso.">
   <Header slot="header" />
 
+  <!-- Page header -->
   <section class="page-header">
     <div class="container">
-      <h1>Contacto</h1>
-      <p>30 minutos de diagnóstico gratis. Sin compromiso, sin PowerPoint.</p>
+      <h1>Hablemos</h1>
+      <p>30 minutos para entender qu&eacute; necesitas. Sin compromiso.</p>
     </div>
   </section>
 
-  <section class="container page-content">
-    <div class="contact-grid">
-      <div class="contact-form">
-        <form action="https://formspree.io/f/TODO" method="POST">
-          <div class="form-group">
-            <label for="name">Nombre</label>
-            <input type="text" id="name" name="name" required />
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required />
-          </div>
-          <div class="form-group">
-            <label for="message">¿En qué podemos ayudarte?</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-          </div>
-          <button type="submit" class="btn btn--primary">Enviar</button>
-        </form>
-      </div>
-      <div class="contact-info">
-        <h3>También puedes escribirnos</h3>
-        <p><a href="mailto:hola@laboteca.es">hola@laboteca.es</a></p>
-        <h3>Dónde estamos</h3>
-        <p>Diseñadero<br />C/ Virgen del Valle, 28<br />41011 Sevilla</p>
+  <!-- Email hero -->
+  <section class="section-email">
+    <div class="container container--narrow">
+      <div class="email-hero">
+        <a href="mailto:hola@laboteca.es" class="email-hero__address">hola@laboteca.es</a>
       </div>
     </div>
-    <!-- TODO: Embed bot Botpress aquí -->
+  </section>
+
+  <!-- Form + info -->
+  <section class="section-form">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-form">
+          <h2>Escr&iacute;benos</h2>
+          <form action="https://formspree.io/f/TODO" method="POST">
+            <div class="form-group">
+              <label for="name">Nombre</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="message">&iquest;En qu&eacute; podemos ayudarte?</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary">Enviar</button>
+          </form>
+        </div>
+
+        <div class="contact-info">
+          <h3>Email</h3>
+          <p><a href="mailto:hola@laboteca.es">hola@laboteca.es</a></p>
+
+          <h3>D&oacute;nde estamos</h3>
+          <p>
+            <strong>Dise&ntilde;adero</strong><br />
+            C/ Virgen del Valle, 28<br />
+            41011 Sevilla
+          </p>
+
+          <h3>Visitas</h3>
+          <p>Con cita previa. Esc&iacute;benos y quedamos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bot section -->
+  <section class="section-bot">
+    <div class="container container--narrow">
+      <div class="bot-box">
+        <h2>O prueba nuestro bot</h2>
+        <p>Tenemos un chatbot activo en esta web. Pru&eacute;balo: te responde sobre servicios, precios y proceso. Si te convence, imagina lo que puede hacer por tu negocio.</p>
+        <p class="bot-note">Widget de chat disponible pr&oacute;ximamente.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proceso: Que pasa despues -->
+  <section class="section-process">
+    <div class="container container--narrow">
+      <h2>&iquest;Qu&eacute; pasa despu&eacute;s?</h2>
+
+      <ol class="steps">
+        <li>
+          <strong>Recibes nuestra respuesta</strong>
+          En 24-48 horas laborables te escribimos. Sin respuestas autom&aacute;ticas.
+        </li>
+        <li>
+          <strong>Agendamos una llamada</strong>
+          30 minutos por videollamada o tel&eacute;fono. T&uacute; eliges.
+        </li>
+        <li>
+          <strong>Hablamos</strong>
+          Te preguntamos qu&eacute; problema tienes, qu&eacute; has probado y qu&eacute; esperas. Escuchamos antes de proponer.
+        </li>
+        <li>
+          <strong>Decidimos si podemos ayudarte</strong>
+          Honestamente. Si un bot no es la soluci&oacute;n, te lo decimos.
+        </li>
+        <li>
+          <strong>Si seguimos: propuesta en 48h</strong>
+          F&oacute;rmula recomendada, precio, tiempos y qu&eacute; incluye. Sin sorpresas.
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-faq">
+    <div class="container container--narrow">
+      <h2>Preguntas frecuentes</h2>
+
+      <div class="faq-item">
+        <h3>&iquest;Cu&aacute;nto dura la primera llamada?</h3>
+        <p>30 minutos. A veces menos, si el caso es claro. Nunca te vamos a alargar una reuni&oacute;n para venderte algo.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>&iquest;Cobr&aacute;is la primera llamada?</h3>
+        <p>No. Es para conocernos y ver si tiene sentido trabajar juntos. Sin compromiso real.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>&iquest;Trabaj&aacute;is con cualquier empresa?</h3>
+        <p>No. Solo aceptamos proyectos donde creemos que podemos aportar valor real. Si pensamos que no necesitas un bot, te lo decimos.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>&iquest;Hac&eacute;is bots &laquo;urgentes&raquo;?</h3>
+        <p>No. M&iacute;nimo 3 semanas para cualquier proyecto. Un bot apresurado es un bot que no funciona.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>&iquest;Trabaj&aacute;is fuera de Sevilla?</h3>
+        <p>S&iacute;. Toda Espa&ntilde;a y pa&iacute;ses hispanohablantes. El 90% del trabajo es remoto, y lo presencial se resuelve con videollamada.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>&iquest;Puedo ir a veros?</h3>
+        <p>S&iacute;, con cita previa. Estamos en Dise&ntilde;adero, un taller f&iacute;sico en Sevilla. Escr&iacute;benos y quedamos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Explorar -->
+  <section class="section-explore">
+    <div class="container container--narrow">
+      <h2>Sigue explorando</h2>
+      <div class="explore-links">
+        <a href="/servicios" class="explore-link">
+          <strong>Servicios</strong>
+          <span>Qu&eacute; hacemos y cu&aacute;nto cuesta</span>
+        </a>
+        <a href="/formulas" class="explore-link">
+          <strong>F&oacute;rmulas</strong>
+          <span>Cat&aacute;logo de chatbots por sector</span>
+        </a>
+        <a href="/quienes-somos" class="explore-link">
+          <strong>Qui&eacute;nes somos</strong>
+          <span>Tres boticarios, un taller</span>
+        </a>
+      </div>
+    </div>
   </section>
 
   <Footer slot="footer" />
 </Base>
 
 <style>
+  /* Page header */
   .page-header {
     padding: var(--space-2xl) 0 var(--space-xl);
     background: var(--color-bg-alt);
+    text-align: center;
   }
+
+  .page-header h1 {
+    margin-bottom: var(--space-sm);
+  }
+
   .page-header p {
     color: var(--color-text-secondary);
-    font-size: 1.15rem;
-    margin-top: var(--space-sm);
+    font-size: 1.2rem;
+    max-width: 500px;
+    margin: 0 auto;
   }
-  .page-content {
+
+  /* Email hero */
+  .section-email {
     padding: var(--space-xl) 0;
+    background: var(--color-bg);
   }
+
+  .email-hero {
+    text-align: center;
+  }
+
+  .email-hero__address {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .email-hero__address:hover {
+    color: var(--color-primary-dark);
+  }
+
+  /* Form section */
+  .section-form {
+    padding: var(--space-xl) 0 var(--space-2xl);
+    background: var(--color-bg);
+  }
+
+  .section-form h2 {
+    margin-bottom: var(--space-lg);
+  }
+
   .contact-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: var(--space-xl);
   }
+
   .form-group {
     margin-bottom: var(--space-md);
   }
+
   .form-group label {
     display: block;
     font-weight: 500;
     margin-bottom: var(--space-xs);
     font-size: 0.9rem;
   }
+
   .form-group input,
   .form-group textarea {
     width: 100%;
@@ -82,39 +244,217 @@ import Footer from '../components/Footer.astro';
     font-family: var(--font-body);
     font-size: 0.95rem;
   }
+
   .form-group input:focus,
   .form-group textarea:focus {
     outline: 2px solid var(--color-primary);
     border-color: transparent;
   }
-  .btn--primary {
+
+  .btn {
     display: inline-block;
-    padding: 0.75rem 1.75rem;
-    background: var(--color-primary);
-    color: white;
-    border: none;
-    border-radius: var(--radius-md);
     font-weight: 600;
     font-size: 0.95rem;
+    padding: 0.75rem 1.75rem;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: background var(--transition-base), color var(--transition-base);
     cursor: pointer;
-    transition: background var(--transition-base);
+    border: none;
   }
+
+  .btn--primary {
+    background: var(--color-primary);
+    color: white;
+  }
+
   .btn--primary:hover {
     background: var(--color-primary-dark);
+    color: white;
   }
+
   .contact-info h3 {
     margin-bottom: var(--space-sm);
     font-size: 1rem;
   }
+
   .contact-info h3:not(:first-child) {
     margin-top: var(--space-lg);
   }
+
   .contact-info p {
     color: var(--color-text-secondary);
     font-size: 0.95rem;
+    line-height: 1.7;
   }
+
+  /* Bot section */
+  .section-bot {
+    padding: var(--space-xl) 0;
+    background: var(--color-bg-alt);
+  }
+
+  .bot-box {
+    padding: var(--space-xl);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    text-align: center;
+  }
+
+  .bot-box h2 {
+    margin-bottom: var(--space-md);
+  }
+
+  .bot-box p {
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+    max-width: 550px;
+    margin: 0 auto var(--space-md);
+    line-height: 1.7;
+  }
+
+  .bot-note {
+    font-style: italic;
+    font-size: 0.9rem !important;
+    color: var(--color-text-secondary);
+  }
+
+  /* Process section */
+  .section-process {
+    padding: var(--space-2xl) 0;
+    background: var(--color-bg);
+  }
+
+  .section-process h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .steps {
+    counter-reset: step;
+    list-style: none;
+    padding: 0;
+  }
+
+  .steps li {
+    counter-increment: step;
+    padding: var(--space-md) 0 var(--space-md) 3.5rem;
+    position: relative;
+    border-left: 2px solid var(--color-border);
+    margin-left: 1rem;
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+
+  .steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: -1.1rem;
+    top: var(--space-md);
+    width: 2rem;
+    height: 2rem;
+    background: var(--color-primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+
+  .steps li:last-child {
+    border-left-color: transparent;
+  }
+
+  .steps li strong {
+    display: block;
+    margin-bottom: 0.3rem;
+    color: var(--color-text);
+  }
+
+  /* FAQ section */
+  .section-faq {
+    padding: var(--space-2xl) 0;
+    background: var(--color-bg-alt);
+  }
+
+  .section-faq h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .faq-item {
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .faq-item:last-child {
+    border-bottom: none;
+  }
+
+  .faq-item h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: var(--space-xs);
+    color: var(--color-text);
+  }
+
+  .faq-item p {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+
+  /* Explore section */
+  .section-explore {
+    padding: var(--space-2xl) 0;
+    background: var(--color-bg);
+  }
+
+  .section-explore h2 {
+    margin-bottom: var(--space-lg);
+  }
+
+  .explore-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+  }
+
+  .explore-link {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    padding: var(--space-lg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    transition: box-shadow var(--transition-base), border-color var(--transition-base);
+  }
+
+  .explore-link:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border-color: var(--color-primary);
+  }
+
+  .explore-link strong {
+    font-size: 1.05rem;
+    color: var(--color-primary-dark);
+  }
+
+  .explore-link span {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+  }
+
+  /* Responsive */
   @media (max-width: 768px) {
     .contact-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .explore-links {
       grid-template-columns: 1fr;
     }
   }

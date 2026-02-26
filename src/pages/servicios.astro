@@ -4,35 +4,695 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Base title="Servicios" description="Servicios de La Boteca: bots llave en mano, mantenimiento evolutivo, auditoría, consultoría y formación.">
+<Base title="Servicios" description="Servicios de La Boteca: desarrollo de chatbots a medida, mantenimiento evolutivo, auditoría, consultoría y formación en IA conversacional.">
   <Header slot="header" />
 
+  <!-- Page header -->
   <section class="page-header">
     <div class="container">
-      <h1>Servicios</h1>
-      <p>Todo lo que hacemos, explicado sin letra pequeña.</p>
+      <h1>Nuestro vademécum</h1>
+      <p class="page-header__subtitle">Lo que preparamos y lo que cuesta. Sin letra pequeña.</p>
     </div>
   </section>
 
-  <section class="container page-content">
-    <!-- TODO: Trasladar contenido de Boteca/Servicios.md -->
-    <p>Contenido en desarrollo.</p>
+  <!-- Fórmulas magistrales — Desarrollo a medida -->
+  <section class="srv-section srv-section--white" id="formulas-magistrales">
+    <div class="container">
+      <div class="srv-section__header">
+        <h2>Fórmulas magistrales</h2>
+        <p class="srv-section__subtitle">Desarrollo a medida</p>
+      </div>
+      <p>Diseñamos y construimos tu chatbot desde cero. No usamos preparados genéricos ni recetas industriales.</p>
+
+      <div class="feature-list">
+        <h3>Qué incluye</h3>
+        <ul class="check-list">
+          <li>Consulta inicial (llamada + documentación)</li>
+          <li>Diseño conversacional (flujos, tono, personalidad)</li>
+          <li>Desarrollo en Botpress Cloud</li>
+          <li>Knowledge Base personalizada</li>
+          <li>Pruebas y ajustes (2 rondas incluidas)</li>
+          <li>Despliegue en web y/o WhatsApp</li>
+          <li>Documentación y 30 días de soporte</li>
+        </ul>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="srv-table">
+          <thead>
+            <tr>
+              <th>Fórmula</th>
+              <th>Qué resuelve</th>
+              <th>Precio</th>
+              <th>Tiempo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Remedio básico</strong></td>
+              <td>Responder preguntas frecuentes</td>
+              <td class="price-cell">1.800 &euro;</td>
+              <td>2-3 semanas</td>
+            </tr>
+            <tr>
+              <td><strong>Tónico captador</strong></td>
+              <td>Captar y cualificar leads</td>
+              <td class="price-cell">3.200 &euro;</td>
+              <td>3-4 semanas</td>
+            </tr>
+            <tr>
+              <td><strong>Elixir complejo</strong></td>
+              <td>Automatizar procesos</td>
+              <td class="price-cell">5.500 &euro;</td>
+              <td>5-6 semanas</td>
+            </tr>
+            <tr>
+              <td><strong>Gran preparado</strong></td>
+              <td>CRM, derivación humana, multicanal</td>
+              <td class="price-cell">10.000 &euro;+</td>
+              <td>8-12 semanas</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="info-box">
+        <p>Fórmulas de 1.800-3.200 &euro; son autogestionables. Las de 5.500 &euro;+ suelen necesitar tratamiento continuado.</p>
+        <p><strong>Pago:</strong> 50 % al inicio &middot; 50 % a la entrega</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tratamiento continuado — Mantenimiento evolutivo -->
+  <section class="srv-section srv-section--alt" id="tratamiento-continuado">
+    <div class="container">
+      <div class="srv-section__header">
+        <h2>Tratamiento continuado</h2>
+        <p class="srv-section__subtitle">Mantenimiento evolutivo</p>
+      </div>
+      <p>Un bot no es un medicamento que se toma una vez. Es un tratamiento que evoluciona con tu negocio.</p>
+
+      <div class="feature-list">
+        <h3>Qué incluye</h3>
+        <ul class="check-list">
+          <li>Monitorización de conversaciones</li>
+          <li>Ajustes según feedback real</li>
+          <li>Ampliación de Knowledge Base</li>
+          <li>Nuevos flujos según necesidad</li>
+          <li>Soporte técnico prioritario</li>
+          <li>Acceso compartido a la plataforma</li>
+        </ul>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="srv-table">
+          <thead>
+            <tr>
+              <th>Plan</th>
+              <th>Horas/mes</th>
+              <th>Precio/mes</th>
+              <th>Ideal para</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Revisión periódica</strong></td>
+              <td>2 h</td>
+              <td class="price-cell">190 &euro;</td>
+              <td>Bots estables, poco tráfico</td>
+            </tr>
+            <tr>
+              <td><strong>Seguimiento activo</strong></td>
+              <td>5 h</td>
+              <td class="price-cell">420 &euro;</td>
+              <td>Bots en crecimiento</td>
+            </tr>
+            <tr>
+              <td><strong>Cuidado intensivo</strong></td>
+              <td>10 h</td>
+              <td class="price-cell">750 &euro;</td>
+              <td>Bots críticos</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="info-box">
+        <p><strong>Condiciones:</strong> Mínimo 3 meses &middot; Horas extra a 90 &euro;/h &middot; Cancelación con 30 días de aviso</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Diagnóstico — Auditoría de chatbots -->
+  <section class="srv-section srv-section--white" id="diagnostico">
+    <div class="container">
+      <div class="srv-section__header">
+        <h2>Diagnóstico</h2>
+        <p class="srv-section__subtitle">Auditoría de chatbots</p>
+      </div>
+      <p>¿Ya tienes un bot que no funciona como esperabas? Lo examinamos a fondo.</p>
+      <p>Muchas empresas compraron chatbots con Kit Digital u otras subvenciones y ahora están abandonados. Les damos una segunda oportunidad.</p>
+
+      <div class="feature-list">
+        <h3>Qué incluye</h3>
+        <ul class="check-list">
+          <li>Revisión de arquitectura conversacional</li>
+          <li>Análisis de conversaciones reales</li>
+          <li>Detección de patologías y puntos de fuga</li>
+          <li>Informe con problemas priorizados</li>
+          <li>Plan de tratamiento (con o sin nosotros)</li>
+        </ul>
+      </div>
+
+      <div class="price-highlight">
+        <span class="price-highlight__amount">950 &euro;</span>
+        <span class="price-highlight__detail">Entrega en 1 semana</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Consultoría -->
+  <section class="srv-section srv-section--alt" id="consultoria">
+    <div class="container">
+      <div class="srv-section__header">
+        <h2>Consultoría</h2>
+        <p class="srv-section__subtitle">Para los que no saben por dónde empezar</p>
+      </div>
+      <p>No tienes claro si necesitas un chatbot. Quieres que alguien con experiencia te ayude a ver el mapa.</p>
+
+      <div class="feature-list">
+        <h3>Qué incluye</h3>
+        <ul class="check-list">
+          <li>Sesión de 2 horas (presencial en Sevilla o videollamada)</li>
+          <li>Análisis de tus procesos y puntos de dolor</li>
+          <li>Identificación de oportunidades de automatización</li>
+          <li>Recomendación honesta: bot, otra herramienta, o nada</li>
+          <li>Informe escrito con próximos pasos</li>
+        </ul>
+      </div>
+
+      <div class="price-highlight">
+        <span class="price-highlight__amount">400 &euro;</span>
+        <span class="price-highlight__detail">Si después contratas una fórmula, se descuenta del precio</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formación -->
+  <section class="srv-section srv-section--white" id="formacion">
+    <div class="container">
+      <div class="srv-section__header">
+        <h2>Formación</h2>
+        <p class="srv-section__subtitle">Para tu autonomía</p>
+      </div>
+      <p>Capacitación para que tu equipo pueda cuidar el bot &mdash; o incluso construirlo.</p>
+
+      <div class="table-wrapper">
+        <table class="srv-table">
+          <thead>
+            <tr>
+              <th>Formato</th>
+              <th>Duración</th>
+              <th>Precio</th>
+              <th>Qué aprenderás</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Primeros auxilios</strong></td>
+              <td>2 h</td>
+              <td class="price-cell">280 &euro;</td>
+              <td>Gestionar KB, editar respuestas</td>
+            </tr>
+            <tr>
+              <td><strong>Curso de boticario</strong></td>
+              <td>4 h</td>
+              <td class="price-cell">500 &euro;</td>
+              <td>Crear flujos, integraciones básicas</td>
+            </tr>
+            <tr>
+              <td><strong>Máster en fórmulas</strong></td>
+              <td>1 día</td>
+              <td class="price-cell">900 &euro;</td>
+              <td>Diseño conversacional completo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="info-box info-box--highlight">
+        <h3>Taller especial: &laquo;IA para Transformar Tu Trabajo&raquo;</h3>
+        <p>18 horas para profesionales que quieren entender y aplicar IA en sus negocios. En colaboración con Diseñadero.</p>
+        <p><strong>Modalidad:</strong> Online (videollamada) o presencial en Sevilla</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ¿Por qué no hacerlo tú mismo? -->
+  <section class="srv-section srv-section--alt" id="por-que-nosotros">
+    <div class="container">
+      <div class="srv-section__header">
+        <h2>¿Por qué no hacerlo tú mismo?</h2>
+      </div>
+      <p>Existen plataformas como Landbot, Tidio o el propio ChatGPT que prometen &laquo;crea tu chatbot en 5 minutos&raquo;. Y es verdad: puedes crearlo en 5 minutos.</p>
+
+      <div class="timeline">
+        <div class="timeline__item">
+          <span class="timeline__label">Semana 1</span>
+          <p>Creas el bot, funciona más o menos, estás contento</p>
+        </div>
+        <div class="timeline__item">
+          <span class="timeline__label">Semana 3</span>
+          <p>Usuarios preguntan cosas que no habías previsto, el bot responde mal</p>
+        </div>
+        <div class="timeline__item">
+          <span class="timeline__label">Mes 2</span>
+          <p>Nadie tiene tiempo de ajustarlo, sigue respondiendo mal</p>
+        </div>
+        <div class="timeline__item timeline__item--bad">
+          <span class="timeline__label">Mes 6</span>
+          <p>Lo desactivas porque &laquo;los chatbots no funcionan&raquo;</p>
+        </div>
+      </div>
+
+      <div class="info-box info-box--highlight">
+        <h3>Lo que aportamos</h3>
+        <p>Experiencia diseñando conversaciones, tiempo dedicado que tú no tienes, mantenimiento, integración real con tus sistemas.</p>
+        <p>Si tienes tiempo y un caso simple, hazlo tú. Si quieres que funcione de verdad, para eso estamos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Costes de plataforma -->
+  <section class="srv-section srv-section--white" id="costes-plataforma">
+    <div class="container">
+      <div class="srv-section__header">
+        <h2>Costes de plataforma</h2>
+        <p class="srv-section__subtitle">Transparencia total, sin margen</p>
+      </div>
+      <p>Las plataformas tienen su propio coste. Te lo trasladamos sin margen. Punto.</p>
+
+      <div class="table-wrapper">
+        <table class="srv-table">
+          <thead>
+            <tr>
+              <th>Plataforma</th>
+              <th>Coste mensual</th>
+              <th>Quién lo paga</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Botpress Cloud</td>
+              <td>10-50 &euro;</td>
+              <td>Tú (factura directa)</td>
+            </tr>
+            <tr>
+              <td>WhatsApp Business API</td>
+              <td>10-100 &euro;</td>
+              <td>Tú</td>
+            </tr>
+            <tr>
+              <td>Zapier/Make (si se usa)</td>
+              <td>0-30 &euro;</td>
+              <td>Tú</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="srv-note">Nuestro negocio es preparar fórmulas, no revender ingredientes.</p>
+    </div>
+  </section>
+
+  <!-- Descuentos -->
+  <section class="srv-section srv-section--alt" id="descuentos">
+    <div class="container">
+      <div class="srv-section__header">
+        <h2>Descuentos</h2>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="srv-table">
+          <thead>
+            <tr>
+              <th>Concepto</th>
+              <th>Descuento</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Pago anual adelantado</td>
+              <td><strong>-10 %</strong> (mín. 5.000 &euro;)</td>
+            </tr>
+            <tr>
+              <td>Referidos</td>
+              <td><strong>300 &euro;</strong> para cada parte</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="srv-note">No hacemos: descuentos &laquo;para empezar&raquo;, rebajas por presupuesto, trabajo gratis.</p>
+    </div>
+  </section>
+
+  <!-- CTA final -->
+  <section class="srv-section srv-section--cta" id="cta">
+    <div class="container srv-cta">
+      <h2>¿No sabes cuál necesitas?</h2>
+      <p>Hablamos 30 minutos. Sin compromiso, sin coste.</p>
+      <a href="/contacto" class="btn btn--primary btn--lg">Hablemos</a>
+    </div>
   </section>
 
   <Footer slot="footer" />
 </Base>
 
 <style>
+  /* ---- Page Header ---- */
   .page-header {
     padding: var(--space-2xl) 0 var(--space-xl);
     background: var(--color-bg-alt);
+    text-align: center;
   }
-  .page-header p {
+
+  .page-header h1 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .page-header__subtitle {
     color: var(--color-text-secondary);
-    font-size: 1.15rem;
-    margin-top: var(--space-sm);
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
   }
-  .page-content {
-    padding: var(--space-xl) 0;
+
+  /* ---- Section rhythm ---- */
+  .srv-section {
+    padding: var(--space-2xl) 0;
+  }
+
+  .srv-section--white {
+    background: var(--color-bg);
+  }
+
+  .srv-section--alt {
+    background: var(--color-bg-alt);
+  }
+
+  .srv-section__header {
+    margin-bottom: var(--space-lg);
+  }
+
+  .srv-section__header h2 {
+    margin-bottom: var(--space-xs);
+  }
+
+  .srv-section__subtitle {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--color-primary-dark);
+    margin-bottom: 0;
+  }
+
+  .srv-section > .container > p {
+    color: var(--color-text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  /* ---- Check list (Qué incluye) ---- */
+  .feature-list {
+    margin: var(--space-lg) 0;
+  }
+
+  .feature-list h3 {
+    font-size: 1.1rem;
+    margin-bottom: var(--space-md);
+    color: var(--color-text);
+  }
+
+  .check-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--space-sm) var(--space-lg);
+  }
+
+  .check-list li {
+    position: relative;
+    padding-left: 1.75rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+  }
+
+  .check-list li::before {
+    content: "\2713";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: 700;
+    color: var(--color-primary);
+    font-size: 1.1rem;
+  }
+
+  /* ---- Tables ---- */
+  .table-wrapper {
+    margin: var(--space-lg) 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+  }
+
+  .srv-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 500px;
+    font-size: 0.95rem;
+  }
+
+  .srv-table thead {
+    background: var(--color-primary);
+    color: white;
+  }
+
+  .srv-table th {
+    padding: 0.85rem 1.25rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+  }
+
+  .srv-table td {
+    padding: 0.85rem 1.25rem;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+  }
+
+  .srv-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .srv-table tbody tr:hover {
+    background: var(--color-accent);
+  }
+
+  .srv-table td strong {
+    color: var(--color-text);
+  }
+
+  .price-cell {
+    font-weight: 700;
+    color: var(--color-primary-dark) !important;
+    white-space: nowrap;
+  }
+
+  /* ---- Price highlight (single service) ---- */
+  .price-highlight {
+    display: inline-flex;
+    align-items: baseline;
+    gap: var(--space-md);
+    margin: var(--space-lg) 0;
+    padding: var(--space-md) var(--space-lg);
+    background: var(--color-accent);
+    border-left: 4px solid var(--color-primary);
+    border-radius: var(--radius-md);
+  }
+
+  .price-highlight__amount {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+  }
+
+  .price-highlight__detail {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+  }
+
+  /* ---- Info box ---- */
+  .info-box {
+    margin-top: var(--space-lg);
+    padding: var(--space-md) var(--space-lg);
+    background: var(--color-accent);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--color-primary);
+  }
+
+  .info-box p {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .info-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  .info-box--highlight {
+    background: var(--color-bg);
+    border-left-color: var(--color-primary-dark);
+  }
+
+  .info-box--highlight h3 {
+    font-size: 1rem;
+    margin-bottom: var(--space-sm);
+    color: var(--color-primary-dark);
+  }
+
+  /* ---- Timeline (DIY section) ---- */
+  .timeline {
+    margin: var(--space-lg) 0;
+    padding-left: var(--space-lg);
+    border-left: 3px solid var(--color-border);
+  }
+
+  .timeline__item {
+    position: relative;
+    padding: var(--space-sm) 0 var(--space-md) var(--space-md);
+  }
+
+  .timeline__item::before {
+    content: "";
+    position: absolute;
+    left: calc(-1 * var(--space-lg) - 7px);
+    top: 0.7rem;
+    width: 12px;
+    height: 12px;
+    background: var(--color-bg);
+    border: 3px solid var(--color-primary);
+    border-radius: 50%;
+  }
+
+  .timeline__item--bad::before {
+    background: #e74c3c;
+    border-color: #c0392b;
+  }
+
+  .timeline__label {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-primary-dark);
+    margin-bottom: var(--space-xs);
+  }
+
+  .timeline__item p {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 0;
+  }
+
+  .timeline__item--bad .timeline__label {
+    color: #c0392b;
+  }
+
+  /* ---- Note ---- */
+  .srv-note {
+    margin-top: var(--space-md);
+    font-style: italic;
+    font-size: 0.95rem;
+  }
+
+  /* ---- CTA section ---- */
+  .srv-section--cta {
+    background: var(--color-bg-dark);
+    text-align: center;
+    padding: var(--space-2xl) 0;
+  }
+
+  .srv-cta h2 {
+    color: white;
+    margin-bottom: var(--space-sm);
+  }
+
+  .srv-cta p {
+    color: #ccc;
+    font-size: 1.1rem;
+    max-width: none;
+    margin-bottom: var(--space-lg);
+  }
+
+  /* ---- Buttons ---- */
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 1.75rem;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all var(--transition-base);
+    text-align: center;
+  }
+
+  .btn--primary {
+    background: var(--color-primary);
+    color: white;
+  }
+
+  .btn--primary:hover {
+    background: var(--color-primary-dark);
+    color: white;
+  }
+
+  .btn--lg {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+  }
+
+  /* ---- Responsive ---- */
+  @media (max-width: 768px) {
+    .srv-section {
+      padding: var(--space-xl) 0;
+    }
+
+    .check-list {
+      grid-template-columns: 1fr;
+    }
+
+    .price-highlight {
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    .timeline {
+      padding-left: var(--space-md);
+    }
+
+    .timeline__item {
+      padding-left: var(--space-sm);
+    }
+
+    .timeline__item::before {
+      left: calc(-1 * var(--space-md) - 7px);
+      width: 10px;
+      height: 10px;
+    }
   }
 </style>

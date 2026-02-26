@@ -4,35 +4,370 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Base title="Quiénes somos" description="El equipo detrás de La Boteca: Jose Ruibérriz, Fermín Sánchez y Txiki López.">
+<Base title="Qui&eacute;nes somos" description="El equipo detr&aacute;s de La Boteca: Jose Ruib&eacute;rriz, Ferm&iacute;n S&aacute;nchez y Txiki L&oacute;pez. Tres boticarios, un taller en Sevilla.">
   <Header slot="header" />
 
+  <!-- Page header -->
   <section class="page-header">
     <div class="container">
-      <h1>Quiénes somos</h1>
-      <p>Un taller, tres personas, cero bullshit corporativo.</p>
+      <h1>Tres boticarios, un taller</h1>
+      <p>Preparamos chatbots que funcionan. Y llevamos a&ntilde;os trabajando con tecnolog&iacute;a, organizaciones y personas.</p>
     </div>
   </section>
 
-  <section class="container page-content">
-    <!-- TODO: Trasladar contenido de Boteca/Quiénes somos.md -->
-    <p>Contenido en desarrollo.</p>
+  <!-- Por que La Boteca -->
+  <section class="section-origin">
+    <div class="container container--narrow">
+      <div class="highlight highlight--quote">
+        <h3>&iquest;Por qu&eacute; &laquo;La Boteca&raquo;?</h3>
+        <p>Una <strong>botica</strong> era la farmacia de antes: un sitio donde el boticario conoc&iacute;a a cada cliente, preparaba f&oacute;rmulas a medida y no te vend&iacute;a lo que no necesitabas. No era una f&aacute;brica de medicamentos gen&eacute;ricos, era un taller de confianza.</p>
+        <p>Eso hacemos nosotros. Pero con chatbots.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Equipo -->
+  <section class="section-team">
+    <div class="container">
+      <h2>El equipo</h2>
+
+      <div class="team-grid">
+
+        <div class="team-card">
+          <h3>Jose Ruib&eacute;rriz</h3>
+          <p class="role">El arquitecto de conversaciones</p>
+          <p>Viene de la consultor&iacute;a y la transformaci&oacute;n digital. Lleva a&ntilde;os ayudando a organizaciones a entender qu&eacute; necesitan de la tecnolog&iacute;a y qu&eacute; no.</p>
+          <p>En La Boteca hace de todo: dise&ntilde;o conversacional, desarrollo, entrenamiento de bots, pruebas, soporte. Las manos en la masa, siempre.</p>
+          <p>Tambi&eacute;n trabaja en <strong>Dise&ntilde;adero</strong>, taller tecnol&oacute;gico Apple en Sevilla.</p>
+          <span class="team-location">Sevilla</span>
+        </div>
+
+        <div class="team-card">
+          <h3>Ferm&iacute;n S&aacute;nchez</h3>
+          <p class="role">El conector</p>
+          <p>Fundador de <strong>Dise&ntilde;adero</strong>. Conoce el tejido de pymes y comercio de Sevilla como nadie. Sabe qui&eacute;n necesita qu&eacute; y por qu&eacute;.</p>
+          <p>Aporta espacio, red de clientes y ojo cl&iacute;nico para detectar qui&eacute;n necesita realmente un chatbot &mdash; y qui&eacute;n no.</p>
+          <span class="team-location">Sevilla</span>
+        </div>
+
+        <div class="team-card">
+          <h3>Txiki L&oacute;pez</h3>
+          <p class="role">El alquimista visual</p>
+          <p>Dise&ntilde;ador gr&aacute;fico. Cre&oacute; la identidad de La Boteca: nombre, logo, concepto visual. Se asegura de que todo lo que sale del taller tenga una presentaci&oacute;n profesional.</p>
+          <p>Porque un buen preparado tambi&eacute;n necesita un buen envase.</p>
+          <span class="team-location">Sevilla</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Como trabajamos -->
+  <section class="section-philosophy">
+    <div class="container container--narrow">
+      <h2>C&oacute;mo trabajamos</h2>
+
+      <div class="highlight highlight--tip">
+        <ul class="philosophy-list">
+          <li>
+            <strong>Escuchar antes de recetar</strong>
+            <span>Primero entendemos tu problema. Despu&eacute;s &mdash; y solo si tiene sentido &mdash; proponemos soluci&oacute;n.</span>
+          </li>
+          <li>
+            <strong>Transparencia radical</strong>
+            <span>Sabes qu&eacute; pagas, por qu&eacute; y qu&eacute; puedes esperar. Sin letra peque&ntilde;a.</span>
+          </li>
+          <li>
+            <strong>Artesan&iacute;a sobre escala</strong>
+            <span>Solo llevamos 2 proyectos de cliente a la vez. Preferimos hacer pocas cosas bien que muchas a medias.</span>
+          </li>
+          <li>
+            <strong>Slow Tech</strong>
+            <span>No corremos para entregar. Un bot mal hecho es peor que ning&uacute;n bot. M&iacute;nimo 3 semanas para cualquier proyecto.</span>
+          </li>
+          <li>
+            <strong>Se construye contigo</strong>
+            <span>No desaparecemos hasta la entrega. Trabajamos juntos durante todo el proceso: t&uacute; conoces tu negocio, nosotros la tecnolog&iacute;a.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Un laboratorio de confianza -->
+  <section class="section-lab">
+    <div class="container container--narrow">
+      <h2>Un laboratorio de confianza</h2>
+      <p>Operamos desde <strong>Dise&ntilde;adero</strong>, un taller tecnol&oacute;gico f&iacute;sico en Sevilla. No somos una web sin cara: tenemos un sitio donde trabajamos, donde puedes venir a vernos y donde siempre hay un bot de demo funcionando.</p>
+      <p>Si quieres probar un chatbot nuestro antes de contratar, el de esta web est&aacute; siempre activo. Y si prefieres verlo en persona, podemos ense&ntilde;&aacute;rtelo en el taller.</p>
+
+      <div class="address-box">
+        <h3>D&oacute;nde estamos</h3>
+        <p>
+          <strong>Dise&ntilde;adero</strong><br />
+          C/ Virgen del Valle, 28<br />
+          41011 Sevilla
+        </p>
+        <p class="address-note">Visitas con cita previa.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA final -->
+  <section class="section-cta">
+    <div class="container">
+      <div class="cta-box">
+        <h2>&iquest;Quieres que hablemos?</h2>
+        <p>30 minutos para conocernos. Sin compromiso, sin PowerPoint.</p>
+        <a href="/contacto" class="btn btn--primary btn--lg">Hablemos</a>
+      </div>
+    </div>
   </section>
 
   <Footer slot="footer" />
 </Base>
 
 <style>
+  /* Page header */
   .page-header {
     padding: var(--space-2xl) 0 var(--space-xl);
     background: var(--color-bg-alt);
+    text-align: center;
   }
+
+  .page-header h1 {
+    margin-bottom: var(--space-sm);
+  }
+
   .page-header p {
     color: var(--color-text-secondary);
-    font-size: 1.15rem;
-    margin-top: var(--space-sm);
+    font-size: 1.2rem;
+    max-width: 650px;
+    margin: 0 auto;
   }
-  .page-content {
-    padding: var(--space-xl) 0;
+
+  /* Origin section */
+  .section-origin {
+    padding: var(--space-2xl) 0 var(--space-xl);
+    background: var(--color-bg);
+  }
+
+  .section-origin .highlight--quote {
+    padding: var(--space-xl);
+  }
+
+  .section-origin .highlight--quote h3 {
+    font-size: 1.2rem;
+    margin-bottom: var(--space-md);
+    font-style: normal;
+    color: var(--color-text);
+  }
+
+  .section-origin .highlight--quote p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+  }
+
+  .section-origin .highlight--quote p:last-child {
+    margin-bottom: 0;
+    font-style: normal;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  /* Team section */
+  .section-team {
+    padding: var(--space-xl) 0 var(--space-2xl);
+    background: var(--color-bg);
+  }
+
+  .section-team h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+  }
+
+  .team-card {
+    padding: var(--space-lg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    transition: box-shadow var(--transition-base);
+  }
+
+  .team-card:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  }
+
+  .team-card h3 {
+    color: var(--color-primary-dark);
+    margin-bottom: 0.25rem;
+  }
+
+  .team-card .role {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    font-style: italic;
+    margin-bottom: var(--space-md);
+  }
+
+  .team-card p {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+
+  .team-location {
+    display: inline-block;
+    margin-top: var(--space-md);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-primary-dark);
+    background: var(--color-accent);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-sm);
+  }
+
+  /* Philosophy section */
+  .section-philosophy {
+    padding: var(--space-2xl) 0;
+    background: var(--color-bg-alt);
+  }
+
+  .section-philosophy h2 {
+    margin-bottom: var(--space-lg);
+  }
+
+  .philosophy-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .philosophy-list li {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .philosophy-list li strong {
+    font-size: 1rem;
+    color: var(--color-text);
+  }
+
+  .philosophy-list li span {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+
+  /* Lab section */
+  .section-lab {
+    padding: var(--space-2xl) 0;
+    background: var(--color-bg);
+  }
+
+  .section-lab h2 {
+    margin-bottom: var(--space-lg);
+  }
+
+  .section-lab > .container > p {
+    font-size: 1.05rem;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+  }
+
+  .address-box {
+    margin-top: var(--space-xl);
+    padding: var(--space-lg);
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+  }
+
+  .address-box h3 {
+    font-size: 1rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .address-box p {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+  }
+
+  .address-note {
+    font-style: italic;
+    margin-top: var(--space-sm);
+    margin-bottom: 0;
+  }
+
+  /* CTA section */
+  .section-cta {
+    padding: var(--space-2xl) 0;
+    background: var(--color-bg-alt);
+  }
+
+  .cta-box {
+    text-align: center;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl) var(--space-lg);
+  }
+
+  .cta-box h2 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .cta-box p {
+    color: var(--color-text-secondary);
+    font-size: 1.05rem;
+    max-width: 500px;
+    margin: 0 auto var(--space-lg);
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.65rem 1.5rem;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: background var(--transition-fast), color var(--transition-fast);
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn--primary {
+    background: var(--color-primary);
+    color: #fff;
+  }
+
+  .btn--primary:hover {
+    background: var(--color-primary-dark);
+    color: #fff;
+  }
+
+  .btn--lg {
+    font-size: 1.1rem;
+    padding: 0.85rem 2rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .team-grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

@@ -4,35 +4,528 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Base title="Casos" description="Casos reales de chatbots implementados por La Boteca.">
+<Base title="Casos" description="Historiales cl&iacute;nicos de La Boteca: casos reales y escenarios tipo de chatbots para pymes y tercer sector.">
   <Header slot="header" />
 
+  <!-- Page header -->
   <section class="page-header">
     <div class="container">
-      <h1>Casos</h1>
-      <p>Bots en funcionamiento. Sin capturas retocadas.</p>
+      <h1>Historiales cl&iacute;nicos</h1>
+      <p>No te contamos lo que podemos hacer. Te mostramos lo que ya hicimos.</p>
     </div>
   </section>
 
-  <section class="container page-content">
-    <!-- TODO: Trasladar contenido de Boteca/Casos.md -->
-    <p>Contenido en desarrollo.</p>
+  <!-- Casos reales -->
+  <section class="section-real">
+    <div class="container">
+      <h2 class="section-title">Casos reales</h2>
+      <p class="section-subtitle">Bots en producci&oacute;n. Sin capturas retocadas, sin promesas vac&iacute;as.</p>
+
+      <div class="real-cases">
+
+        <!-- Caso 1: La Boteca -->
+        <article class="case-card case-card--real">
+          <div class="case-badge badge--real">Caso real</div>
+          <div class="case-header">
+            <h3>El bot de La Boteca</h3>
+            <div class="case-meta">
+              <span class="case-patient"><strong>Paciente:</strong> La Boteca (nosotros mismos)</span>
+              <span class="case-formula"><strong>F&oacute;rmula:</strong> Remedio FAQ + T&oacute;nico captador</span>
+            </div>
+          </div>
+          <div class="case-body">
+            <div class="case-section">
+              <h4>S&iacute;ntoma</h4>
+              <p>Necesit&aacute;bamos un asistente que respondiera preguntas sobre servicios, precios y proceso 24/7, y que capturara leads cuando detectara inter&eacute;s real.</p>
+            </div>
+            <div class="case-section">
+              <h4>Tratamiento</h4>
+              <ul>
+                <li>Knowledge Base con toda la info de servicios, precios y proceso</li>
+                <li>Flujo de cualificaci&oacute;n cuando detecta intenci&oacute;n de compra</li>
+                <li>Derivaci&oacute;n a humano cuando no sabe responder</li>
+                <li>Notificaci&oacute;n por email de cada lead capturado</li>
+              </ul>
+            </div>
+            <div class="case-section">
+              <h4>Resultado</h4>
+              <ul class="results-list">
+                <li>Es el bot que puedes probar en esta web</li>
+                <li>Si no funciona bien, &iquest;por qu&eacute; ibas a confiar en nosotros?</li>
+              </ul>
+            </div>
+          </div>
+          <div class="case-cta">
+            <a href="/contacto" class="btn btn--primary">Pru&eacute;balo t&uacute; mismo</a>
+          </div>
+        </article>
+
+        <!-- Caso 2: Disenadero -->
+        <article class="case-card case-card--real">
+          <div class="case-badge badge--real">Caso real</div>
+          <div class="case-header">
+            <h3>Bot de Dise&ntilde;adero</h3>
+            <div class="case-meta">
+              <span class="case-patient"><strong>Paciente:</strong> Dise&ntilde;adero (taller tecnol&oacute;gico, Sevilla)</span>
+              <span class="case-formula"><strong>F&oacute;rmula:</strong> Remedio FAQ + B&aacute;lsamo asociativo</span>
+            </div>
+          </div>
+          <div class="case-body">
+            <div class="case-section">
+              <h4>S&iacute;ntoma</h4>
+              <p>Taller con mucho tr&aacute;fico de consultas repetitivas: horarios, servicios, precios de impresi&oacute;n 3D, disponibilidad de m&aacute;quinas. El equipo perd&iacute;a 4-5 horas semanales respondiendo lo mismo.</p>
+            </div>
+            <div class="case-section">
+              <h4>Tratamiento</h4>
+              <ul>
+                <li>FAQ de servicios del taller (corte l&aacute;ser, impresi&oacute;n 3D, electr&oacute;nica)</li>
+                <li>Informaci&oacute;n sobre cursos y talleres formativos</li>
+                <li>Captura de interesados en formaci&oacute;n</li>
+                <li>Canal: web + WhatsApp</li>
+              </ul>
+            </div>
+            <div class="case-section">
+              <h4>Resultado</h4>
+              <ul class="results-list">
+                <li>Reducci&oacute;n de 4-5 horas semanales de consultas repetitivas</li>
+                <li>El equipo atiende casos complejos, el bot resuelve lo b&aacute;sico</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Escenarios tipo -->
+  <section class="section-scenarios">
+    <div class="container">
+      <h2 class="section-title">Escenarios tipo</h2>
+      <p class="section-subtitle">No son clientes reales, pero son casos representativos de lo que resolvemos. Si te ves reflejado, hablemos.</p>
+
+      <div class="scenarios-grid">
+
+        <!-- Escenario: Despacho de abogados -->
+        <article class="case-card case-card--scenario">
+          <div class="case-badge badge--scenario">Escenario tipo</div>
+          <div class="case-header">
+            <h3>Despacho de abogados</h3>
+            <div class="case-meta">
+              <span><strong>Sector:</strong> Legal</span>
+              <span><strong>Tama&ntilde;o:</strong> 3-5 abogados</span>
+            </div>
+          </div>
+          <div class="case-body">
+            <div class="case-section">
+              <h4>Problema</h4>
+              <p>El 60% de llamadas son consultas iniciales que no acaban en cliente. El equipo pierde horas filtrando llamadas que no llevan a nada.</p>
+            </div>
+            <div class="case-section">
+              <h4>Soluci&oacute;n</h4>
+              <p>Bot que filtra por tipo de caso, cualifica urgencia y presupuesto, responde FAQ generales y agenda citas solo con casos cualificados.</p>
+            </div>
+            <div class="case-section">
+              <h4>Resultado esperado</h4>
+              <ul class="results-list">
+                <li>Reducci&oacute;n del 40-50% de llamadas no cualificadas</li>
+                <li>Ahorro de 8-10 h/semana en filtrado</li>
+                <li>Mejor tasa de conversi&oacute;n</li>
+              </ul>
+            </div>
+          </div>
+          <div class="case-footer">
+            <span class="case-formula-tag">Extracto legal</span>
+            <span class="case-investment">3.200 - 5.500 &euro;</span>
+          </div>
+        </article>
+
+        <!-- Escenario: Tienda online -->
+        <article class="case-card case-card--scenario">
+          <div class="case-badge badge--scenario">Escenario tipo</div>
+          <div class="case-header">
+            <h3>Tienda online</h3>
+            <div class="case-meta">
+              <span><strong>Sector:</strong> Ecommerce</span>
+              <span><strong>Tama&ntilde;o:</strong> 500-2.000 pedidos/mes</span>
+            </div>
+          </div>
+          <div class="case-body">
+            <div class="case-section">
+              <h4>Problema</h4>
+              <p>Soporte saturado con las mismas preguntas: &laquo;&iquest;d&oacute;nde est&aacute; mi pedido?&raquo;, &laquo;&iquest;c&oacute;mo devuelvo?&raquo;, &laquo;&iquest;ten&eacute;is X en stock?&raquo;</p>
+            </div>
+            <div class="case-section">
+              <h4>Soluci&oacute;n</h4>
+              <p>Bot integrado con el sistema de pedidos. Consulta estado real, explica pol&iacute;ticas de devoluci&oacute;n, resuelve dudas de producto y deriva casos complejos a humanos.</p>
+            </div>
+            <div class="case-section">
+              <h4>Resultado esperado</h4>
+              <ul class="results-list">
+                <li>60-70% de consultas resueltas sin intervenci&oacute;n humana</li>
+                <li>Respuesta instant&aacute;nea vs. las 4-6h anteriores</li>
+                <li>Equipo enfocado en lo que realmente importa</li>
+              </ul>
+            </div>
+          </div>
+          <div class="case-footer">
+            <span class="case-formula-tag">Jarabe postventa</span>
+            <span class="case-investment">5.500 - 10.000 &euro;</span>
+          </div>
+        </article>
+
+        <!-- Escenario: Consultor / Formador -->
+        <article class="case-card case-card--scenario">
+          <div class="case-badge badge--scenario">Escenario tipo</div>
+          <div class="case-header">
+            <h3>Consultor / Formador</h3>
+            <div class="case-meta">
+              <span><strong>Sector:</strong> Servicios profesionales</span>
+              <span><strong>Tama&ntilde;o:</strong> Freelance o microempresa</span>
+            </div>
+          </div>
+          <div class="case-body">
+            <div class="case-section">
+              <h4>Problema</h4>
+              <p>Tiene metodolog&iacute;a propia, contenido de valor, experiencia. Pero no puede estar 24/7 respondiendo las mismas dudas de clientes y alumnos.</p>
+            </div>
+            <div class="case-section">
+              <h4>Soluci&oacute;n</h4>
+              <p>Bot entrenado con su metodolog&iacute;a. Conoce su contenido, gu&iacute;a a los usuarios, responde FAQ. &laquo;T&uacute; en autom&aacute;tico.&raquo;</p>
+            </div>
+            <div class="case-section">
+              <h4>Resultado esperado</h4>
+              <ul class="results-list">
+                <li>Respuestas inmediatas a dudas frecuentes</li>
+                <li>Reducci&oacute;n dr&aacute;stica de emails repetitivos</li>
+                <li>Servicio premium disponible 24/7</li>
+              </ul>
+            </div>
+          </div>
+          <div class="case-footer">
+            <span class="case-formula-tag">Esencia de conocimiento</span>
+            <span class="case-investment">3.200 - 5.500 &euro;</span>
+          </div>
+        </article>
+
+        <!-- Escenario: ONG / Fundacion -->
+        <article class="case-card case-card--scenario">
+          <div class="case-badge badge--scenario">Escenario tipo</div>
+          <div class="case-header">
+            <h3>ONG / Fundaci&oacute;n</h3>
+            <div class="case-meta">
+              <span><strong>Sector:</strong> Tercer sector</span>
+              <span><strong>Tama&ntilde;o:</strong> 5-20 personas, mucho voluntariado</span>
+            </div>
+          </div>
+          <div class="case-body">
+            <div class="case-section">
+              <h4>Problema</h4>
+              <p>Equipo peque&ntilde;o, muchas consultas de voluntariado, socios y colaboradores. No dan abasto para responder a todos.</p>
+            </div>
+            <div class="case-section">
+              <h4>Soluci&oacute;n</h4>
+              <p>Bot que informa sobre formas de colaborar, responde FAQ de voluntariado, captura datos de interesados y resuelve preguntas sobre actividades.</p>
+            </div>
+            <div class="case-section">
+              <h4>Resultado esperado</h4>
+              <ul class="results-list">
+                <li>M&aacute;s voluntariado captado gracias a respuesta inmediata</li>
+                <li>Equipo liberado de consultas repetitivas</li>
+                <li>Atenci&oacute;n 24/7 sin ampliar plantilla</li>
+              </ul>
+            </div>
+          </div>
+          <div class="case-footer">
+            <span class="case-formula-tag">B&aacute;lsamo asociativo</span>
+            <span class="case-investment">1.800 &euro;</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA final -->
+  <section class="section-cta">
+    <div class="container">
+      <div class="cta-box">
+        <h2>&iquest;Quieres ser el pr&oacute;ximo caso?</h2>
+        <p>Cu&eacute;ntanos tu situaci&oacute;n. Te decimos si un bot tiene sentido para ti, sin compromiso.</p>
+        <a href="/contacto" class="btn btn--primary btn--lg">Hablemos</a>
+      </div>
+    </div>
   </section>
 
   <Footer slot="footer" />
 </Base>
 
 <style>
+  /* Page header */
   .page-header {
     padding: var(--space-2xl) 0 var(--space-xl);
     background: var(--color-bg-alt);
+    text-align: center;
   }
+
+  .page-header h1 {
+    margin-bottom: var(--space-sm);
+  }
+
   .page-header p {
     color: var(--color-text-secondary);
-    font-size: 1.15rem;
-    margin-top: var(--space-sm);
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
   }
-  .page-content {
-    padding: var(--space-xl) 0;
+
+  /* Section titles */
+  .section-title {
+    margin-bottom: var(--space-sm);
+  }
+
+  .section-subtitle {
+    color: var(--color-text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: var(--space-xl);
+  }
+
+  /* Casos reales section */
+  .section-real {
+    padding: var(--space-2xl) 0;
+    background: var(--color-bg);
+  }
+
+  .real-cases {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  /* Escenarios section */
+  .section-scenarios {
+    padding: var(--space-2xl) 0;
+    background: var(--color-bg-alt);
+  }
+
+  .scenarios-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+  }
+
+  /* Case cards -- shared */
+  .case-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    position: relative;
+    transition: box-shadow var(--transition-base);
+  }
+
+  .case-card:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Real case cards -- featured style */
+  .case-card--real {
+    border-left: 4px solid var(--color-primary);
+    padding-left: calc(var(--space-lg) - 3px);
+  }
+
+  /* Scenario cards */
+  .case-card--scenario {
+    border-left: 4px solid var(--color-border);
+  }
+
+  /* Badges */
+  .case-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-md);
+  }
+
+  .badge--real {
+    background: var(--color-accent);
+    color: var(--color-primary-dark);
+  }
+
+  .badge--scenario {
+    background: #f0f0ee;
+    color: var(--color-text-secondary);
+  }
+
+  /* Card header */
+  .case-header h3 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .case-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm) var(--space-lg);
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-md);
+  }
+
+  /* Card body */
+  .case-body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .case-section h4 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-primary-dark);
+    margin-bottom: var(--space-xs);
+  }
+
+  .case-section p {
+    font-size: 0.95rem;
+    color: var(--color-text);
+    margin-bottom: 0;
+  }
+
+  .case-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .case-section ul li {
+    font-size: 0.95rem;
+    padding: var(--space-xs) 0;
+    padding-left: var(--space-md);
+    position: relative;
+  }
+
+  .case-section ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.65em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-border);
+  }
+
+  /* Results list -- accent bullets */
+  .results-list li::before {
+    background: var(--color-primary);
+  }
+
+  /* Card CTA */
+  .case-cta {
+    margin-top: var(--space-lg);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border);
+  }
+
+  /* Card footer (scenario) */
+  .case-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--space-lg);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .case-formula-tag {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-primary-dark);
+    background: var(--color-accent);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-sm);
+  }
+
+  .case-investment {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.65rem 1.5rem;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: background var(--transition-fast), color var(--transition-fast);
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn--primary {
+    background: var(--color-primary);
+    color: #fff;
+  }
+
+  .btn--primary:hover {
+    background: var(--color-primary-dark);
+    color: #fff;
+  }
+
+  .btn--lg {
+    font-size: 1.1rem;
+    padding: 0.85rem 2rem;
+  }
+
+  /* Final CTA section */
+  .section-cta {
+    padding: var(--space-2xl) 0;
+    background: var(--color-bg);
+  }
+
+  .cta-box {
+    text-align: center;
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl) var(--space-lg);
+  }
+
+  .cta-box h2 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .cta-box p {
+    color: var(--color-text-secondary);
+    font-size: 1.05rem;
+    max-width: 500px;
+    margin: 0 auto var(--space-lg);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .scenarios-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .case-footer {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-sm);
+    }
+
+    .case-meta {
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
   }
 </style>

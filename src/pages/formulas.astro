@@ -7,32 +7,523 @@ import Footer from '../components/Footer.astro';
 <Base title="Fórmulas" description="Catálogo de chatbots de La Boteca: fórmulas magistrales por sector y necesidad.">
   <Header slot="header" />
 
+  <!-- Page header -->
   <section class="page-header">
     <div class="container">
-      <h1>Fórmulas</h1>
-      <p>Cada bot es una fórmula magistral. Aquí está el vademécum.</p>
+      <h1>El vademécum de La Boteca</h1>
+      <p>Recetas probadas que adaptamos a tu medida. Cada fórmula es un punto de partida, no un producto de estantería.</p>
     </div>
   </section>
 
-  <section class="container page-content">
-    <!-- TODO: Trasladar contenido de Boteca/Fórmulas.md -->
-    <p>Contenido en desarrollo.</p>
+  <div class="page-content">
+    <div class="container">
+
+      <!-- Fórmulas básicas -->
+      <section class="section">
+        <h2>Fórmulas básicas</h2>
+        <div class="cards">
+
+          <article class="card">
+            <h3>🧪 Remedio FAQ</h3>
+            <p class="card__subtitle">El básico que funciona</p>
+            <span class="badge badge--auto">🔓 Autogestionable</span>
+            <ul>
+              <li>✓ Responde 20-50 preguntas frecuentes</li>
+              <li>✓ Aprende de tu documentación</li>
+              <li>✓ Deriva a humano cuando no sabe</li>
+            </ul>
+            <div class="card__meta">
+              <span><strong>Canal:</strong> Web o WhatsApp</span>
+              <span><strong>Precio:</strong> 1.800 &euro;</span>
+              <span><strong>Plazo:</strong> 2-3 semanas</span>
+            </div>
+            <a href="/contacto" class="btn btn--primary btn--sm">Consultar</a>
+          </article>
+
+          <article class="card">
+            <h3>💊 Tónico captador</h3>
+            <p class="card__subtitle">Leads cualificados</p>
+            <span class="badge badge--auto">🔓 Autogestionable</span>
+            <ul>
+              <li>✓ Recoge datos de contacto</li>
+              <li>✓ Cualifica con preguntas clave</li>
+              <li>✓ Avisa al equipo comercial</li>
+              <li>✓ Incluye email + Zapier</li>
+            </ul>
+            <div class="card__meta">
+              <span><strong>Canal:</strong> Web</span>
+              <span><strong>Precio:</strong> 3.200 &euro;</span>
+              <span><strong>Plazo:</strong> 3-4 semanas</span>
+            </div>
+            <a href="/contacto" class="btn btn--primary btn--sm">Consultar</a>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Por sector — Salud y bienestar -->
+      <section class="section">
+        <h2>Por sector</h2>
+        <h3 class="category">Salud y bienestar</h3>
+        <div class="cards">
+
+          <article class="card">
+            <h3>⚕️ Elixir clínico</h3>
+            <p class="card__subtitle">Consultas médicas</p>
+            <span class="badge badge--auto">🔓 Autogestionable</span>
+            <ul>
+              <li>✓ FAQ de servicios y especialidades</li>
+              <li>✓ Captura de citas</li>
+              <li>✓ Derivación de urgencias</li>
+              <li>✓ Info de tratamientos</li>
+            </ul>
+            <div class="card__meta">
+              <span><strong>Canal:</strong> Web + WhatsApp</span>
+              <span><strong>Precio:</strong> 1.800-3.200 &euro;</span>
+              <span><strong>Plazo:</strong> 2-4 semanas</span>
+            </div>
+            <a href="/contacto" class="btn btn--primary btn--sm">Consultar</a>
+          </article>
+
+          <article class="card">
+            <h3>🦷 Solución dental</h3>
+            <p class="card__subtitle">Clínicas dentales</p>
+            <span class="badge badge--auto">🔓 Autogestionable</span>
+            <ul>
+              <li>✓ Info tratamientos y precios</li>
+              <li>✓ Preparación intervenciones</li>
+              <li>✓ Gestión de urgencias</li>
+              <li>✓ Recordatorio de revisiones</li>
+            </ul>
+            <div class="card__meta">
+              <span><strong>Canal:</strong> Web + WhatsApp</span>
+              <span><strong>Precio:</strong> 1.800-3.200 &euro;</span>
+              <span><strong>Plazo:</strong> 2-4 semanas</span>
+            </div>
+            <a href="/contacto" class="btn btn--primary btn--sm">Consultar</a>
+          </article>
+
+          <article class="card">
+            <h3>🐾 Bálsamo veterinario</h3>
+            <p class="card__subtitle">Clínicas veterinarias</p>
+            <span class="badge badge--auto">🔓 Autogestionable</span>
+            <ul>
+              <li>✓ FAQ vacunas y desparasitación</li>
+              <li>✓ Filtro de urgencias</li>
+              <li>✓ Info servicios y tarifas</li>
+              <li>✓ Captura de citas</li>
+            </ul>
+            <div class="card__meta">
+              <span><strong>Canal:</strong> Web + WhatsApp</span>
+              <span><strong>Precio:</strong> 1.800 &euro;</span>
+              <span><strong>Plazo:</strong> 2-3 semanas</span>
+            </div>
+            <a href="/contacto" class="btn btn--primary btn--sm">Consultar</a>
+          </article>
+
+          <article class="card">
+            <h3>💪 Tónico fitness</h3>
+            <p class="card__subtitle">Gimnasios</p>
+            <span class="badge badge--auto">🔓 Autogestionable</span>
+            <ul>
+              <li>✓ Info tarifas y horarios</li>
+              <li>✓ FAQ de clases</li>
+              <li>✓ Captura de leads</li>
+              <li>✓ Info para socios</li>
+            </ul>
+            <div class="card__meta">
+              <span><strong>Canal:</strong> Web + WhatsApp</span>
+              <span><strong>Precio:</strong> 1.800 &euro;</span>
+              <span><strong>Plazo:</strong> 2-3 semanas</span>
+            </div>
+            <a href="/contacto" class="btn btn--primary btn--sm">Consultar</a>
+          </article>
+
+          <article class="card">
+            <h3>💇 Esencia de salón</h3>
+            <p class="card__subtitle">Peluquerías y estética</p>
+            <span class="badge badge--auto">🔓 Autogestionable</span>
+            <ul>
+              <li>✓ Catálogo de servicios</li>
+              <li>✓ Disponibilidad y reservas</li>
+              <li>✓ Recomendaciones personalizadas</li>
+              <li>✓ Promociones activas</li>
+            </ul>
+            <div class="card__meta">
+              <span><strong>Canal:</strong> Web + WhatsApp</span>
+              <span><strong>Precio:</strong> 1.800 &euro;</span>
+              <span><strong>Plazo:</strong> 2-3 semanas</span>
+            </div>
+            <a href="/contacto" class="btn btn--primary btn--sm">Consultar</a>
+          </article>
+
+          <article class="card">
+            <h3>👓 Colirio óptico</h3>
+            <p class="card__subtitle">Ópticas</p>
+            <span class="badge badge--auto">🔓 Autogestionable</span>
+            <ul>
+              <li>✓ FAQ lentes, cristales y seguros</li>
+              <li>✓ Recordatorio de revisiones</li>
+              <li>✓ Estado de pedidos</li>
+              <li>✓ Cita de graduación</li>
+            </ul>
+            <div class="card__meta">
+              <span><strong>Canal:</strong> Web + WhatsApp</span>
+              <span><strong>Precio:</strong> 1.800-3.200 &euro;</span>
+              <span><strong>Plazo:</strong> 2-4 semanas</span>
+            </div>
+            <a href="/contacto" class="btn btn--primary btn--sm">Consultar</a>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Servicios profesionales -->
+      <section class="section">
+        <h3 class="category">Servicios profesionales</h3>
+        <div class="cards">
+
+          <article class="card">
+            <h3>⚖️ Extracto legal</h3>
+            <p class="card__subtitle">Despachos de abogados</p>
+            <span class="badge badge--maint">🔧 Mantenimiento recomendado</span>
+            <ul>
+              <li>✓ Filtra por tipo de caso</li>
+              <li>✓ Cualifica urgencia y presupuesto</li>
+              <li>✓ FAQ generales</li>
+              <li>✓ Agenda de citas</li>
+            </ul>
+            <div class="card__meta">
+              <span><strong>Canal:</strong> Web</span>
+              <span><strong>Precio:</strong> 3.200-5.500 &euro;</span>
+              <span><strong>Plazo:</strong> 4-6 semanas</span>
+            </div>
+            <a href="/contacto" class="btn btn--primary btn--sm">Consultar</a>
+          </article>
+
+          <article class="card">
+            <h3>📋 Compuesto gestor</h3>
+            <p class="card__subtitle">Gestorías y asesorías</p>
+            <span class="badge badge--auto">🔓 Autogestionable</span>
+            <ul>
+              <li>✓ FAQ trámites, plazos y documentación</li>
+              <li>✓ Info servicios y tarifas</li>
+              <li>✓ Captura de nuevos clientes</li>
+              <li>✓ Recordatorio de fechas clave</li>
+            </ul>
+            <div class="card__meta">
+              <span><strong>Canal:</strong> Web + WhatsApp</span>
+              <span><strong>Precio:</strong> 1.800-3.200 &euro;</span>
+              <span><strong>Plazo:</strong> 2-4 semanas</span>
+            </div>
+            <a href="/contacto" class="btn btn--primary btn--sm">Consultar</a>
+          </article>
+
+          <article class="card">
+            <h3>🏠 Filtro inmobiliario</h3>
+            <p class="card__subtitle">Inmobiliarias</p>
+            <span class="badge badge--maint">🔧 Mantenimiento recomendado</span>
+            <ul>
+              <li>✓ Filtro zona, presupuesto y características</li>
+              <li>✓ Info de propiedades</li>
+              <li>✓ Cualificación financiera</li>
+              <li>✓ Agenda de visitas</li>
+            </ul>
+            <div class="card__meta">
+              <span><strong>Canal:</strong> Web + WhatsApp</span>
+              <span><strong>Precio:</strong> 3.200-5.500 &euro;</span>
+              <span><strong>Plazo:</strong> 4-6 semanas</span>
+            </div>
+            <a href="/contacto" class="btn btn--primary btn--sm">Consultar</a>
+          </article>
+
+          <article class="card">
+            <h3>🧠 Esencia de conocimiento</h3>
+            <p class="card__subtitle">Consultoría y formación</p>
+            <span class="badge badge--maint">🔧 Mantenimiento recomendado</span>
+            <ul>
+              <li>✓ Conoce tu metodología</li>
+              <li>✓ Guía a usuarios</li>
+              <li>✓ Responde sobre tu contenido</li>
+              <li>✓ Tú en automático</li>
+            </ul>
+            <div class="card__meta">
+              <span><strong>Canal:</strong> Web o embebido</span>
+              <span><strong>Precio:</strong> 3.200-5.500 &euro;</span>
+              <span><strong>Plazo:</strong> 4-6 semanas</span>
+            </div>
+            <a href="/contacto" class="btn btn--primary btn--sm">Consultar</a>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Hostelería y comercio -->
+      <section class="section">
+        <h3 class="category">Hostelería y comercio</h3>
+        <div class="cards">
+
+          <article class="card">
+            <h3>🍽️ Digestivo hostelero</h3>
+            <p class="card__subtitle">Restaurantes y bares</p>
+            <span class="badge badge--auto">🔓 Autogestionable</span>
+            <ul>
+              <li>✓ Carta, alérgenos y opciones</li>
+              <li>✓ Horarios y disponibilidad</li>
+              <li>✓ Reservas</li>
+              <li>✓ Info eventos y grupos</li>
+            </ul>
+            <div class="card__meta">
+              <span><strong>Canal:</strong> Web + WhatsApp</span>
+              <span><strong>Precio:</strong> 1.800 &euro;</span>
+              <span><strong>Plazo:</strong> 2-3 semanas</span>
+            </div>
+            <a href="/contacto" class="btn btn--primary btn--sm">Consultar</a>
+          </article>
+
+          <article class="card">
+            <h3>📦 Jarabe postventa</h3>
+            <p class="card__subtitle">Tiendas online</p>
+            <span class="badge badge--maint">🔧 Mantenimiento recomendado</span>
+            <ul>
+              <li>✓ Estado de pedidos</li>
+              <li>✓ Políticas de devolución</li>
+              <li>✓ Dudas sobre productos</li>
+              <li>✓ Integración con sistema de pedidos</li>
+            </ul>
+            <div class="card__meta">
+              <span><strong>Canal:</strong> Web + WhatsApp</span>
+              <span><strong>Precio:</strong> 5.500-10.000 &euro;</span>
+              <span><strong>Plazo:</strong> 6-10 semanas</span>
+            </div>
+            <a href="/contacto" class="btn btn--primary btn--sm">Consultar</a>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Educación y formación -->
+      <section class="section">
+        <h3 class="category">Educación y formación</h3>
+        <div class="cards">
+
+          <article class="card">
+            <h3>🎓 Fórmula académica</h3>
+            <p class="card__subtitle">Academias y centros de formación</p>
+            <span class="badge badge--auto">🔓 Autogestionable</span>
+            <ul>
+              <li>✓ Catálogo cursos, horarios y precios</li>
+              <li>✓ Requisitos y matrícula</li>
+              <li>✓ FAQ de alumnado</li>
+              <li>✓ Captura de interesados</li>
+            </ul>
+            <div class="card__meta">
+              <span><strong>Canal:</strong> Web + WhatsApp</span>
+              <span><strong>Precio:</strong> 1.800-3.200 &euro;</span>
+              <span><strong>Plazo:</strong> 2-4 semanas</span>
+            </div>
+            <a href="/contacto" class="btn btn--primary btn--sm">Consultar</a>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Tercer sector -->
+      <section class="section">
+        <h3 class="category">Tercer sector</h3>
+        <div class="cards">
+
+          <article class="card">
+            <h3>🤝 Bálsamo asociativo</h3>
+            <p class="card__subtitle">Fundaciones y asociaciones</p>
+            <span class="badge badge--auto">🔓 Autogestionable</span>
+            <ul>
+              <li>✓ Dudas sobre voluntariado</li>
+              <li>✓ Info para colaborar</li>
+              <li>✓ Captura datos de interesados</li>
+              <li>✓ FAQ de actividades</li>
+            </ul>
+            <div class="card__meta">
+              <span><strong>Canal:</strong> Web + WhatsApp</span>
+              <span><strong>Precio:</strong> 1.800 &euro;</span>
+              <span><strong>Plazo:</strong> 2-3 semanas</span>
+            </div>
+            <a href="/contacto" class="btn btn--primary btn--sm">Consultar</a>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Uso interno -->
+      <section class="section">
+        <h3 class="category">Uso interno</h3>
+        <div class="cards">
+
+          <article class="card">
+            <h3>🏢 Ungüento interno</h3>
+            <p class="card__subtitle">Soporte a plantilla</p>
+            <span class="badge badge--maint">🔧 Mantenimiento recomendado</span>
+            <ul>
+              <li>✓ Dudas nóminas y vacaciones</li>
+              <li>✓ Guía de procesos internos</li>
+              <li>✓ Onboarding nuevas incorporaciones</li>
+              <li>✓ FAQ políticas internas</li>
+            </ul>
+            <div class="card__meta">
+              <span><strong>Canal:</strong> Intranet o Teams</span>
+              <span><strong>Precio:</strong> 3.200-7.000 &euro;</span>
+              <span><strong>Plazo:</strong> 5-8 semanas</span>
+            </div>
+            <a href="/contacto" class="btn btn--primary btn--sm">Consultar</a>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Especiales -->
+      <section class="section">
+        <h3 class="category">Especiales</h3>
+        <div class="cards">
+
+          <article class="card">
+            <h3>🔒 Preparado confidencial</h3>
+            <p class="card__subtitle">Máxima privacidad</p>
+            <span class="badge badge--maint">🔧 Mantenimiento recomendado</span>
+            <ul>
+              <li>✓ Despliegue en servidor propio</li>
+              <li>✓ Modelos open-source</li>
+              <li>✓ Sin envío de datos a terceros</li>
+              <li>✓ RGPD reforzado</li>
+            </ul>
+            <div class="card__meta">
+              <span><strong>Canal:</strong> Web privada o intranet</span>
+              <span><strong>Precio:</strong> 7.000-12.000 &euro;</span>
+              <span><strong>Plazo:</strong> 8-12 semanas</span>
+            </div>
+            <a href="/contacto" class="btn btn--primary btn--sm">Consultar</a>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Leyenda de badges -->
+      <section class="section">
+        <div class="highlight highlight--tip">
+          <h3>Tipos de fórmula</h3>
+          <ul class="legend-list">
+            <li>
+              <span class="badge badge--auto">🔓 Autogestionable</span>
+              <p>Te entregamos el bot funcionando y puedes gestionarlo tú. Mantenimiento opcional.</p>
+            </li>
+            <li>
+              <span class="badge badge--maint">🔧 Mantenimiento recomendado</span>
+              <p>Bot más complejo, evoluciona con tu negocio. Recomendamos tratamiento continuado.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- CTA final -->
+  <section class="cta-section cta-section--dark">
+    <div class="container">
+      <h2>¿No encaja ninguna?</h2>
+      <p>Preparamos fórmula a medida. Cuéntanos tu caso y diseñamos algo que funcione para ti.</p>
+      <a href="/contacto" class="btn btn--primary btn--lg">Contactar</a>
+    </div>
   </section>
 
   <Footer slot="footer" />
 </Base>
 
 <style>
-  .page-header {
-    padding: var(--space-2xl) 0 var(--space-xl);
-    background: var(--color-bg-alt);
-  }
-  .page-header p {
+  /* Card subtitle */
+  .card__subtitle {
+    font-size: 0.9rem;
     color: var(--color-text-secondary);
-    font-size: 1.15rem;
+    font-style: italic;
+    margin-bottom: var(--space-sm);
+  }
+
+  /* Small button variant */
+  .btn--sm {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.85rem;
+  }
+
+  .btn--lg {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+  }
+
+  /* Card CTA link */
+  .card .btn {
     margin-top: var(--space-sm);
   }
-  .page-content {
-    padding: var(--space-xl) 0;
+
+  /* Meta row inside cards */
+  .card__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm) var(--space-md);
+  }
+
+  .card__meta span {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    background: var(--color-bg-alt);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-sm);
+  }
+
+  /* Legend list */
+  .legend-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .legend-list li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+  }
+
+  .legend-list li p {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+  }
+
+  .legend-list .badge {
+    flex-shrink: 0;
+  }
+
+  /* Dark CTA section */
+  .cta-section--dark {
+    background: var(--color-bg-dark);
+    padding: var(--space-2xl) 0;
+  }
+
+  .cta-section--dark h2 {
+    color: var(--color-bg);
+  }
+
+  .cta-section--dark p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.15rem;
+    max-width: 500px;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .legend-list li {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 </style>

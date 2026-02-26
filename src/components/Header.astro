@@ -14,8 +14,7 @@ const nav = [
 <header class="header">
   <div class="container header__inner">
     <a href="/" class="header__logo" aria-label="La Boteca — Inicio">
-      <!-- TODO: Reemplazar con logo SVG real -->
-      <span class="header__logo-text">La Boteca</span>
+      <img src="/img/logo-boteca-horizontal.jpeg" alt="La Boteca" class="header__logo-img" />
     </a>
 
     <nav class="header__nav" aria-label="Navegación principal">
@@ -58,10 +57,10 @@ const nav = [
     height: 4rem;
   }
 
-  .header__logo-text {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--color-primary);
+  .header__logo-img {
+    height: 2.5rem;
+    width: auto;
+    object-fit: contain;
   }
 
   .header__nav-list {

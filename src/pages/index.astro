@@ -7,36 +7,173 @@ import Footer from '../components/Footer.astro';
 <Base title="Inicio" description="La Boteca — Taller de asistentes conversacionales con IA para pymes y tercer sector. Chatbots artesanales en Sevilla.">
   <Header slot="header" />
 
+  <!-- Hero -->
   <section class="hero">
     <div class="container">
-      <h1>Chatbots que funcionan.<br />Sin humo.</h1>
-      <p class="hero__subtitle">Diseñamos asistentes conversacionales con IA para que tu negocio atienda mejor, capture más y pierda menos tiempo.</p>
+      <h1>Chatbots de<br />f&oacute;rmula magistral</h1>
+      <p class="hero__subtitle">Sin humo. Hiperpersonalizados. Preparados para tu negocio, no para una demo.</p>
       <div class="hero__cta">
         <a href="/contacto" class="btn btn--primary">Hablemos</a>
-        <a href="/formulas" class="btn btn--outline">Ver fórmulas</a>
+        <a href="/formulas" class="btn btn--outline">Ver f&oacute;rmulas</a>
       </div>
     </div>
   </section>
 
-  <section class="servicios-preview">
+  <!-- Problema -->
+  <section class="problema">
+    <div class="container container--narrow">
+      <h2>&iquest;Tu chatbot responde &laquo;no entiendo&raquo; m&aacute;s que otra cosa?</h2>
+      <p>La mayor&iacute;a de bots se fabrica en serie, pensando en demos, no en conversaciones reales. Se venden como &laquo;inteligentes&raquo; y luego no saben responder ni la tercera pregunta.</p>
+      <p>En La Boteca hacemos lo contrario: <strong>primero entendemos tu negocio, despu&eacute;s preparamos la f&oacute;rmula.</strong> Cada chatbot es una pieza &uacute;nica, con los ingredientes justos para resolver tus problemas reales.</p>
+    </div>
+  </section>
+
+  <!-- Nuestros preparados -->
+  <section class="preparados">
     <div class="container">
-      <h2>Lo que hacemos</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Fórmulas magistrales</h3>
-          <p>Bots llave en mano, diseñados para tu caso. No plantillas genéricas.</p>
-          <a href="/formulas">Ver catálogo</a>
-        </div>
-        <div class="card">
+      <h2>Nuestros preparados</h2>
+      <div class="cards cards--4">
+        <a href="/formulas" class="card card--link">
+          <h3>F&oacute;rmulas magistrales</h3>
+          <p>Chatbots dise&ntilde;ados desde cero para tu caso espec&iacute;fico. Cada ingrediente pensado para tu negocio.</p>
+          <span class="card__price">Desde 1.800 &euro;</span>
+          <span class="card__action">Ver f&oacute;rmulas &rarr;</span>
+        </a>
+        <a href="/servicios#tratamiento-continuado" class="card card--link">
           <h3>Tratamiento continuado</h3>
-          <p>Tu bot evoluciona contigo. Mantenimiento, métricas, mejoras.</p>
-          <a href="/servicios">Cómo funciona</a>
+          <p>Tu bot es un organismo vivo. Lo monitorizamos, ajustamos y hacemos crecer contigo.</p>
+          <span class="card__price">Desde 190 &euro;/mes</span>
+          <span class="card__action">Ver planes &rarr;</span>
+        </a>
+        <a href="/servicios#diagnostico" class="card card--link">
+          <h3>Diagn&oacute;stico</h3>
+          <p>&iquest;Ya tienes un bot que no funciona? Lo analizamos y te decimos exactamente qu&eacute; le pasa.</p>
+          <span class="card__price">950 &euro;</span>
+          <span class="card__action">Ver m&aacute;s &rarr;</span>
+        </a>
+        <a href="/servicios#consultoria" class="card card--link">
+          <h3>Consultor&iacute;a</h3>
+          <p>No sabes si necesitas un bot ni por d&oacute;nde empezar. Te ayudamos a ver el mapa.</p>
+          <span class="card__price">Desde 400 &euro;</span>
+          <span class="card__action">Ver m&aacute;s &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Artesanos -->
+  <section class="artesanos">
+    <div class="container container--narrow">
+      <h2>Artesanos, no una f&aacute;brica</h2>
+      <p class="artesanos__intro">Las grandes consultoras tienen oficinas en tres pa&iacute;ses y cientos de clientes. Nosotros somos un taller.</p>
+      <ul class="feature-list">
+        <li class="feature-item">
+          <strong>2 proyectos de cliente a la vez</strong> &mdash; atenci&oacute;n de boticario, no de supermercado
+        </li>
+        <li class="feature-item">
+          <strong>Sin intermediarios</strong> &mdash; hablas directamente con quien prepara la f&oacute;rmula
+        </li>
+        <li class="feature-item">
+          <strong>Transparencia total</strong> &mdash; sabes qu&eacute; pagas y por qu&eacute;
+        </li>
+        <li class="feature-item">
+          <strong>Sin humo</strong> &mdash; si no necesitas un bot, te lo decimos
+        </li>
+      </ul>
+      <p class="artesanos__cierre">No competimos en volumen. Competimos en hacer las cosas bien.</p>
+    </div>
+  </section>
+
+  <!-- Datos y control -->
+  <section class="datos">
+    <div class="container container--narrow">
+      <h2>Tus datos, tu control</h2>
+      <ul class="feature-list">
+        <li class="feature-item">
+          <strong>Sin dependencia de plataforma</strong> &mdash; si ma&ntilde;ana quieres cambiar de proveedor, tu bot es tuyo
+        </li>
+        <li class="feature-item">
+          <strong>Opci&oacute;n de servidor local</strong> &mdash; para quienes necesitan que los datos no salgan de su infraestructura
+        </li>
+        <li class="feature-item">
+          <strong>Transparencia en integraciones</strong> &mdash; sabes exactamente qu&eacute; servicios externos usa tu bot y por qu&eacute;
+        </li>
+      </ul>
+      <p class="datos__nota">Muchos chatbots env&iacute;an tus conversaciones a servidores en EEUU sin que lo sepas. Nosotros te lo explicamos y te damos alternativas.</p>
+    </div>
+  </section>
+
+  <!-- Proceso -->
+  <section class="proceso">
+    <div class="container">
+      <h2>De la consulta al remedio</h2>
+      <div class="steps">
+        <div class="step">
+          <span class="step__number">1</span>
+          <h3>Escuchamos</h3>
+          <p>Hablamos. &iquest;Qu&eacute; te duele? &iquest;Qu&eacute; preguntas te hacen siempre? &iquest;Qu&eacute; procesos quieres automatizar?</p>
         </div>
-        <div class="card">
-          <h3>Diagnóstico</h3>
-          <p>¿Ya tienes un bot que no rinde? Lo auditamos y te decimos qué falla.</p>
-          <a href="/contacto">Pedir cita</a>
+        <div class="step">
+          <span class="step__number">2</span>
+          <h3>Formulamos</h3>
+          <p>Definimos los ingredientes: flujos, tono, integraciones. Te mostramos la receta antes de preparar nada.</p>
         </div>
+        <div class="step">
+          <span class="step__number">3</span>
+          <h3>Preparamos</h3>
+          <p>Desarrollamos en Botpress Cloud. Probamos. Ajustamos. Volvemos a probar.</p>
+        </div>
+        <div class="step">
+          <span class="step__number">4</span>
+          <h3>Dispensamos</h3>
+          <p>Bot en producci&oacute;n, documentaci&oacute;n, formaci&oacute;n b&aacute;sica incluida. Y si quieres, seguimos juntos con tratamiento continuado.</p>
+        </div>
+      </div>
+      <p class="proceso__posologia"><strong>Posolog&iacute;a t&iacute;pica:</strong> F&oacute;rmula sencilla: 3 semanas &nbsp;|&nbsp; Con integraciones: 6-8 semanas</p>
+    </div>
+  </section>
+
+  <!-- Trabajamos con -->
+  <section class="pacientes">
+    <div class="container container--narrow">
+      <h2>Trabajamos con</h2>
+      <p class="pacientes__intro">Nuestros pacientes ideales:</p>
+      <ul class="feature-list">
+        <li class="feature-item">
+          <strong>PYMEs</strong> que quieren automatizar atenci&oacute;n sin perder el toque humano
+        </li>
+        <li class="feature-item">
+          <strong>Fundaciones y asociaciones</strong> que necesitan escalar impacto con equipos peque&ntilde;os
+        </li>
+        <li class="feature-item">
+          <strong>Profesionales de la consultor&iacute;a</strong> que quieren un asistente digital para su metodolog&iacute;a
+        </li>
+        <li class="feature-item">
+          <strong>Despachos profesionales</strong> que valoran la privacidad de datos de sus clientes
+        </li>
+        <li class="feature-item">
+          <strong>Empresas con bots enfermos</strong> que necesitan diagn&oacute;stico y tratamiento
+        </li>
+      </ul>
+
+      <div class="no-hacemos">
+        <h3>Lo que NO hacemos</h3>
+        <ul>
+          <li>Bots gen&eacute;ricos de producci&oacute;n industrial</li>
+          <li>Proyectos sin un caso de uso claro</li>
+          <li>&laquo;Urgencias&raquo; de menos de 3 semanas</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA final -->
+  <section class="cta-final">
+    <div class="container container--narrow">
+      <h2>&iquest;Tienes un proyecto en mente?</h2>
+      <p>Cu&eacute;ntanos qu&eacute; necesitas. Una llamada de 30 minutos, sin compromiso, y te decimos si podemos ayudarte.</p>
+      <div class="cta-final__actions">
+        <a href="/contacto" class="btn btn--primary">Hablemos</a>
       </div>
     </div>
   </section>
@@ -45,6 +182,7 @@ import Footer from '../components/Footer.astro';
 </Base>
 
 <style>
+  /* ---- Hero ---- */
   .hero {
     padding: var(--space-2xl) 0;
     background: var(--color-bg-alt);
@@ -57,15 +195,17 @@ import Footer from '../components/Footer.astro';
   .hero__subtitle {
     font-size: 1.2rem;
     color: var(--color-text-secondary);
-    max-width: 550px;
+    max-width: 600px;
     margin-bottom: var(--space-xl);
   }
 
   .hero__cta {
     display: flex;
     gap: var(--space-md);
+    flex-wrap: wrap;
   }
 
+  /* ---- Buttons ---- */
   .btn {
     display: inline-block;
     padding: 0.75rem 1.75rem;
@@ -73,6 +213,7 @@ import Footer from '../components/Footer.astro';
     font-weight: 600;
     font-size: 0.95rem;
     transition: all var(--transition-base);
+    text-align: center;
   }
 
   .btn--primary {
@@ -95,29 +236,60 @@ import Footer from '../components/Footer.astro';
     color: white;
   }
 
-  .servicios-preview {
+  /* ---- Problema ---- */
+  .problema {
     padding: var(--space-2xl) 0;
   }
 
-  .servicios-preview h2 {
+  .problema h2 {
+    margin-bottom: var(--space-lg);
+  }
+
+  .problema p {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+  }
+
+  /* ---- Nuestros preparados (cards) ---- */
+  .preparados {
+    padding: var(--space-2xl) 0;
+    background: var(--color-bg-alt);
+  }
+
+  .preparados h2 {
     margin-bottom: var(--space-xl);
   }
 
   .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: var(--space-lg);
+  }
+
+  .cards--4 {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   }
 
   .card {
     padding: var(--space-lg);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
-    transition: box-shadow var(--transition-base);
+    background: var(--color-bg);
+    transition: box-shadow var(--transition-base), border-color var(--transition-base);
+    display: flex;
+    flex-direction: column;
   }
 
-  .card:hover {
+  .card--link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .card--link:hover {
+    color: inherit;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border-color: var(--color-primary);
   }
 
   .card h3 {
@@ -129,5 +301,258 @@ import Footer from '../components/Footer.astro';
     color: var(--color-text-secondary);
     margin-bottom: var(--space-md);
     font-size: 0.95rem;
+    flex-grow: 1;
+  }
+
+  .card__price {
+    display: block;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--color-primary);
+    margin-bottom: var(--space-sm);
+  }
+
+  .card__action {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--color-primary);
+    transition: color var(--transition-fast);
+  }
+
+  .card--link:hover .card__action {
+    color: var(--color-primary-dark);
+  }
+
+  /* ---- Artesanos ---- */
+  .artesanos {
+    padding: var(--space-2xl) 0;
+    background: var(--color-bg-alt);
+  }
+
+  .artesanos h2 {
+    margin-bottom: var(--space-lg);
+  }
+
+  .artesanos__intro {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-lg);
+  }
+
+  .artesanos__cierre {
+    margin-top: var(--space-lg);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  /* ---- Feature list (shared) ---- */
+  .feature-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .feature-item {
+    padding: var(--space-md) var(--space-lg);
+    background: var(--color-bg);
+    border-left: 3px solid var(--color-primary);
+    border-radius: var(--radius-sm);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+  }
+
+  .feature-item strong {
+    color: var(--color-text);
+  }
+
+  /* ---- Datos ---- */
+  .datos {
+    padding: var(--space-2xl) 0;
+  }
+
+  .datos h2 {
+    margin-bottom: var(--space-lg);
+  }
+
+  .datos__nota {
+    margin-top: var(--space-lg);
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    font-style: italic;
+  }
+
+  /* Inside white-bg sections, feature-items need alt background */
+  .datos .feature-item,
+  .pacientes .feature-item {
+    background: var(--color-bg-alt);
+  }
+
+  /* ---- Proceso ---- */
+  .proceso {
+    padding: var(--space-2xl) 0;
+    background: var(--color-bg-alt);
+  }
+
+  .proceso h2 {
+    margin-bottom: var(--space-xl);
+    text-align: center;
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+  }
+
+  .step {
+    text-align: center;
+    padding: var(--space-lg);
+    background: var(--color-bg);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    transition: box-shadow var(--transition-base);
+  }
+
+  .step:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  }
+
+  .step__number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .step h3 {
+    margin-bottom: var(--space-sm);
+    color: var(--color-primary-dark);
+  }
+
+  .step p {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+
+  .proceso__posologia {
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    background: var(--color-bg);
+    padding: var(--space-md) var(--space-lg);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .proceso__posologia strong {
+    color: var(--color-text);
+  }
+
+  /* ---- Pacientes / Trabajamos con ---- */
+  .pacientes {
+    padding: var(--space-2xl) 0;
+  }
+
+  .pacientes h2 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .pacientes__intro {
+    color: var(--color-text-secondary);
+    font-size: 1.05rem;
+    margin-bottom: var(--space-lg);
+  }
+
+  /* ---- Lo que NO hacemos ---- */
+  .no-hacemos {
+    margin-top: var(--space-xl);
+    padding: var(--space-lg);
+    background: var(--color-bg-dark);
+    color: rgba(255, 255, 255, 0.85);
+    border-radius: var(--radius-lg);
+  }
+
+  .no-hacemos h3 {
+    color: white;
+    margin-bottom: var(--space-md);
+    font-size: 1.1rem;
+  }
+
+  .no-hacemos ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .no-hacemos li {
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .no-hacemos li::before {
+    content: "\2013";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary-light);
+    font-weight: 700;
+  }
+
+  /* ---- CTA final ---- */
+  .cta-final {
+    padding: var(--space-2xl) 0;
+    background: var(--color-accent);
+    text-align: center;
+  }
+
+  .cta-final h2 {
+    margin-bottom: var(--space-md);
+  }
+
+  .cta-final p {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    margin: 0 auto var(--space-xl);
+    max-width: 550px;
+  }
+
+  .cta-final__actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+  }
+
+  /* ---- Responsive ---- */
+  @media (max-width: 600px) {
+    .hero__cta {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .steps {
+      grid-template-columns: 1fr;
+    }
+
+    .cards--4 {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
