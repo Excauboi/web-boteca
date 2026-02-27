@@ -1,0 +1,30 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Base title="Mensaje enviado" description="Gracias por contactar con La Boteca.">
+  <Header slot="header" />
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Mensaje enviado</h1>
+      <p>Gracias por escribirnos. Te responderemos lo antes posible.</p>
+      <a href="/" class="btn btn--primary" style="margin-top: 2rem; display: inline-block;">Volver al inicio</a>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Base>
+
+<style>
+  .page-header {
+    padding: 6rem 0 4rem;
+    text-align: center;
+  }
+  .page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+</style>
