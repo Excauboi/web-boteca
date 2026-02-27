@@ -40,6 +40,28 @@ const nav = [
   </div>
 </header>
 
+<script>
+  const btn = document.querySelector('.header__menu-btn');
+  const nav = document.querySelector('.header__nav');
+
+  btn?.addEventListener('click', () => {
+    const open = nav?.classList.toggle('is-open');
+    btn.classList.toggle('is-open', open);
+    btn.setAttribute('aria-expanded', String(open));
+    btn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+  });
+
+  // Cerrar menú al hacer click en un enlace
+  nav?.querySelectorAll('.header__nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('is-open');
+      btn?.classList.remove('is-open');
+      btn?.setAttribute('aria-expanded', 'false');
+      btn?.setAttribute('aria-label', 'Abrir menú');
+    });
+  });
+</script>
+
 <style>
   .header {
     position: sticky;
@@ -81,6 +103,7 @@ const nav = [
     color: var(--color-primary);
   }
 
+  /* Hamburger button */
   .header__menu-btn {
     display: none;
     flex-direction: column;
@@ -96,10 +119,58 @@ const nav = [
     height: 2px;
     background: var(--color-text);
     transition: var(--transition-base);
+    transform-origin: center;
   }
 
+  /* Hamburger → X animation */
+  .header__menu-btn.is-open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .header__menu-btn.is-open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .header__menu-btn.is-open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Mobile */
   @media (max-width: 768px) {
-    .header__nav { display: none; }
-    .header__menu-btn { display: flex; }
+    .header__nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--color-bg);
+      border-bottom: 1px solid var(--color-border);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .header__nav.is-open {
+      display: block;
+    }
+
+    .header__nav-list {
+      flex-direction: column;
+      gap: 0;
+      padding: var(--space-md) 0;
+    }
+
+    .header__nav-link {
+      display: block;
+      padding: var(--space-md) var(--space-lg);
+      font-size: 1rem;
+    }
+
+    .header__nav-link:hover,
+    .header__nav-link.active {
+      background: var(--color-bg-alt);
+    }
+
+    .header__menu-btn {
+      display: flex;
+    }
   }
 </style>

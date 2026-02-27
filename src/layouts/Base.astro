@@ -24,6 +24,12 @@ const fullTitle = title === 'Inicio' ? siteName : `${title} | ${siteName}`;
   <meta property="og:description" content={description} />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_ES" />
+  <meta property="og:url" content={Astro.url.href} />
+  <meta property="og:site_name" content="La Boteca" />
+  <meta property="og:image" content={`${Astro.site}img/logo-boteca-horizontal.png`} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:alt" content="La Boteca — Taller de asistentes conversacionales" />
+  <meta name="twitter:card" content="summary" />
 
   <title>{fullTitle}</title>
 
