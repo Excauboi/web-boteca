@@ -6,9 +6,9 @@ interface Props {
   description?: string;
 }
 
-const { title, description = 'Taller de asistentes conversacionales con IA para pymes y tercer sector' } = Astro.props;
+const { title, description = 'Taller de asistentes conversacionales con IA para pymes y organizaciones' } = Astro.props;
 const siteName = 'La Boteca';
-const fullTitle = title === 'Inicio' ? siteName : `${title} | ${siteName}`;
+const fullTitle = title === 'Inicio' ? 'La Boteca — Chatbots con IA a medida para pymes y organizaciones' : `${title} | ${siteName}`;
 ---
 
 <!doctype html>

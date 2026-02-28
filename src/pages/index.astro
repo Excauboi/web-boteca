@@ -4,13 +4,13 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Base title="Inicio" description="La Boteca — Taller de asistentes conversacionales con IA para pymes y tercer sector. Chatbots artesanales en Sevilla.">
+<Base title="Inicio" description="La Boteca — Taller de asistentes conversacionales con IA para pymes y organizaciones. Chatbots artesanales en Sevilla.">
   <Header slot="header" />
 
   <!-- Hero -->
   <section class="hero">
     <div class="container hero__inner">
-      <div class="hero__text">
+      <div class="hero__text hero__fade-up">
         <h1>Chatbots de<br />f&oacute;rmula magistral</h1>
         <p class="hero__subtitle">F&oacute;rmulas, preparados y soluciones de inteligencia artificial</p>
         <div class="hero__cta">
@@ -18,7 +18,7 @@ import Footer from '../components/Footer.astro';
           <a href="/formulas" class="btn btn--outline">Ver f&oacute;rmulas</a>
         </div>
       </div>
-      <div class="hero__visual">
+      <div class="hero__visual hero__fade-in">
         <video autoplay loop muted playsinline>
           <source src="/img/boteca-hero.mp4" type="video/mp4" />
         </video>
@@ -124,7 +124,7 @@ import Footer from '../components/Footer.astro';
         <div class="step">
           <span class="step__number">3</span>
           <h3>Preparamos</h3>
-          <p>Desarrollamos en Botpress Cloud. Probamos. Ajustamos. Volvemos a probar.</p>
+          <p>Desarrollamos, integramos y ajustamos. Probamos. Volvemos a probar.</p>
         </div>
         <div class="step">
           <span class="step__number">4</span>
@@ -185,6 +185,31 @@ import Footer from '../components/Footer.astro';
 </Base>
 
 <style>
+  /* ---- Hero animations ---- */
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .hero__fade-up {
+    animation: fadeUp 0.8s ease-out both;
+  }
+
+  .hero__fade-in {
+    animation: fadeIn 1s ease-out 0.3s both;
+  }
+
   /* ---- Hero ---- */
   .hero {
     padding: var(--space-2xl) 0;
@@ -327,14 +352,6 @@ import Footer from '../components/Footer.astro';
     margin-bottom: var(--space-md);
     font-size: 0.95rem;
     flex-grow: 1;
-  }
-
-  .card__price {
-    display: block;
-    font-weight: 700;
-    font-size: 1.05rem;
-    color: var(--color-primary);
-    margin-bottom: var(--space-sm);
   }
 
   .card__action {
