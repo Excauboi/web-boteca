@@ -6,9 +6,9 @@ interface Props {
   description?: string;
 }
 
-const { title, description = 'Taller de asistentes conversacionales con IA para pymes y organizaciones' } = Astro.props;
+const { title, description = 'Taller de asistentes conversacionales con IA para pymes' } = Astro.props;
 const siteName = 'La Boteca';
-const fullTitle = title === 'Inicio' ? 'La Boteca — Chatbots con IA a medida para pymes y organizaciones' : `${title} | ${siteName}`;
+const fullTitle = title === 'Inicio' ? 'La Boteca — Chatbots con IA a medida para pymes' : `${title} | ${siteName}`;
 ---
 
 <!doctype html>
@@ -56,7 +56,7 @@ const fullTitle = title === 'Inicio' ? 'La Boteca — Chatbots con IA a medida p
           "@type": "ImageObject",
           "url": "https://laboteca.es/img/logo-boteca-horizontal.png"
         },
-        "description": "Taller de asistentes conversacionales con IA para pymes y organizaciones. Chatbots artesanales en Sevilla.",
+        "description": "Taller de asistentes conversacionales con IA para pymes. Chatbots artesanales en Sevilla.",
         "email": "hola@laboteca.es",
         "address": {
           "@type": "PostalAddress",
