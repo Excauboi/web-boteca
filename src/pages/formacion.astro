@@ -1,0 +1,560 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Base title="Formación" description="Cursos de inteligencia artificial para equipos de pymes y organizaciones. Desde prompting hasta estrategia de adopción. 12 horas, presencial u online.">
+  <Fragment slot="schema">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Cursos de formación en IA — La Boteca",
+      "description": "Catálogo de cursos de inteligencia artificial para equipos de pymes y organizaciones.",
+      "numberOfItems": 4,
+      "itemListElement": [
+        {
+          "@type": "Course",
+          "position": 1,
+          "name": "Primeros auxilios — IA para tu equipo",
+          "description": "Curso de fundamentos de IA generativa para equipos de pymes. Prompting, herramientas y plan de aplicación.",
+          "provider": { "@id": "https://laboteca.es/#organization" },
+          "hasCourseInstance": {
+            "@type": "CourseInstance",
+            "courseMode": ["onsite", "online"],
+            "duration": "PT12H",
+            "courseWorkload": "PT12H"
+          },
+          "educationalLevel": "Básico-Intermedio",
+          "inLanguage": "es"
+        },
+        {
+          "@type": "Course",
+          "position": 2,
+          "name": "Curso de boticario — Construye tus propios asistentes IA",
+          "description": "Curso avanzado de GPTs corporativos, bases de conocimiento y estrategia de adopción de IA.",
+          "provider": { "@id": "https://laboteca.es/#organization" },
+          "hasCourseInstance": {
+            "@type": "CourseInstance",
+            "courseMode": ["onsite", "online"],
+            "duration": "PT12H",
+            "courseWorkload": "PT12H"
+          },
+          "educationalLevel": "Intermedio-Avanzado",
+          "inLanguage": "es"
+        },
+        {
+          "@type": "Course",
+          "position": 3,
+          "name": "Marketing con chatbots — Que tu negocio aparezca cuando preguntan",
+          "description": "Curso de posicionamiento CRO/GEO en chatbots de IA, creación de contenido y análisis de datos con IA.",
+          "provider": { "@id": "https://laboteca.es/#organization" },
+          "hasCourseInstance": {
+            "@type": "CourseInstance",
+            "courseMode": ["onsite", "online"],
+            "duration": "PT12H",
+            "courseWorkload": "PT12H"
+          },
+          "educationalLevel": "Intermedio",
+          "inLanguage": "es"
+        },
+        {
+          "@type": "Course",
+          "position": 4,
+          "name": "Vibe working — Trabaja con IA como si fuera tu equipo",
+          "description": "Curso de productividad con IA en flujo continuo. Delegación, memoria persistente y asistentes personalizados.",
+          "provider": { "@id": "https://laboteca.es/#organization" },
+          "hasCourseInstance": {
+            "@type": "CourseInstance",
+            "courseMode": ["onsite", "online"],
+            "duration": "PT12H",
+            "courseWorkload": "PT12H"
+          },
+          "educationalLevel": "Intermedio",
+          "inLanguage": "es"
+        }
+      ]
+    })} />
+  </Fragment>
+  <Header slot="header" />
+
+  <!-- Page header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Formación en IA</h1>
+      <p>Cursos de 12 horas diseñados para equipos que quieren integrar la inteligencia artificial con criterio, no con hype. Presencial en Sevilla u online.</p>
+    </div>
+  </section>
+
+  <div class="page-content">
+    <div class="container">
+
+      <!-- Intro -->
+      <section class="section">
+        <div class="highlight highlight--tip">
+          <h3>Formación probada en producción</h3>
+          <p>El mismo contenido que hemos impartido en Gabitel (ingeniería, 200 empleados), Algalia (ESS), NOESSO y Entrepueblos — adaptado al contexto de cada equipo. 12 horas de ejercicios aplicados a tu negocio, no demos genéricas.</p>
+        </div>
+      </section>
+
+      <!-- Cursos -->
+      <section class="section">
+        <h2>Catálogo de cursos</h2>
+        <div class="cards reveal-stagger">
+
+          <!-- Primeros auxilios -->
+          <article class="card card--curso" id="primeros-auxilios">
+            <div class="card__badge-row">
+              <span class="badge badge--nivel badge--basico">Básico-Intermedio</span>
+              <span class="badge badge--formato">12h · 4 sesiones</span>
+            </div>
+            <h3>Primeros auxilios</h3>
+            <p class="card__subtitle">IA para tu equipo</p>
+            <p>Para equipos de pymes que quieren integrar la IA en su trabajo diario con criterio. Desde los fundamentos hasta un plan de aplicación personalizado.</p>
+            <ul>
+              <li>Qué es la IA generativa y qué puede hacer realmente</li>
+              <li>Prompts efectivos para tareas cotidianas</li>
+              <li>Panorama de herramientas (ChatGPT, Claude, Gemini, Copilot)</li>
+              <li>Generación de imágenes y vídeo con IA</li>
+              <li>Plan de aplicación: cada participante sale con su hoja de ruta</li>
+            </ul>
+            <div class="card__meta">
+              <span><strong>Para:</strong> Equipos de pymes, autónomos, departamentos operativos</span>
+              <span><strong>Formato:</strong> Online o presencial en Sevilla · 4-12 personas</span>
+              <span><strong>Requisitos:</strong> Ninguno técnico</span>
+            </div>
+            <details class="card__details">
+              <summary>Ver programa completo</summary>
+              <div class="card__programa">
+                <div class="sesion">
+                  <h4>Sesión 1 — Fundamentos</h4>
+                  <p>Qué es la IA generativa · Punto de inflexión 2022-2026 · Las 7 acciones (resumir, redactar, analizar, idear, transformar, investigar, automatizar) · Panorama de herramientas · Introducción a prompts</p>
+                </div>
+                <div class="sesion">
+                  <h4>Sesión 2 — Ingeniería de prompts</h4>
+                  <p>Anatomía de un prompt · Templates y modelos de salida · Ejemplos few-shot · Instrucción secuencial · Paso a paso con confirmación · Ingeniería inversa · Combinación de técnicas</p>
+                </div>
+                <div class="sesion">
+                  <h4>Sesión 3 — Contexto y memoria</h4>
+                  <p>Qué es el contexto y por qué importa · Fuentes de contexto · Ventanas de contexto · Contexto mediante archivos y URLs · Memoria y persistencia · Projects y Workflows</p>
+                </div>
+                <div class="sesion">
+                  <h4>Sesión 4 — Herramientas y plan de aplicación</h4>
+                  <p>Generación de imágenes y vídeo · Ecosistema Google (Gemini, Gems, NotebookLM) · Análisis de datos con IA · <strong>Taller final:</strong> cada participante elabora su hoja de ruta de integración IA</p>
+                </div>
+              </div>
+            </details>
+            <a href="/contacto/" class="btn btn--primary btn--sm">Solicitar información</a>
+          </article>
+
+          <!-- Curso de boticario -->
+          <article class="card card--curso" id="curso-boticario">
+            <div class="card__badge-row">
+              <span class="badge badge--nivel badge--avanzado">Intermedio-Avanzado</span>
+              <span class="badge badge--formato">12h · 4 sesiones</span>
+            </div>
+            <h3>Curso de boticario</h3>
+            <p class="card__subtitle">Construye tus propios asistentes IA</p>
+            <p>Para equipos que quieren crear GPTs corporativos, diseñar bases de conocimiento y trazar una estrategia de adopción de IA para su organización.</p>
+            <ul>
+              <li>Diseñar y configurar GPTs/asistentes corporativos</li>
+              <li>Crear y curar bases de conocimiento propias</li>
+              <li>Fundamentos de sistemas agénticos y su aplicación</li>
+              <li>Política de uso responsable de IA</li>
+              <li>Hoja de ruta de adopción con priorización de casos de uso</li>
+            </ul>
+            <div class="card__meta">
+              <span><strong>Para:</strong> Responsables de innovación, IT, operaciones, dirección</span>
+              <span><strong>Formato:</strong> Online o presencial en Sevilla · 2-8 personas</span>
+              <span><strong>Requisitos:</strong> Primeros auxilios o experiencia equivalente</span>
+            </div>
+            <details class="card__details">
+              <summary>Ver programa completo</summary>
+              <div class="card__programa">
+                <div class="sesion">
+                  <h4>Sesión 1 — GPTs: asistentes a medida</h4>
+                  <p>Qué son GPTs y qué aportan · Arquitectura · Instrucciones de sistema · Base de conocimiento · Flujos conversacionales · Seguridad y permisos · <strong>Ejercicio:</strong> cada participante configura un GPT para una tarea recurrente</p>
+                </div>
+                <div class="sesion">
+                  <h4>Sesión 2 — Bases de conocimiento y contexto avanzado</h4>
+                  <p>Curación de documentos · Formatos óptimos · Chunking · Introducción a RAG · Diseño de bases de conocimiento · Evaluación de calidad de respuestas</p>
+                </div>
+                <div class="sesion">
+                  <h4>Sesión 3 — Sistemas agénticos</h4>
+                  <p>Qué es un agente IA · RPA vs GenAI vs Agéntico · Anatomía (modelo+herramientas+orquestador) · System prompts como infraestructura · Memoria · HITL</p>
+                </div>
+                <div class="sesion">
+                  <h4>Sesión 4 — Estrategia y hoja de ruta</h4>
+                  <p>Cultura IA · Mapeo de procesos · Política uso responsable · RGPD · <strong>Taller final:</strong> cada participante diseña la hoja de ruta IA de su organización (mapa procesos, quick wins, roadmap 6-12 meses)</p>
+                </div>
+              </div>
+            </details>
+            <a href="/contacto/" class="btn btn--primary btn--sm">Solicitar información</a>
+          </article>
+
+          <!-- Marketing con chatbots -->
+          <article class="card card--curso" id="marketing-chatbots">
+            <div class="card__badge-row">
+              <span class="badge badge--nivel badge--intermedio">Intermedio</span>
+              <span class="badge badge--formato">12h · 4 sesiones</span>
+            </div>
+            <h3>Marketing con chatbots</h3>
+            <p class="card__subtitle">Que tu negocio aparezca cuando preguntan</p>
+            <p>Para equipos de marketing y dirección que quieren posicionar su negocio en los chatbots de IA y convertir visitas en clientes.</p>
+            <ul>
+              <li>Cómo ChatGPT, Gemini y Perplexity eligen a quién recomendar</li>
+              <li>Las 13 estrategias CRO (Chatbot Response Optimization)</li>
+              <li>Crear contenido que las IAs citen</li>
+              <li>Análisis de datos de campañas y ventas con IA</li>
+              <li>Plan de contenido y posicionamiento CRO personalizado</li>
+            </ul>
+            <div class="card__meta">
+              <span><strong>Para:</strong> Marketing, dirección comercial, comunicación</span>
+              <span><strong>Formato:</strong> Online o presencial en Sevilla · 4-12 personas</span>
+              <span><strong>Requisitos:</strong> Conocimientos básicos de marketing digital</span>
+            </div>
+            <details class="card__details">
+              <summary>Ver programa completo</summary>
+              <div class="card__programa">
+                <div class="sesion">
+                  <h4>Sesión 1 — CRO: el nuevo posicionamiento</h4>
+                  <p>Chatbot Response Optimization (13 acciones) · Contenido estructurado, Schema.org · E-E-A-T · <strong>Demo:</strong> qué dicen los chatbots de IA sobre el sector de cada participante</p>
+                </div>
+                <div class="sesion">
+                  <h4>Sesión 2 — Crear contenido que las IAs citen</h4>
+                  <p>Templates para marketing · SEO conversacional · Contenido estructurado (FAQs, tablas) · 4 tipos de artículo CRO · Generación de imágenes para RRSS</p>
+                </div>
+                <div class="sesion">
+                  <h4>Sesión 3 — Análisis de datos y métricas</h4>
+                  <p>Análisis de ventas y campañas con IA · Deep Research · Multi-persona · Dashboard mínimo · <strong>Ejercicio:</strong> cada participante analiza sus datos reales con IA</p>
+                </div>
+                <div class="sesion">
+                  <h4>Sesión 4 — Plan de marketing con IA</h4>
+                  <p>Mapeo de procesos marketing · Ecosistema Google · Reputación online · Calendario editorial CRO · <strong>Taller final:</strong> plan de marketing completo (auditoría CRO, calendario, herramientas, métricas)</p>
+                </div>
+              </div>
+            </details>
+            <a href="/contacto/" class="btn btn--primary btn--sm">Solicitar información</a>
+          </article>
+
+          <!-- Vibe working -->
+          <article class="card card--curso" id="vibe-working">
+            <div class="card__badge-row">
+              <span class="badge badge--nivel badge--intermedio">Intermedio</span>
+              <span class="badge badge--formato">12h · 4 sesiones</span>
+            </div>
+            <h3>Vibe working</h3>
+            <p class="card__subtitle">Trabaja con IA como si fuera tu equipo</p>
+            <p>Para profesionales que quieren pasar de «usar ChatGPT de vez en cuando» a trabajar en flujo continuo con IA como copiloto.</p>
+            <ul>
+              <li>Trabajar con IA en flujo continuo, no en sesiones aisladas</li>
+              <li>Configurar un entorno con memoria persistente</li>
+              <li>Delegar trabajo real (redacción, análisis, investigación)</li>
+              <li>Crear asistentes personalizados para tareas recurrentes</li>
+              <li>Evaluar críticamente el output y conocer los límites</li>
+            </ul>
+            <div class="card__meta">
+              <span><strong>Para:</strong> Profesionales, autónomos, consultores, equipos pyme</span>
+              <span><strong>Formato:</strong> Online o presencial en Sevilla · 4-12 personas</span>
+              <span><strong>Requisitos:</strong> Experiencia básica con ChatGPT/Claude</span>
+            </div>
+            <details class="card__details">
+              <summary>Ver programa completo</summary>
+              <div class="card__programa">
+                <div class="sesion">
+                  <h4>Sesión 1 — Qué es Vibe Working</h4>
+                  <p>De «usar ChatGPT» a trabajar en flujo · Infraestructura mínima · El loop (contexto → colaboración → memoria → acumulación) · <strong>Ejercicio:</strong> cada participante delega una tarea real a IA y compara con su método habitual</p>
+                </div>
+                <div class="sesion">
+                  <h4>Sesión 2 — Prompts y contexto para trabajo real</h4>
+                  <p>Anatomía del prompt para encargos (no preguntas) · Instrucciones secuenciales · Contexto mediante archivos · Memoria y persistencia · Projects y Workflows</p>
+                </div>
+                <div class="sesion">
+                  <h4>Sesión 3 — Proyectos, contenido y análisis</h4>
+                  <p>Vibe Working aplicado a diseño de proyectos · Creación de contenido (docs, informes, propuestas) · Análisis estratégico · <strong>Taller:</strong> cada participante ejecuta un caso real en flujo</p>
+                </div>
+                <div class="sesion">
+                  <h4>Sesión 4 — Límites, asistentes y plan personal</h4>
+                  <p>Automatizaciones · Comunicación entre instancias IA · Antipatrones · Crear GPT/asistente para tarea recurrente · <strong>Taller final:</strong> plan Vibe Working personal (semana tipo, tareas delegables, rutina, 3 cambios para la semana siguiente)</p>
+                </div>
+              </div>
+            </details>
+            <a href="/contacto/" class="btn btn--primary btn--sm">Solicitar información</a>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Cómo elegir -->
+      <section class="section">
+        <h2>¿Cuál necesitas?</h2>
+        <table class="pricing-table">
+          <thead>
+            <tr>
+              <th>Curso</th>
+              <th>Para quién</th>
+              <th>Nivel</th>
+              <th>Lo que te llevas</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong><a href="#primeros-auxilios">Primeros auxilios</a></strong></td>
+              <td>Equipos sin experiencia con IA</td>
+              <td>Básico-Intermedio</td>
+              <td>Saber usar IA con criterio + hoja de ruta personal</td>
+            </tr>
+            <tr>
+              <td><strong><a href="#curso-boticario">Curso de boticario</a></strong></td>
+              <td>Responsables de innovación, IT, dirección</td>
+              <td>Intermedio-Avanzado</td>
+              <td>GPTs corporativos + estrategia adopción IA</td>
+            </tr>
+            <tr>
+              <td><strong><a href="#marketing-chatbots">Marketing con chatbots</a></strong></td>
+              <td>Marketing, comercial, comunicación</td>
+              <td>Intermedio</td>
+              <td>Posicionamiento CRO + plan marketing con IA</td>
+            </tr>
+            <tr>
+              <td><strong><a href="#vibe-working">Vibe working</a></strong></td>
+              <td>Profesionales, autónomos, consultores</td>
+              <td>Intermedio</td>
+              <td>Método trabajo en flujo con IA como copiloto</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Incluido -->
+      <section class="section">
+        <h2>Todos los cursos incluyen</h2>
+        <ul class="feature-list reveal-stagger">
+          <li class="feature-item">
+            <strong>12 horas reales de formación</strong> — repartidas en 4 sesiones de 3 horas
+          </li>
+          <li class="feature-item">
+            <strong>Ejercicios aplicados a tu negocio</strong> — no demos genéricas, sino trabajo con tus datos y procesos reales
+          </li>
+          <li class="feature-item">
+            <strong>Material de referencia</strong> — cheatsheets, bibliotecas de prompts y plantillas adaptadas
+          </li>
+          <li class="feature-item">
+            <strong>Acceso a grabaciones</strong> — durante 30 días tras la última sesión
+          </li>
+          <li class="feature-item">
+            <strong>Taller final con entregable</strong> — cada participante sale con su plan de acción concreto
+          </li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- CTA final -->
+  <section class="cta-section cta-section--dark reveal">
+    <div class="container">
+      <h2>¿Quieres formación para tu equipo?</h2>
+      <p>Cuéntanos cuántas personas sois, qué nivel tenéis y qué queréis conseguir. Adaptamos el curso a vuestro contexto.</p>
+      <a href="/contacto/" class="btn btn--primary btn--lg">Solicitar información</a>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Base>
+
+<style>
+  /* Card subtitle */
+  .card__subtitle {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    font-style: italic;
+    margin-bottom: var(--space-sm);
+  }
+
+  /* Small button variant */
+  .btn--sm {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.85rem;
+  }
+
+  .btn--lg {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+  }
+
+  /* Card CTA link */
+  .card .btn {
+    margin-top: var(--space-md);
+  }
+
+  /* Meta row inside cards */
+  .card__meta {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+    padding-top: var(--space-sm);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .card__meta span {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    background: var(--color-bg-alt);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-sm);
+  }
+
+  /* Badge row */
+  .card__badge-row {
+    display: flex;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-sm);
+    flex-wrap: wrap;
+  }
+
+  /* Level badges */
+  .badge--nivel {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .badge--basico {
+    background: #e8f5f3;
+    color: var(--color-primary-dark);
+  }
+
+  .badge--intermedio {
+    background: #e3f2fd;
+    color: #1565c0;
+  }
+
+  .badge--avanzado {
+    background: #f3e5f5;
+    color: #7b1fa2;
+  }
+
+  .badge--formato {
+    background: var(--color-bg-alt);
+    color: var(--color-text-secondary);
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--radius-sm);
+  }
+
+  /* Course cards larger */
+  .card--curso {
+    padding: var(--space-lg) var(--space-lg) var(--space-md);
+  }
+
+  .card--curso h3 {
+    font-size: 1.4rem;
+  }
+
+  .card--curso > p {
+    font-size: 0.95rem;
+  }
+
+  .card--curso ul {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-sm) 0 var(--space-md);
+  }
+
+  .card--curso li {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    padding: 0.25rem 0 0.25rem 1.2rem;
+    position: relative;
+  }
+
+  .card--curso li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  /* Details/Summary for program */
+  .card__details {
+    margin-top: var(--space-md);
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-sm);
+  }
+
+  .card__details summary {
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    padding: var(--space-sm) 0;
+    list-style: none;
+  }
+
+  .card__details summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .card__details summary::before {
+    content: "▸ ";
+  }
+
+  .card__details[open] summary::before {
+    content: "▾ ";
+  }
+
+  .card__programa {
+    padding: var(--space-sm) 0;
+  }
+
+  .sesion {
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .sesion:last-child {
+    border-bottom: none;
+  }
+
+  .sesion h4 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 0.25rem;
+  }
+
+  .sesion p {
+    font-size: 0.82rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+    margin-bottom: 0;
+  }
+
+  /* Dark CTA section */
+  .cta-section--dark {
+    background: var(--color-bg-dark);
+    padding: var(--space-2xl) 0;
+  }
+
+  .cta-section--dark h2 {
+    color: var(--color-bg);
+  }
+
+  .cta-section--dark p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.15rem;
+    max-width: 500px;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .card--curso h3 {
+      font-size: 1.2rem;
+    }
+  }
+</style>

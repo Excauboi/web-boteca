@@ -1,0 +1,228 @@
+---
+import Base from './Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  date: string;
+  author: string;
+  keywords?: string;
+}
+
+const { title, description, date, author, keywords } = Astro.props;
+
+const formattedDate = new Date(date).toLocaleDateString('es-ES', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<Base title={title} description={description}>
+  <Fragment slot="schema">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": title,
+      "description": description,
+      "datePublished": date,
+      "author": {
+        "@type": "Organization",
+        "name": author,
+        "@id": "https://laboteca.es/#organization"
+      },
+      "publisher": { "@id": "https://laboteca.es/#organization" },
+      "mainEntityOfPage": Astro.url.href,
+      "inLanguage": "es",
+      ...(keywords ? { keywords: keywords } : {})
+    })} />
+    {keywords && <meta name="keywords" content={keywords} />}
+  </Fragment>
+  <Header slot="header" />
+
+  <article class="blog-post">
+    <header class="blog-post__header">
+      <div class="container container--narrow">
+        <a href="/blog/" class="blog-post__back">&larr; Volver al blog</a>
+        <h1>{title}</h1>
+        <div class="blog-post__meta">
+          <time datetime={date}>{formattedDate}</time>
+          <span class="blog-post__author">{author}</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="blog-post__content">
+      <div class="container container--narrow">
+        <slot />
+      </div>
+    </div>
+  </article>
+
+  <!-- CTA post -->
+  <section class="cta-section cta-section--dark reveal">
+    <div class="container">
+      <h2>¿Necesitas un chatbot que funcione de verdad?</h2>
+      <p>Cuéntanos tu caso. Una llamada de 30 minutos, sin compromiso.</p>
+      <a href="/contacto/" class="btn btn--primary btn--lg">Hablemos</a>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Base>
+
+<style>
+  .blog-post__header {
+    padding: var(--space-2xl) 0 var(--space-xl);
+    background: var(--color-bg-alt);
+  }
+
+  .blog-post__back {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-lg);
+    transition: color var(--transition-fast);
+  }
+
+  .blog-post__back:hover {
+    color: var(--color-primary);
+  }
+
+  .blog-post__header h1 {
+    margin-bottom: var(--space-md);
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+  }
+
+  .blog-post__meta {
+    display: flex;
+    gap: var(--space-md);
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+  }
+
+  .blog-post__author::before {
+    content: "·";
+    margin-right: var(--space-md);
+  }
+
+  .blog-post__content {
+    padding: var(--space-xl) 0 var(--space-2xl);
+  }
+
+  /* Prose styles for markdown content */
+  .blog-post__content h2 {
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-md);
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  }
+
+  .blog-post__content h3 {
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-sm);
+    font-size: clamp(1.1rem, 2vw, 1.35rem);
+  }
+
+  .blog-post__content p {
+    margin-bottom: var(--space-md);
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--color-text);
+  }
+
+  .blog-post__content ul,
+  .blog-post__content ol {
+    margin: var(--space-md) 0;
+    padding-left: 1.5rem;
+  }
+
+  .blog-post__content li {
+    margin-bottom: var(--space-sm);
+    font-size: 1.05rem;
+    line-height: 1.65;
+  }
+
+  .blog-post__content strong {
+    font-weight: 600;
+  }
+
+  .blog-post__content em {
+    font-style: italic;
+  }
+
+  .blog-post__content blockquote {
+    border-left: 3px solid var(--color-primary);
+    padding: var(--space-md) var(--space-lg);
+    margin: var(--space-lg) 0;
+    background: var(--color-bg-alt);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  }
+
+  .blog-post__content blockquote p {
+    margin-bottom: 0;
+    color: var(--color-text-secondary);
+    font-style: italic;
+  }
+
+  .blog-post__content hr {
+    border: none;
+    border-top: 1px solid var(--color-border);
+    margin: var(--space-xl) 0;
+  }
+
+  .blog-post__content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--space-lg) 0;
+    font-size: 0.9rem;
+  }
+
+  .blog-post__content th {
+    background: var(--color-bg-alt);
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid var(--color-border);
+  }
+
+  .blog-post__content td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--color-border);
+    vertical-align: top;
+  }
+
+  .blog-post__content a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .blog-post__content a:hover {
+    color: var(--color-primary-dark);
+  }
+
+  /* Dark CTA section */
+  .cta-section--dark {
+    background: var(--color-bg-dark);
+    padding: var(--space-2xl) 0;
+    text-align: center;
+  }
+
+  .cta-section--dark h2 {
+    color: var(--color-bg);
+  }
+
+  .cta-section--dark p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.15rem;
+    max-width: 500px;
+    margin: 0 auto var(--space-lg);
+  }
+
+  .btn--lg {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+  }
+</style>
