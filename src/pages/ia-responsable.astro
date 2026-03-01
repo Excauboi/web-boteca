@@ -1,0 +1,337 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Base title="IA responsable" description="C&oacute;mo usamos la inteligencia artificial en La Boteca. D&oacute;nde viven tus datos, qu&eacute; modelo usamos, cu&aacute;ndo interviene una persona y por qu&eacute; nos importa.">
+  <Header slot="header" />
+
+  <!-- Page header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>C&oacute;mo usamos la IA</h1>
+      <p>No es un documento legal. Es lo que hacemos de verdad.</p>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="section-intro">
+    <div class="container container--narrow">
+      <div class="highlight highlight--quote">
+        <p>Construimos chatbots con inteligencia artificial. Eso nos obliga a tomar decisiones sobre d&oacute;nde viven los datos de tus clientes, qu&eacute; puede hacer el bot y qu&eacute; no, y cu&aacute;ndo debe intervenir una persona.</p>
+        <p>Estas decisiones no las tomamos por cumplir un requisito. Las tomamos porque afectan a personas reales.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Principios -->
+  <section class="section-principles">
+    <div class="container">
+      <h2>Cinco decisiones que definen c&oacute;mo trabajamos</h2>
+
+      <div class="principles-grid">
+
+        <div class="principle-card">
+          <h3>1. Tus datos viven en Europa</h3>
+          <p>Todo nuestro stack es <strong>self-hosted</strong>: lo instalamos y gestionamos nosotros en un servidor europeo. No usamos plataformas de terceros que procesen los datos de tus clientes en servidores de EE.UU. o sin garant&iacute;as claras.</p>
+          <p>Esto significa: cero dependencia de Big Tech, cumplimiento RGPD real y control total sobre la informaci&oacute;n.</p>
+          <ul class="principle-details">
+            <li>Servidor en Hetzner (Alemania)</li>
+            <li>Orquestaci&oacute;n con n8n (self-hosted)</li>
+            <li>Frontend con Chatwoot (self-hosted)</li>
+            <li>Backups diarios, restaurables en menos de 1 hora</li>
+          </ul>
+        </div>
+
+        <div class="principle-card">
+          <h3>2. Siempre hay una persona detr&aacute;s</h3>
+          <p>Todos nuestros bots incluyen <strong>derivaci&oacute;n a humano</strong> (HITL). El bot sabe cu&aacute;ndo no puede ayudar y pasa la conversaci&oacute;n a una persona real, con todo el contexto.</p>
+          <p>La IA no toma decisiones sola. No cierra ventas, no da diagn&oacute;sticos, no resuelve conflictos. Atiende, cualifica y escala. Las decisiones importantes las toman personas.</p>
+        </div>
+
+        <div class="principle-card">
+          <h3>3. Sabes qu&eacute; modelo usamos y qu&eacute; no puede hacer</h3>
+          <p>No escondemos la tecnolog&iacute;a detr&aacute;s de una caja negra. Te decimos qu&eacute; modelo de IA usa tu bot, para qu&eacute; sirve y d&oacute;nde tiene limitaciones.</p>
+          <p>Actualmente usamos <strong>Claude Haiku 4.5</strong> de Anthropic. Es r&aacute;pido, preciso y con buenas pol&iacute;ticas de privacidad. Pero como toda IA, puede equivocarse. Por eso los bots tienen instrucciones expl&iacute;citas para reconocer cuando no saben algo, en lugar de inventar.</p>
+        </div>
+
+        <div class="principle-card">
+          <h3>4. Revisamos los sesgos</h3>
+          <p>Los modelos de IA aprenden de datos que reflejan el mundo tal como es, con sus sesgos incluidos. Un bot puede dar respuestas que ignoren contextos locales, reproduzcan estereotipos o asuman cosas que no aplican a tu p&uacute;blico.</p>
+          <p>Por eso <strong>probamos cada bot con casos reales</strong> antes de ponerlo en producci&oacute;n. Buscamos respuestas inadecuadas, sesgos de g&eacute;nero o culturales, y ajustamos hasta que funcione bien para tu contexto concreto.</p>
+        </div>
+
+        <div class="principle-card">
+          <h3>5. Si no necesitas un bot, te lo decimos</h3>
+          <p>No vendemos IA porque est&eacute; de moda. Si tu problema se resuelve con un formulario, una FAQ est&aacute;tica o una persona atendiendo el tel&eacute;fono, te lo decimos desde la primera conversaci&oacute;n.</p>
+          <p>Un bot mal planteado es peor que ning&uacute;n bot: frustra a tus clientes, genera desconfianza y te cuesta dinero mantenerlo.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Lo que NO hacemos -->
+  <section class="section-nopes">
+    <div class="container container--narrow">
+      <h2>Lo que no hacemos</h2>
+      <ul class="nope-list">
+        <li>
+          <strong>No subimos datos de tus clientes a herramientas gratuitas.</strong>
+          Las versiones free de ChatGPT, Gemini y similares pueden usar los datos para entrenar sus modelos. Nosotros usamos APIs de pago con pol&iacute;ticas de privacidad verificadas, o directamente self-hosted.
+        </li>
+        <li>
+          <strong>No dejamos que el bot decida solo.</strong>
+          En situaciones ambiguas, delicadas o fuera de su conocimiento, el bot escala a una persona. Sin excepciones.
+        </li>
+        <li>
+          <strong>No presentamos respuestas de IA como certezas absolutas.</strong>
+          Los bots est&aacute;n entrenados para decir &laquo;no lo s&eacute;&raquo; cuando no lo saben, en lugar de inventar. La honestidad del bot es parte del dise&ntilde;o.
+        </li>
+        <li>
+          <strong>No te atamos a nuestra plataforma.</strong>
+          Tus datos (base de conocimiento, conversaciones, configuraci&oacute;n) son tuyos y exportables en cualquier momento. Si decides irte, te llevas todo.
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Para quien quiera profundizar -->
+  <section class="section-depth">
+    <div class="container container--narrow">
+      <h2>Para quien quiera ir m&aacute;s all&aacute;</h2>
+      <p>Adem&aacute;s de construir bots, impartimos <a href="/formacion">formaci&oacute;n en IA</a> donde trabajamos estos temas en profundidad: privacidad de datos, sesgo en modelos, soberan&iacute;a tecnol&oacute;gica, regulaci&oacute;n europea (AI Act) y c&oacute;mo implementar IA de forma responsable en organizaciones.</p>
+      <p>Si tu organizaci&oacute;n necesita no solo un bot, sino entender qu&eacute; implica usar IA con datos sensibles, <a href="/contacto">hablemos</a>.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-cta">
+    <div class="container container--narrow">
+      <div class="cta-box">
+        <h2>&iquest;Quieres saber m&aacute;s?</h2>
+        <p>Pregunta lo que quieras sobre c&oacute;mo funciona tu bot, d&oacute;nde est&aacute;n los datos o qu&eacute; modelo usamos. Respondemos con transparencia porque creemos que es lo correcto.</p>
+        <a href="/contacto" class="btn btn--primary">Escr&iacute;benos</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Base>
+
+<style>
+  /* Page header */
+  .page-header {
+    padding: var(--space-2xl) 0 var(--space-xl);
+    background: var(--color-bg-alt);
+    text-align: center;
+  }
+
+  .page-header h1 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .page-header p {
+    color: var(--color-text-secondary);
+    font-size: 1.2rem;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  /* Intro */
+  .section-intro {
+    padding: var(--space-xl) 0;
+    background: var(--color-bg);
+  }
+
+  .highlight {
+    padding: var(--space-lg) var(--space-xl);
+    border-radius: var(--radius-lg);
+  }
+
+  .highlight--quote {
+    background: var(--color-bg-alt);
+    border-left: 4px solid var(--color-primary);
+  }
+
+  .highlight p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--color-text);
+  }
+
+  .highlight p + p {
+    margin-top: var(--space-md);
+  }
+
+  /* Principles */
+  .section-principles {
+    padding: var(--space-2xl) 0;
+    background: var(--color-bg);
+  }
+
+  .section-principles > .container > h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .principles-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+  }
+
+  .principle-card {
+    padding: var(--space-lg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    transition: box-shadow var(--transition-base);
+  }
+
+  .principle-card:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  }
+
+  .principle-card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .principle-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: var(--space-md);
+    color: var(--color-primary-dark);
+  }
+
+  .principle-card p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+  }
+
+  .principle-card p + p {
+    margin-top: var(--space-sm);
+  }
+
+  .principle-details {
+    margin-top: var(--space-md);
+    padding-left: 1.2rem;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+  }
+
+  /* Nopes */
+  .section-nopes {
+    padding: var(--space-2xl) 0;
+    background: var(--color-bg-alt);
+  }
+
+  .section-nopes h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .nope-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .nope-list li {
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+  }
+
+  .nope-list li:last-child {
+    border-bottom: none;
+  }
+
+  .nope-list li strong {
+    display: block;
+    color: var(--color-text);
+    margin-bottom: 0.3rem;
+  }
+
+  /* Depth */
+  .section-depth {
+    padding: var(--space-2xl) 0;
+    background: var(--color-bg);
+  }
+
+  .section-depth h2 {
+    margin-bottom: var(--space-lg);
+  }
+
+  .section-depth p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+  }
+
+  .section-depth p + p {
+    margin-top: var(--space-md);
+  }
+
+  .section-depth a {
+    color: var(--color-primary);
+    font-weight: 500;
+  }
+
+  /* CTA */
+  .section-cta {
+    padding: var(--space-xl) 0 var(--space-2xl);
+    background: var(--color-bg);
+  }
+
+  .cta-box {
+    padding: var(--space-xl);
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    text-align: center;
+  }
+
+  .cta-box h2 {
+    margin-bottom: var(--space-md);
+  }
+
+  .cta-box p {
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+    max-width: 550px;
+    margin: 0 auto var(--space-lg);
+    line-height: 1.7;
+  }
+
+  .btn {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.75rem 1.75rem;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: background var(--transition-base), color var(--transition-base);
+  }
+
+  .btn--primary {
+    background: var(--color-primary);
+    color: white;
+  }
+
+  .btn--primary:hover {
+    background: var(--color-primary-dark);
+    color: white;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .principles-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .principle-card:last-child {
+      grid-column: auto;
+    }
+  }
+</style>
