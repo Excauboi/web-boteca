@@ -1,7 +1,7 @@
 ---
 title: "Alucinaciones de la IA: por qué tu chatbot inventa respuestas (y cómo evitarlo)"
 description: "Las alucinaciones son el principal riesgo de un chatbot con IA. Te explicamos qué son, por qué ocurren y qué hacemos en La Boteca para que tu bot no invente."
-date: "2026-03-01"
+date: "2026-02-17"
 author: "La Boteca"
 keywords: "alucinaciones inteligencia artificial, chatbot se equivoca, chatbot respuestas incorrectas, supervisión humana chatbot, HITL chatbot"
 ---

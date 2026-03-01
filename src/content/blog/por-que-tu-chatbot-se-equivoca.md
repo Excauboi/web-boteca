@@ -1,7 +1,7 @@
 ---
 title: "Por qué tu chatbot se equivoca (y cómo diseñar uno que no lo haga)"
 description: "La mayoría de chatbots que fallan no tienen un problema técnico. Tienen un problema de diseño. Te explicamos los 5 fallos más comunes y cómo evitarlos."
-date: "2026-03-01"
+date: "2026-02-10"
 author: "La Boteca"
 keywords: "chatbot se equivoca, chatbot no funciona, chatbot responde mal, diseño de chatbot, chatbot mal diseñado"
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Cómo integrar IA en tu pyme sin perder el control"
 description: "La IA no es solo para grandes empresas. Te explicamos cómo integrar un chatbot en tu pyme paso a paso, sin perder el control de tu negocio ni de tus clientes."
-date: "2026-03-01"
+date: "2026-02-24"
 author: "La Boteca"
 keywords: "integrar ia en pyme, chatbot para pyme, inteligencia artificial pequeña empresa, automatizar atencion al cliente, ia para negocios pequeños"
 ---
