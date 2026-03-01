@@ -89,17 +89,41 @@ import Footer from '../components/Footer.astro';
           <form name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/gracias/">
             <input type="hidden" name="form-name" value="contacto" />
             <p class="sr-only"><label>No rellenar: <input name="bot-field" /></label></p>
-            <div class="form-group">
-              <label for="name">Nombre</label>
-              <input type="text" id="name" name="name" required />
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Nombre</label>
+                <input type="text" id="name" name="name" required placeholder="Tu nombre" />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="tu@email.com" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="negocio">Negocio o empresa</label>
+                <input type="text" id="negocio" name="negocio" placeholder="Nombre de tu empresa (opcional)" />
+              </div>
+              <div class="form-group">
+                <label for="web">Web</label>
+                <input type="url" id="web" name="web" placeholder="https://tuempresa.es (opcional)" />
+              </div>
             </div>
             <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required />
+              <label for="servicio">&iquest;Qu&eacute; necesitas?</label>
+              <select id="servicio" name="servicio" required>
+                <option value="" disabled selected>Elige una opci&oacute;n</option>
+                <option value="chatbot-web">Chatbot para mi web</option>
+                <option value="chatbot-multicanal">Chatbot multicanal (WhatsApp, Telegram...)</option>
+                <option value="auditoria">Auditor&iacute;a de un bot que ya tengo</option>
+                <option value="migracion">Migrar desde otra plataforma</option>
+                <option value="formacion">Formaci&oacute;n en IA</option>
+                <option value="no-se">No lo tengo claro, quiero hablarlo</option>
+              </select>
             </div>
             <div class="form-group">
-              <label for="message">&iquest;En qu&eacute; podemos ayudarte?</label>
-              <textarea id="message" name="message" rows="5" required></textarea>
+              <label for="message">Cu&eacute;ntanos m&aacute;s</label>
+              <textarea id="message" name="message" rows="4" placeholder="&iquest;Qu&eacute; problema quieres resolver? &iquest;Qu&eacute; has probado?"></textarea>
             </div>
             <div class="form-group form-group--checkbox">
               <label>
@@ -300,14 +324,37 @@ import Footer from '../components/Footer.astro';
     font-size: 0.9rem;
   }
 
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+  }
+
   .form-group input,
-  .form-group textarea {
+  .form-group textarea,
+  .form-group select {
     width: 100%;
     padding: 0.75rem;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     font-family: var(--font-body);
     font-size: 0.95rem;
+    background: white;
+  }
+
+  .form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23666' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    padding-right: 2.5rem;
+    cursor: pointer;
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: var(--color-text-secondary);
+    opacity: 0.5;
   }
 
   .form-group--checkbox label {
@@ -330,7 +377,8 @@ import Footer from '../components/Footer.astro';
   }
 
   .form-group input:focus,
-  .form-group textarea:focus {
+  .form-group textarea:focus,
+  .form-group select:focus {
     outline: 2px solid var(--color-primary);
     border-color: transparent;
   }
@@ -545,6 +593,10 @@ import Footer from '../components/Footer.astro';
   /* Responsive */
   @media (max-width: 768px) {
     .contact-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .form-row {
       grid-template-columns: 1fr;
     }
 
