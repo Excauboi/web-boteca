@@ -5,6 +5,71 @@ import Footer from '../components/Footer.astro';
 ---
 
 <Base title="Inicio" description="La Boteca — Taller de asistentes conversacionales con IA para pymes y organizaciones. Chatbots artesanales en Sevilla.">
+  <Fragment slot="schema">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://laboteca.es/#localbusiness",
+      "name": "La Boteca",
+      "description": "Taller de asistentes conversacionales con IA para pymes y organizaciones. Chatbots artesanales a medida en Sevilla.",
+      "url": "https://laboteca.es",
+      "email": "hola@laboteca.es",
+      "image": "https://laboteca.es/img/logo-boteca-horizontal.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "C/ Virgen del Valle, 28",
+        "addressLocality": "Sevilla",
+        "postalCode": "41011",
+        "addressRegion": "Andalucía",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 37.3826,
+        "longitude": -5.9990
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "España"
+      },
+      "priceRange": "€€",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de chatbot con IA",
+        "itemListElement": [
+          {
+            "@type": "Service",
+            "name": "Fórmulas magistrales — Desarrollo de chatbot a medida",
+            "description": "Diseño y construcción de chatbots personalizados con IA para empresas. Incluye diseño conversacional, knowledge base, pruebas y 30 días de soporte.",
+            "provider": { "@id": "https://laboteca.es/#organization" },
+            "areaServed": { "@type": "Country", "name": "España" },
+            "serviceType": "Desarrollo de chatbot"
+          },
+          {
+            "@type": "Service",
+            "name": "Tratamiento continuado — Mantenimiento evolutivo",
+            "description": "Monitorización, ajustes y mejora continua de chatbots en producción. Revisión de conversaciones, actualización de knowledge base y soporte técnico.",
+            "provider": { "@id": "https://laboteca.es/#organization" },
+            "serviceType": "Mantenimiento de chatbot"
+          },
+          {
+            "@type": "Service",
+            "name": "Diagnóstico — Auditoría de chatbots",
+            "description": "Análisis de arquitectura conversacional, detección de fallos y plan de tratamiento para chatbots que no funcionan correctamente.",
+            "provider": { "@id": "https://laboteca.es/#organization" },
+            "serviceType": "Auditoría de chatbot"
+          },
+          {
+            "@type": "Service",
+            "name": "Consultoría en IA conversacional",
+            "description": "Asesoramiento estratégico para empresas que quieren integrar chatbots e inteligencia artificial en sus procesos.",
+            "provider": { "@id": "https://laboteca.es/#organization" },
+            "serviceType": "Consultoría IA"
+          }
+        ]
+      }
+    })} />
+  </Fragment>
   <Header slot="header" />
 
   <!-- Hero -->

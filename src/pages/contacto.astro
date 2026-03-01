@@ -5,6 +5,62 @@ import Footer from '../components/Footer.astro';
 ---
 
 <Base title="Contacto" description="Contacta con La Boteca. 30 minutos para entender qu&eacute; necesitas. Sin compromiso.">
+  <Fragment slot="schema">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cuánto dura la primera llamada?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "30 minutos. A veces menos, si el caso es claro. Nunca te vamos a alargar una reunión para venderte algo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cobráis la primera llamada?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Es para conocernos y ver si tiene sentido trabajar juntos. Sin compromiso real."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Trabajáis con cualquier empresa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Solo aceptamos proyectos donde creemos que podemos aportar valor real. Si pensamos que no necesitas un bot, te lo decimos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Hacéis bots urgentes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Mínimo 3 semanas para cualquier proyecto. Un bot apresurado es un bot que no funciona."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Trabajáis fuera de Sevilla?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Toda España y países hispanohablantes. El 90% del trabajo es remoto, y lo presencial se resuelve con videollamada."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo ir a veros?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, con cita previa. Estamos en Diseñadero, un taller físico en Sevilla. Escríbenos y quedamos."
+          }
+        }
+      ]
+    })} />
+  </Fragment>
   <Header slot="header" />
 
   <!-- Page header -->

@@ -40,6 +40,56 @@ const fullTitle = title === 'Inicio' ? 'La Boteca — Chatbots con IA a medida p
 
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="canonical" href={Astro.url.href} />
+
+  <!-- Schema.org global: Organization + WebSite -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://laboteca.es/#organization",
+        "name": "La Boteca",
+        "url": "https://laboteca.es",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://laboteca.es/img/logo-boteca-horizontal.png"
+        },
+        "description": "Taller de asistentes conversacionales con IA para pymes y organizaciones. Chatbots artesanales en Sevilla.",
+        "email": "hola@laboteca.es",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "C/ Virgen del Valle, 28",
+          "addressLocality": "Sevilla",
+          "postalCode": "41011",
+          "addressCountry": "ES"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "España"
+        },
+        "knowsAbout": [
+          "Chatbots",
+          "Inteligencia artificial",
+          "Automatización conversacional",
+          "Asistentes virtuales para empresas",
+          "n8n",
+          "Chatwoot"
+        ],
+        "sameAs": []
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://laboteca.es/#website",
+        "url": "https://laboteca.es",
+        "name": "La Boteca",
+        "publisher": { "@id": "https://laboteca.es/#organization" },
+        "inLanguage": "es"
+      }
+    ]
+  })} />
+
+  <slot name="schema" />
 
   <!-- Umami Analytics -->
   <script defer src="https://analytics.ruiberriz.org/script.js" data-website-id="ccc1d8b4-fdde-4250-8172-8aab5f683d67"></script>
@@ -51,11 +101,104 @@ const fullTitle = title === 'Inicio' ? 'La Boteca — Chatbots con IA a medida p
   </main>
   <slot name="footer" />
 
+  <!-- Launcher custom La Boteca -->
+  <button id="boteca-launcher" class="boteca-launcher" aria-label="Abrir chat">
+    <img src="/img/cruz-boteca.png" alt="" class="boteca-launcher__icon" width="32" height="32" />
+    <span class="boteca-launcher__text">Pruébame</span>
+  </button>
+
   <script>
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
     }, { threshold: 0.15 });
     document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => io.observe(el));
+  </script>
+
+  <!-- Chatwoot SDK: is:inline para garantizar orden (settings → SDK → launcher) -->
+  <script is:inline>
+    window.chatwootSettings = {
+      hideMessageBubble: true,
+      position: "right",
+      locale: "es",
+      type: "standard"
+    };
+
+    (function(d,t) {
+      var BASE_URL="https://support.ruiberriz.org";
+      var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src=BASE_URL+"/packs/js/sdk.js";
+      g.defer=true;
+      g.async=true;
+      s.parentNode.insertBefore(g,s);
+      g.onload=function(){
+        window.chatwootSDK.run({
+          websiteToken: 'Bjp3BSyfrxL6L9ZEmvhJJMyF',
+          baseUrl: BASE_URL
+        })
+      }
+    })(document,"script");
+  </script>
+
+  <!-- Launcher: expandir, colapsar al scroll, abrir Chatwoot -->
+  <script is:inline>
+    (function() {
+      var launcher = document.getElementById('boteca-launcher');
+      var expanded = false;
+      var expandTimer = null;
+      var scrollTimer = null;
+      var chatOpen = false;
+
+      function expand() {
+        if (chatOpen) return;
+        launcher.classList.add('is-expanded');
+        expanded = true;
+      }
+
+      function collapse() {
+        launcher.classList.remove('is-expanded');
+        expanded = false;
+      }
+
+      // Expandir tras 4 segundos de carga
+      expandTimer = setTimeout(expand, 4000);
+
+      // Pulso suave inicial
+      launcher.classList.add('is-pulsing');
+
+      // Scroll: colapsar inmediatamente, re-expandir 8s después de parar
+      window.addEventListener('scroll', function() {
+        if (expanded) collapse();
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(function() {
+          if (!chatOpen) expand();
+        }, 8000);
+      }, { passive: true });
+
+      // Click: abrir Chatwoot
+      launcher.addEventListener('click', function() {
+        if (window.$chatwoot) {
+          window.$chatwoot.toggle('open');
+          chatOpen = true;
+          launcher.classList.add('is-hidden');
+          clearTimeout(expandTimer);
+          clearTimeout(scrollTimer);
+        }
+      });
+
+      // Chatwoot cerrado: mostrar launcher de nuevo
+      window.addEventListener('chatwoot:close', function() {
+        chatOpen = false;
+        launcher.classList.remove('is-hidden');
+        collapse();
+        scrollTimer = setTimeout(expand, 4000);
+      });
+
+      // Chatwoot abierto externamente
+      window.addEventListener('chatwoot:open', function() {
+        chatOpen = true;
+        launcher.classList.add('is-hidden');
+      });
+    })();
   </script>
 </body>
 </html>
