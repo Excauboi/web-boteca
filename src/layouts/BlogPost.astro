@@ -61,6 +61,53 @@ const formattedDate = new Date(date).toLocaleDateString('es-ES', {
     </div>
   </article>
 
+
+  <!-- Share -->
+  <aside class="blog-post__share">
+    <div class="container container--narrow">
+      <p class="share__label">Comparte este artículo</p>
+      <div class="share__buttons">
+        <a
+          class="share__btn share__btn--linkedin"
+          data-umami-event="share-blog"
+          data-umami-event-network="linkedin"
+          href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(Astro.url.href)}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Compartir en LinkedIn"
+        >LinkedIn</a>
+        <a
+          class="share__btn share__btn--x"
+          data-umami-event="share-blog"
+          data-umami-event-network="x"
+          href={`https://x.com/intent/tweet?url=${encodeURIComponent(Astro.url.href)}&text=${encodeURIComponent(title + " — La Boteca")}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Compartir en X"
+        >X</a>
+        <button
+          class="share__btn share__btn--copy"
+          data-umami-event="share-blog"
+          data-umami-event-network="copy"
+          data-url={Astro.url.href}
+          aria-label="Copiar enlace"
+        >Copiar enlace</button>
+      </div>
+    </div>
+  </aside>
+
+  <script is:inline>
+    document.querySelectorAll(".share__btn--copy").forEach(function(btn) {
+      btn.addEventListener("click", function() {
+        var url = btn.getAttribute("data-url");
+        navigator.clipboard.writeText(url).then(function() {
+          btn.textContent = "Copiado";
+          setTimeout(function() { btn.textContent = "Copiar enlace"; }, 2000);
+        });
+      });
+    });
+  </script>
+
   <!-- CTA post -->
   <section class="cta-section cta-section--dark reveal">
     <div class="container">
@@ -225,4 +272,47 @@ const formattedDate = new Date(date).toLocaleDateString('es-ES', {
     padding: 1rem 2.5rem;
     font-size: 1.1rem;
   }
+
+  /* Share bar */
+  .blog-post__share {
+    padding: var(--space-lg) 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .share__label {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-sm);
+  }
+
+  .share__buttons {
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+  }
+
+  .share__btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-md);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    transition: border-color var(--transition-fast), background var(--transition-fast);
+  }
+
+  .share__btn:hover {
+    border-color: var(--color-primary);
+    background: var(--color-bg-alt);
+    color: var(--color-text);
+  }
+
+  .share__btn--linkedin:hover { border-color: #0a66c2; }
+  .share__btn--x:hover { border-color: #000; }
 </style>
