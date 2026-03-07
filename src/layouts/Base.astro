@@ -187,7 +187,7 @@ const fullTitle = title === 'Inicio' ? 'La Boteca — Chatbots con IA a medida p
       });
 
       // Chatwoot cerrado: mostrar launcher de nuevo
-      window.addEventListener('chatwoot:close', function() {
+      window.addEventListener('chatwoot:closed', function() {
         chatOpen = false;
         launcher.classList.remove('is-hidden');
         collapse();
@@ -195,7 +195,7 @@ const fullTitle = title === 'Inicio' ? 'La Boteca — Chatbots con IA a medida p
       });
 
       // Chatwoot abierto externamente
-      window.addEventListener('chatwoot:open', function() {
+      window.addEventListener('chatwoot:opened', function() {
         chatOpen = true;
         launcher.classList.add('is-hidden');
       });
