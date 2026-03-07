@@ -75,7 +75,7 @@ import Footer from '../components/Footer.astro';
   <section class="section-email">
     <div class="container container--narrow">
       <div class="email-hero">
-        <a href="mailto:hola@laboteca.es" class="email-hero__address">hola@laboteca.es</a>
+        <a href="mailto:hola@laboteca.es" class="email-hero__address" data-umami-event="email-click">hola@laboteca.es</a>
       </div>
     </div>
   </section>
@@ -251,6 +251,23 @@ import Footer from '../components/Footer.astro';
       </div>
     </div>
   </section>
+
+
+  <!-- Umami event tracking: form submit -->
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', function() {
+      var form = document.querySelector('form[name="contacto"]');
+      if (form) {
+        form.addEventListener('submit', function() {
+          var servicio = form.querySelector('#servicio');
+          var val = servicio ? servicio.value : 'unknown';
+          if (typeof umami !== 'undefined') {
+            umami.track('form-contacto', { servicio: val });
+          }
+        });
+      }
+    });
+  </script>
 
   <Footer slot="footer" />
 </Base>
