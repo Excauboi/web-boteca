@@ -1,0 +1,321 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const pageTitle = "Precios";
+const pageDesc = "Lo que cuesta trabajar con La Boteca. Desarrollo de chatbots, mantenimiento, consultoría, diagnóstico y formación en IA. Sin letra pequeña.";
+---
+
+<Base title={pageTitle} description={pageDesc}>
+  <Header slot="header" />
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Precios</h1>
+      <p>Esto es lo que cuesta. Si no encaja, no pasa nada.</p>
+    </div>
+  </section>
+
+  <div class="page-content">
+    <div class="container precios-container">
+
+      <!-- Desarrollo a medida -->
+      <section class="precios-section">
+        <h2>Desarrollo a medida</h2>
+        <p class="precios-desc">Dise&ntilde;amos y construimos tu chatbot desde cero. Consulta inicial, dise&ntilde;o conversacional, desarrollo, pruebas, despliegue y 30 d&iacute;as de soporte.</p>
+        <table class="precios-table">
+          <thead>
+            <tr>
+              <th>F&oacute;rmula</th>
+              <th>Qu&eacute; resuelve</th>
+              <th>Plazo</th>
+              <th>Desde</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Remedio b&aacute;sico</strong></td>
+              <td>Preguntas frecuentes</td>
+              <td>2-3 semanas</td>
+              <td class="precio">900 &euro;</td>
+            </tr>
+            <tr>
+              <td><strong>T&oacute;nico captador</strong></td>
+              <td>Captar y cualificar contactos</td>
+              <td>3-4 semanas</td>
+              <td class="precio">2.500 &euro;</td>
+            </tr>
+            <tr>
+              <td><strong>Elixir complejo</strong></td>
+              <td>Automatizar procesos</td>
+              <td>5-6 semanas</td>
+              <td class="precio">2.500 &euro;</td>
+            </tr>
+            <tr>
+              <td><strong>Gran preparado</strong></td>
+              <td>CRM, derivaci&oacute;n humana, multicanal</td>
+              <td>8-12 semanas</td>
+              <td class="precio">5.000 &euro;</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="precios-nota">Precios orientativos. Cada caso tiene sus particularidades, pero no los escondemos. <a href="/formulas/">Ver cat&aacute;logo completo de f&oacute;rmulas</a>.</p>
+      </section>
+
+      <!-- Mantenimiento -->
+      <section class="precios-section">
+        <h2>Mantenimiento</h2>
+        <p class="precios-desc">Un bot no es un mueble. Monitorización, ajustes, ampliación de la base de conocimiento y soporte.</p>
+        <table class="precios-table">
+          <thead>
+            <tr>
+              <th>Plan</th>
+              <th>Dedicaci&oacute;n</th>
+              <th>Desde</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Revisi&oacute;n peri&oacute;dica</strong></td>
+              <td>Puntual</td>
+              <td class="precio">190 &euro;/mes</td>
+            </tr>
+            <tr>
+              <td><strong>Seguimiento activo</strong></td>
+              <td>Semanal</td>
+              <td class="precio">350 &euro;/mes</td>
+            </tr>
+            <tr>
+              <td><strong>Cuidado intensivo</strong></td>
+              <td>Continua</td>
+              <td class="precio">550 &euro;/mes</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="precios-nota">Compromiso m&iacute;nimo de 3 meses. Cancelable con 30 d&iacute;as de aviso. Sin penalizaci&oacute;n.</p>
+      </section>
+
+      <!-- Diagnóstico -->
+      <section class="precios-section">
+        <h2>Diagn&oacute;stico</h2>
+        <p class="precios-desc">Revisión de un chatbot existente: arquitectura, conversaciones reales, puntos de fuga. Informe con problemas priorizados y plan de tratamiento.</p>
+        <div class="precio-single">
+          <span class="precio-single__amount">90 &euro;/hora</span>
+          <span class="precio-single__detail">Entrega en 1 semana.</span>
+        </div>
+      </section>
+
+      <!-- Consultoría -->
+      <section class="precios-section">
+        <h2>Consultor&iacute;a</h2>
+        <p class="precios-desc">Sesi&oacute;n de an&aacute;lisis: tus procesos, tus puntos de dolor, oportunidades de automatizaci&oacute;n. Recomendaci&oacute;n honesta: bot, otra herramienta, o nada. Informe escrito.</p>
+        <div class="precio-single">
+          <span class="precio-single__amount">90 &euro;/hora</span>
+          <span class="precio-single__detail">Si despu&eacute;s contratas una f&oacute;rmula, la consultor&iacute;a se descuenta.</span>
+        </div>
+      </section>
+
+      <!-- Formación -->
+      <section class="precios-section">
+        <h2>Formaci&oacute;n</h2>
+        <p class="precios-desc">Cursos de 12 horas en 4 sesiones. Presencial en Sevilla u online. Los participantes no necesitan ser de la misma organizaci&oacute;n.</p>
+        <div class="precio-single">
+          <span class="precio-single__amount">70 &euro;/hora por participante</span>
+          <span class="precio-single__detail">Grupos de 8 a 12 personas. Curso completo: 840 &euro; por participante.</span>
+        </div>
+        <p class="precios-nota"><a href="/formacion/">Ver cat&aacute;logo de cursos</a>.</p>
+      </section>
+
+      <!-- Condiciones -->
+      <section class="precios-section precios-section--condiciones">
+        <h2>Condiciones</h2>
+        <ul class="condiciones-list">
+          <li>IVA no incluido en ning&uacute;n precio.</li>
+          <li>Todo lo que construimos es tuyo: c&oacute;digo, prompts, flujos, documentaci&oacute;n. Sin permanencia.</li>
+          <li>Presupuestos v&aacute;lidos 15 d&iacute;as.</li>
+          <li>Pago a la entrega o por fases en proyectos grandes.</li>
+          <li>Si no necesitas un bot, te lo decimos.</li>
+        </ul>
+      </section>
+
+      <!-- CTA -->
+      <section class="precios-cta">
+        <p>Si tienes dudas, ll&aacute;manos o escr&iacute;benos. No hay formulario que rellenar para saber un precio.</p>
+        <a href="/contacto" class="btn btn--primary">Contacto</a>
+      </section>
+
+    </div>
+  </div>
+
+  <Footer slot="footer" />
+</Base>
+
+<style>
+  .precios-container {
+    max-width: 800px;
+  }
+
+  .precios-section {
+    padding: var(--space-xl) 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .precios-section:last-of-type {
+    border-bottom: none;
+  }
+
+  .precios-section h2 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .precios-desc {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: var(--space-lg);
+  }
+
+  /* Tables */
+  .precios-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+
+  .precios-table th {
+    text-align: left;
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-text-secondary);
+    border-bottom: 2px solid var(--color-border);
+  }
+
+  .precios-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+  }
+
+  .precios-table td strong {
+    color: var(--color-text);
+  }
+
+  .precios-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .precio {
+    font-weight: 700;
+    color: var(--color-primary-dark) !important;
+    white-space: nowrap;
+  }
+
+  /* Single price */
+  .precio-single {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    margin: var(--space-md) 0;
+  }
+
+  .precio-single__amount {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+  }
+
+  .precio-single__detail {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+  }
+
+  /* Notas */
+  .precios-nota {
+    margin-top: var(--space-md);
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+  }
+
+  .precios-nota a {
+    color: var(--color-primary);
+  }
+
+  /* Condiciones */
+  .precios-section--condiciones {
+    background: var(--color-bg-alt);
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+    margin-top: var(--space-lg);
+    border-bottom: none;
+  }
+
+  .condiciones-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .condiciones-list li {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    padding-left: 1.25rem;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .condiciones-list li::before {
+    content: "\2014";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+  }
+
+  /* CTA */
+  .precios-cta {
+    text-align: center;
+    padding: var(--space-xl) 0;
+  }
+
+  .precios-cta p {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-md);
+  }
+
+  .btn--primary {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background: var(--color-primary);
+    color: white;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    transition: background var(--transition-base);
+  }
+
+  .btn--primary:hover {
+    background: var(--color-primary-dark);
+    color: white;
+  }
+
+  @media (max-width: 600px) {
+    .precio-single {
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    .precios-table {
+      font-size: 0.85rem;
+    }
+
+    .precios-table th,
+    .precios-table td {
+      padding: 0.5rem 0.6rem;
+    }
+  }
+</style>
