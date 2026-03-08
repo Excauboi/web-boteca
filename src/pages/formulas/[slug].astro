@@ -1,0 +1,258 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { formulas } from '../../data/formulas.js';
+
+export function getStaticPaths() {
+  return formulas.map(f => ({ params: { slug: f.slug }, props: { formula: f } }));
+}
+
+const { formula } = Astro.props;
+const badgeClass = formula.badge === 'auto' ? 'badge--auto' : 'badge--maint';
+const badgeText = formula.badge === 'auto' ? '🔓 Autogestionable' : '🔧 Mantenimiento recomendado';
+
+const mismaCategoria = formulas.filter(f => f.categoria === formula.categoria && f.slug !== formula.slug);
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": `${formula.nombre} — La Boteca`,
+  "description": formula.metaDescription,
+  "provider": { "@id": "https://laboteca.es/#organization" },
+  "areaServed": { "@type": "Country", "name": "España" },
+  "serviceType": "Chatbot con IA",
+  "url": `https://laboteca.es/formulas/${formula.slug}/`
+};
+---
+
+<Base title={formula.nombre} description={formula.metaDescription}>
+  <Fragment slot="schema">
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </Fragment>
+
+  <Header slot="header" />
+
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Migas de pan">
+        <a href="/formulas/">Fórmulas</a> <span>›</span> <span>{formula.categoriaLabel}</span>
+      </nav>
+      <h1><span class="formula-emoji">{formula.emoji}</span> {formula.nombre}</h1>
+      <p class="page-header__sub">{formula.subtitulo}</p>
+      <span class={`badge ${badgeClass}`}>{badgeText}</span>
+    </div>
+  </section>
+
+  <div class="page-content">
+    <div class="container formula-detail">
+
+      <section class="section">
+        <p class="formula-intro">{formula.intro}</p>
+      </section>
+
+      <section class="section">
+        <h2>¿Es para ti?</h2>
+        <ul class="check-list">
+          {formula.paraTi.map(item => <li>{item}</li>)}
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Qué incluye</h2>
+        <ul class="feature-list">
+          {formula.features.map(item => <li>✓ {item}</li>)}
+        </ul>
+        <div class="meta-row">
+          <div class="meta-item">
+            <strong>Canal</strong>
+            <span>{formula.canal}</span>
+          </div>
+          <div class="meta-item">
+            <strong>Plazo</strong>
+            <span>{formula.plazo}</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Cómo funciona</h2>
+        <ol class="steps-list">
+          {formula.comoFunciona.map(step => <li>{step}</li>)}
+        </ol>
+      </section>
+
+      <section class="section cta-inline">
+        <h2>¿Te encaja?</h2>
+        <p>Cuéntanos tu caso y lo adaptamos a tu medida. Sin compromiso.</p>
+        <a href="/contacto" class="btn btn--primary btn--lg">Consultar sobre {formula.nombre}</a>
+      </section>
+
+      {mismaCategoria.length > 0 && (
+        <section class="section">
+          <h2>Más fórmulas en {formula.categoriaLabel}</h2>
+          <div class="cards-related">
+            {mismaCategoria.map(f => (
+              <a href={`/formulas/${f.slug}/`} class="card-related">
+                <span class="card-related__emoji">{f.emoji}</span>
+                <span class="card-related__name">{f.nombre}</span>
+                <span class="card-related__sub">{f.subtitulo}</span>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <div class="back-link">
+        <a href="/formulas/">← Todas las fórmulas</a>
+      </div>
+
+    </div>
+  </div>
+
+  <Footer slot="footer" />
+</Base>
+
+<style>
+  .breadcrumb {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-sm);
+  }
+  .breadcrumb a {
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .breadcrumb span { margin: 0 0.25rem; }
+
+  .formula-emoji { font-size: 1.5em; }
+
+  .page-header__sub {
+    font-size: 1.15rem;
+    color: var(--color-text-secondary);
+    font-style: italic;
+    margin-bottom: var(--space-sm);
+  }
+
+  .formula-detail { max-width: 720px; }
+
+  .formula-intro {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--color-text);
+  }
+
+  .check-list {
+    list-style: none;
+    padding: 0;
+  }
+  .check-list li {
+    position: relative;
+    padding-left: 1.75rem;
+    margin-bottom: var(--space-sm);
+    line-height: 1.6;
+  }
+  .check-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  .feature-list {
+    list-style: none;
+    padding: 0;
+  }
+  .feature-list li {
+    padding: var(--space-xs) 0;
+    border-bottom: 1px solid var(--color-bg-alt);
+  }
+
+  .meta-row {
+    display: flex;
+    gap: var(--space-lg);
+    margin-top: var(--space-md);
+  }
+  .meta-item {
+    background: var(--color-bg-alt);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-sm);
+  }
+  .meta-item strong {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.15rem;
+  }
+
+  .steps-list {
+    padding-left: 1.5rem;
+  }
+  .steps-list li {
+    padding: var(--space-xs) 0;
+    line-height: 1.6;
+  }
+  .steps-list li::marker {
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  .cta-inline {
+    background: var(--color-bg-alt);
+    padding: var(--space-xl);
+    border-radius: var(--radius-md);
+    text-align: center;
+  }
+  .cta-inline p {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-md);
+  }
+
+  .btn--lg {
+    padding: 1rem 2.5rem;
+    font-size: 1.05rem;
+  }
+
+  .cards-related {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--space-md);
+  }
+  .card-related {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-md);
+    background: var(--color-bg-alt);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    color: var(--color-text);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .card-related:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  .card-related__emoji { font-size: 1.5rem; margin-bottom: var(--space-xs); }
+  .card-related__name { font-weight: 600; }
+  .card-related__sub { font-size: 0.85rem; color: var(--color-text-secondary); }
+
+  .back-link {
+    margin-top: var(--space-xl);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-bg-alt);
+  }
+  .back-link a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .back-link a:hover { text-decoration: underline; }
+
+  @media (max-width: 768px) {
+    .meta-row { flex-direction: column; gap: var(--space-sm); }
+  }
+</style>

@@ -1,0 +1,145 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { formulas, categorias } from '../../data/formulas.js';
+---
+
+<Base title="Fórmulas" description="Catálogo de chatbots de La Boteca: fórmulas magistrales por sector y necesidad.">
+  <Header slot="header" />
+
+  <section class="page-header">
+    <div class="container">
+      <h1>El vademécum de La Boteca</h1>
+      <p>Recetas probadas que adaptamos a tu medida. Cada fórmula es un punto de partida, no un producto de estantería.</p>
+    </div>
+  </section>
+
+  <div class="page-content">
+    <div class="container">
+
+      {categorias.map(cat => {
+        const items = formulas.filter(f => f.categoria === cat.id);
+        if (items.length === 0) return null;
+        return (
+          <section class="section">
+            <h2>{cat.label}</h2>
+            <div class="cards reveal-stagger">
+              {items.map(f => {
+                const badgeClass = f.badge === 'auto' ? 'badge--auto' : 'badge--maint';
+                const badgeText = f.badge === 'auto' ? '🔓 Autogestionable' : '🔧 Mantenimiento recomendado';
+                return (
+                  <article class="card">
+                    <a href={`/formulas/${f.slug}/`} class="card-link">
+                      <h3>{f.emoji} {f.nombre}</h3>
+                    </a>
+                    <p class="card__subtitle">{f.subtitulo}</p>
+                    <span class={`badge ${badgeClass}`}>{badgeText}</span>
+                    <ul>
+                      {f.features.map(feat => <li>✓ {feat}</li>)}
+                    </ul>
+                    <div class="card__meta">
+                      <span><strong>Canal:</strong> {f.canal}</span>
+                      <span><strong>Plazo:</strong> {f.plazo}</span>
+                    </div>
+                    <a href={`/formulas/${f.slug}/`} class="btn btn--primary btn--sm">Ver detalle</a>
+                  </article>
+                );
+              })}
+            </div>
+          </section>
+        );
+      })}
+
+      <section class="section">
+        <div class="highlight highlight--tip">
+          <h3>Tipos de fórmula</h3>
+          <ul class="legend-list">
+            <li>
+              <span class="badge badge--auto">🔓 Autogestionable</span>
+              <p>Te entregamos el bot funcionando y puedes gestionarlo tú. Mantenimiento opcional.</p>
+            </li>
+            <li>
+              <span class="badge badge--maint">🔧 Mantenimiento recomendado</span>
+              <p>Bot más complejo, evoluciona con tu negocio. Recomendamos tratamiento continuado.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <section class="cta-section cta-section--dark reveal">
+    <div class="container">
+      <h2>¿No encaja ninguna?</h2>
+      <p>Preparamos fórmula a medida. Cuéntanos tu caso y diseñamos algo que funcione para ti.</p>
+      <a href="/contacto" class="btn btn--primary btn--lg">Contactar</a>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Base>
+
+<style>
+  .card__subtitle {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    font-style: italic;
+    margin-bottom: var(--space-sm);
+  }
+  .btn--sm { padding: 0.5rem 1.25rem; font-size: 0.85rem; }
+  .btn--lg { padding: 1rem 2.5rem; font-size: 1.1rem; }
+  .card .btn { margin-top: var(--space-sm); }
+  .card__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm) var(--space-md);
+  }
+  .card__meta span {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    background: var(--color-bg-alt);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-sm);
+  }
+  .card-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  .card-link:hover h3 { color: var(--color-primary); }
+  .legend-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+  .legend-list li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+  }
+  .legend-list li p {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+  }
+  .legend-list .badge { flex-shrink: 0; }
+  .cta-section--dark {
+    background: var(--color-bg-dark);
+    padding: var(--space-2xl) 0;
+  }
+  .cta-section--dark h2 { color: var(--color-bg); }
+  .cta-section--dark p {
+    color: rgba(255,255,255,0.7);
+    font-size: 1.15rem;
+    max-width: 500px;
+  }
+  @media (max-width: 768px) {
+    .legend-list li {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>
