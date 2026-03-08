@@ -48,7 +48,7 @@ Un bot que intenta responder a todo es un bot que acaba inventando. Un bot bien 
 
 Después de trabajar con pymes de distintos sectores, hemos identificado los patrones que se repiten:
 
-**Empezar por la herramienta, no por el problema.** "Quiero ChatGPT en mi web" no es un briefing. Es un titular. Primero viene el diagnóstico, después la fórmula.
+**Empezar por la herramienta, no por el problema.** "Quiero un chatbot de IA en mi web" no es un briefing. Es un titular. Primero viene el diagnóstico, después la fórmula.
 
 **Lanzar sin supervisión humana.** El bot sale a producción y nadie lee las conversaciones. Cuando alguien las revisa, han pasado semanas de respuestas incorrectas que nadie detectó.
 

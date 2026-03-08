@@ -10,7 +10,7 @@ Un chatbot que suena convincente no es lo mismo que un chatbot que dice la verda
 
 Hace unos meses le enseñé una foto a una inteligencia artificial. Una imagen de una virgen sobre un retablo dorado, tomada con el móvil en una ermita de Peñaflor, Sevilla. Bodas de oro de unos tíos. Un momento familiar.
 
-Le pedí a Gemini que identificara la talla. Respondió con total seguridad: "Esa virgen está en la iglesia de Santa Ana, en Triana".
+Le pedí a una inteligencia artificial que identificara la talla. Respondió con total seguridad: "Esa virgen está en la iglesia de Santa Ana, en Triana".
 
 No. Yo estaba allí. Vivo a dos minutos de Santa Ana. Eso no era Triana. Era Peñaflor.
 
@@ -30,7 +30,7 @@ Para un usuario que no conoce el tema — que es exactamente el perfil de alguie
 
 ## ¿Por qué alucina un chatbot?
 
-Los chatbots con IA generativa (ChatGPT, Claude, Gemini y los que se construyen sobre ellos) no "saben" cosas. Predicen qué palabra es más probable que venga después de la anterior. Eso significa que:
+Los chatbots con IA generativa (y los que se construyen sobre estos modelos) no "saben" cosas. Predicen qué palabra es más probable que venga después de la anterior. Eso significa que:
 
 - **Si no tienen la información, la inventan** — y la inventan bien, con formato de respuesta correcta
 - **Priorizan la coherencia sobre la verdad** — prefieren una respuesta fluida a decir "no tengo datos"
@@ -79,7 +79,7 @@ En La Boteca preparamos chatbots con la misma filosofía: **la fórmula se compr
 
 ### ¿Todos los chatbots con IA alucinan?
 
-Sí, todos los que usan modelos generativos (GPT, Claude, Gemini) pueden alucinar. La diferencia está en cómo se diseña el sistema para detectar y contener esas alucinaciones.
+Sí, todos los que usan modelos generativos pueden alucinar. La diferencia está en cómo se diseña el sistema para detectar y contener esas alucinaciones.
 
 ### ¿Un chatbot sin IA generativa no alucina?
 
