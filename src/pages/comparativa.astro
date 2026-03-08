@@ -1,0 +1,349 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const pageTitle = "Comparativa: chatbot a medida vs plataformas SaaS";
+const pageDesc = "Compara las opciones de chatbot con IA para pymes: plataformas SaaS (Tidio, Intercom, Crisp), consultoría enterprise o solución a medida como La Boteca.";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": pageTitle,
+  "description": pageDesc,
+  "url": "https://laboteca.es/comparativa/",
+  "publisher": { "@id": "https://laboteca.es/#organization" }
+};
+---
+
+<Base title={pageTitle} description={pageDesc}>
+  <Fragment slot="schema">
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </Fragment>
+
+  <Header slot="header" />
+
+  <section class="page-header">
+    <div class="container">
+      <h1>¿Qué tipo de chatbot necesita tu pyme?</h1>
+      <p>Tres caminos, un objetivo: que tus clientes reciban respuesta inmediata. Aquí los comparamos sin letra pequeña.</p>
+    </div>
+  </section>
+
+  <div class="page-content">
+    <div class="container comp-container">
+
+      <!-- Intro -->
+      <section class="section">
+        <p class="comp-intro">Cuando una pyme busca un chatbot con IA, se encuentra con tres opciones muy distintas. Ninguna es mala en abstracto, pero cada una encaja con un tipo de empresa. Esta comparativa te ayuda a decidir sin rodeos.</p>
+      </section>
+
+      <!-- Tabla comparativa principal -->
+      <section class="section">
+        <h2>Comparativa rápida</h2>
+        <div class="table-wrap">
+          <table class="comp-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Plataformas SaaS<br/><span class="th-sub">Tidio, Crisp, Intercom...</span></th>
+                <th>Consultoría enterprise<br/><span class="th-sub">Accenture, Chatbot Chocolate...</span></th>
+                <th class="col-highlight">A medida para pymes<br/><span class="th-sub">La Boteca</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Precio</strong></td>
+                <td>29-295 €/mes<br/><span class="cell-sub">Planes fijos, escalan por agentes</span></td>
+                <td>5.000-50.000 €+<br/><span class="cell-sub">Proyectos a medida, grandes cuentas</span></td>
+                <td class="col-highlight">Setup + suscripción mensual<br/><span class="cell-sub">Adaptado a cada caso</span></td>
+              </tr>
+              <tr>
+                <td><strong>Personalización</strong></td>
+                <td>Limitada<br/><span class="cell-sub">Plantillas predefinidas, flujos visuales</span></td>
+                <td>Total<br/><span class="cell-sub">Desarrollo a medida</span></td>
+                <td class="col-highlight">Total<br/><span class="cell-sub">Diseñado para tu negocio concreto</span></td>
+              </tr>
+              <tr>
+                <td><strong>IA conversacional</strong></td>
+                <td>Básica<br/><span class="cell-sub">FAQ automáticas, respuestas predefinidas</span></td>
+                <td>Avanzada<br/><span class="cell-sub">Modelos propios o GPT Enterprise</span></td>
+                <td class="col-highlight">Avanzada<br/><span class="cell-sub">Claude, modelos open-source, RAG</span></td>
+              </tr>
+              <tr>
+                <td><strong>Tus datos</strong></td>
+                <td>En sus servidores<br/><span class="cell-sub">EEUU o UE según proveedor</span></td>
+                <td>Negociable<br/><span class="cell-sub">Depende del contrato</span></td>
+                <td class="col-highlight">En tu servidor si quieres<br/><span class="cell-sub">Self-hosted disponible, RGPD nativo</span></td>
+              </tr>
+              <tr>
+                <td><strong>Integraciones</strong></td>
+                <td>Las suyas<br/><span class="cell-sub">Shopify, WordPress, limitado</span></td>
+                <td>Lo que pidas<br/><span class="cell-sub">Desarrollo custom</span></td>
+                <td class="col-highlight">Las que necesites<br/><span class="cell-sub">CRM, email, WhatsApp, calendario, ERP...</span></td>
+              </tr>
+              <tr>
+                <td><strong>Soporte</strong></td>
+                <td>Ticket / chat<br/><span class="cell-sub">Estándar, sin contexto de tu negocio</span></td>
+                <td>Account manager<br/><span class="cell-sub">Dedicado, con SLA</span></td>
+                <td class="col-highlight">Directo con quien lo construyó<br/><span class="cell-sub">Conocemos tu negocio, no somos un ticket</span></td>
+              </tr>
+              <tr>
+                <td><strong>Autonomía</strong></td>
+                <td>Total<br/><span class="cell-sub">Tú lo gestionas todo</span></td>
+                <td>Baja<br/><span class="cell-sub">Dependes de la consultora</span></td>
+                <td class="col-highlight">Tú decides<br/><span class="cell-sub">Autogestionable o con mantenimiento</span></td>
+              </tr>
+              <tr>
+                <td><strong>Ideal para</strong></td>
+                <td>Quien quiere DIY rápido<br/><span class="cell-sub">Funcionalidad genérica, ya</span></td>
+                <td>Grandes empresas<br/><span class="cell-sub">> 50 empleados, presupuesto alto</span></td>
+                <td class="col-highlight">Pymes que quieren algo suyo<br/><span class="cell-sub">1-50 empleados, resultado profesional</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Secciones detalladas -->
+      <section class="section">
+        <h2>Plataformas SaaS: rápido, pero genérico</h2>
+        <p>Tidio, Crisp, Intercom o Zendesk ofrecen chatbots que puedes activar en minutos. Son buena opción si necesitas algo inmediato y estándar: un widget que responda preguntas básicas con respuestas predefinidas.</p>
+        <div class="pros-cons">
+          <div class="pros">
+            <h4>Ventajas</h4>
+            <ul>
+              <li>Activación inmediata</li>
+              <li>No necesitas conocimientos técnicos</li>
+              <li>Precio predecible</li>
+            </ul>
+          </div>
+          <div class="cons">
+            <h4>Limitaciones</h4>
+            <ul>
+              <li>Personalización superficial (colores y poco más)</li>
+              <li>IA limitada a FAQ predefinidas</li>
+              <li>Tus datos en servidores de terceros (normalmente EEUU)</li>
+              <li>Integraciones solo con sus partners</li>
+              <li>Cuando necesitas más, los precios escalan rápido</li>
+            </ul>
+          </div>
+        </div>
+        <p class="comp-verdict"><strong>Veredicto:</strong> Perfecto para probar. Insuficiente cuando tu negocio necesita algo que entienda tus procesos, hable con tus herramientas y respete tu marca.</p>
+      </section>
+
+      <section class="section">
+        <h2>Consultoría enterprise: potente, pero fuera de escala</h2>
+        <p>Accenture, Deloitte o consultoras especializadas como Chatbot Chocolate construyen soluciones a medida con tecnología puntera. Clientes institucionales, certificaciones ISO, equipos de 15+ personas.</p>
+        <div class="pros-cons">
+          <div class="pros">
+            <h4>Ventajas</h4>
+            <ul>
+              <li>Capacidad técnica ilimitada</li>
+              <li>Certificaciones (ENS, ISO 42001)</li>
+              <li>Equipos grandes y especializados</li>
+            </ul>
+          </div>
+          <div class="cons">
+            <h4>Limitaciones</h4>
+            <ul>
+              <li>Presupuestos de 5.000 € para arriba (normalmente mucho más)</li>
+              <li>Plazos largos (meses)</li>
+              <li>No diseñados para pymes: eres una cuenta pequeña</li>
+              <li>Dependencia del proveedor para cualquier cambio</li>
+            </ul>
+          </div>
+        </div>
+        <p class="comp-verdict"><strong>Veredicto:</strong> Si facturas millones y necesitas certificaciones, es tu camino. Si eres una pyme con 5-20 empleados, estarás pagando estructura que no necesitas.</p>
+      </section>
+
+      <section class="section">
+        <h2>A medida para pymes: lo justo, bien hecho</h2>
+        <p>Es lo que hacemos en La Boteca. Diseñamos chatbots con IA adaptados a tu negocio concreto, con tecnología profesional pero a escala de pyme. Sin intermediarios, sin plataformas de terceros si no quieres, sin sorpresas.</p>
+        <div class="pros-cons">
+          <div class="pros">
+            <h4>Ventajas</h4>
+            <ul>
+              <li>Diseñado para tu negocio, no para un segmento genérico</li>
+              <li>IA que entiende tu documentación y tus procesos</li>
+              <li>Tus datos donde tú quieras (incluso en tu servidor)</li>
+              <li>Integración con tus herramientas reales</li>
+              <li>Soporte directo con quien lo construyó</li>
+              <li>Precio adaptado a tu escala</li>
+            </ul>
+          </div>
+          <div class="cons">
+            <h4>Limitaciones</h4>
+            <ul>
+              <li>No es inmediato: 2-8 semanas según complejidad</li>
+              <li>Requiere una conversación inicial para entender tu caso</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Preguntas frecuentes -->
+      <section class="section">
+        <h2>Preguntas frecuentes</h2>
+        <div class="faq-list">
+          <details>
+            <summary>¿Puedo empezar con un SaaS y luego migrar?</summary>
+            <p>Sí, pero ten en cuenta que los datos y flujos que construyas en Tidio o Crisp no son portables. Si migras, empiezas de cero. Si crees que vas a necesitar algo a medida a medio plazo, puede merecer la pena empezar bien desde el principio.</p>
+          </details>
+          <details>
+            <summary>¿Cuánto cuesta un chatbot a medida para una pyme?</summary>
+            <p>Depende del caso. Nuestras fórmulas básicas parten de un setup inicial más una suscripción mensual asequible. <a href="/formulas/">Consulta nuestro catálogo</a> para ver opciones concretas, y <a href="/contacto">pide presupuesto</a> sin compromiso.</p>
+          </details>
+          <details>
+            <summary>¿Qué pasa si dejo de trabajar con La Boteca?</summary>
+            <p>El bot es tuyo. Si es autogestionable, sigues usándolo. Si tiene mantenimiento, puedes asumir la gestión tú o buscar otro proveedor. No hay lock-in.</p>
+          </details>
+          <details>
+            <summary>¿Necesito conocimientos técnicos?</summary>
+            <p>No. Te entregamos el bot funcionando y te enseñamos a gestionarlo. Para los autogestionables, puedes actualizar contenido tú mismo sin tocar código.</p>
+          </details>
+          <details>
+            <summary>¿Self-hosted significa que necesito un servidor?</summary>
+            <p>No necesariamente. Podemos desplegarlo en nuestra infraestructura (UE) o en la tuya. La opción self-hosted es para empresas que necesitan que los datos no salgan de su red.</p>
+          </details>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section cta-inline">
+        <h2>¿Todavía con dudas?</h2>
+        <p>Cuéntanos tu caso en 2 minutos. Te decimos honestamente si un SaaS te basta o si merece la pena algo a medida.</p>
+        <a href="/contacto" class="btn btn--primary btn--lg">Consultar sin compromiso</a>
+      </section>
+
+    </div>
+  </div>
+
+  <Footer slot="footer" />
+</Base>
+
+<style>
+  .comp-container { max-width: 900px; }
+
+  .comp-intro {
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+
+  /* Table */
+  .table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .comp-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    min-width: 700px;
+  }
+  .comp-table th,
+  .comp-table td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid var(--color-bg-alt);
+  }
+  .comp-table th {
+    background: var(--color-bg-alt);
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+  .th-sub {
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+  }
+  .cell-sub {
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+    display: block;
+    margin-top: 0.15rem;
+  }
+  .col-highlight {
+    background: rgba(0, 169, 157, 0.06);
+  }
+  .comp-table thead .col-highlight {
+    background: rgba(0, 169, 157, 0.12);
+    color: var(--color-primary);
+  }
+
+  /* Pros/Cons */
+  .pros-cons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+    margin: var(--space-md) 0;
+  }
+  .pros, .cons {
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+  }
+  .pros { background: rgba(0, 169, 157, 0.06); }
+  .cons { background: rgba(220, 53, 69, 0.04); }
+  .pros h4 { color: var(--color-primary); margin-bottom: var(--space-sm); }
+  .cons h4 { color: #b02a37; margin-bottom: var(--space-sm); }
+  .pros ul, .cons ul {
+    padding-left: 1.25rem;
+    margin: 0;
+  }
+  .pros li, .cons li {
+    margin-bottom: 0.35rem;
+    line-height: 1.5;
+  }
+
+  .comp-verdict {
+    background: var(--color-bg-alt);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-sm);
+    border-left: 3px solid var(--color-primary);
+  }
+
+  /* FAQ */
+  .faq-list { display: flex; flex-direction: column; gap: var(--space-sm); }
+  .faq-list details {
+    background: var(--color-bg-alt);
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+  }
+  .faq-list summary {
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-list summary::before {
+    content: "▸ ";
+    color: var(--color-primary);
+  }
+  .faq-list details[open] summary::before { content: "▾ "; }
+  .faq-list details p {
+    margin-top: var(--space-sm);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+  .faq-list details a { color: var(--color-primary); }
+
+  /* CTA */
+  .cta-inline {
+    background: var(--color-bg-alt);
+    padding: var(--space-xl);
+    border-radius: var(--radius-md);
+    text-align: center;
+  }
+  .cta-inline p {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-md);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .btn--lg { padding: 1rem 2.5rem; font-size: 1.05rem; }
+
+  @media (max-width: 768px) {
+    .pros-cons { grid-template-columns: 1fr; }
+  }
+</style>
