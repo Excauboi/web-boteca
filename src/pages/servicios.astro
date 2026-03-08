@@ -52,25 +52,25 @@ import Footer from '../components/Footer.astro';
               <td><strong>Remedio b&aacute;sico</strong></td>
               <td>Responder preguntas frecuentes</td>
               <td>2-3 semanas</td>
-              <td class="price-cell">900 &euro;</td>
+              <td class="price-cell">900 &euro; <span class="price-iva">1.089 &euro; con IVA</span></td>
             </tr>
             <tr>
               <td><strong>T&oacute;nico captador</strong></td>
               <td>Captar y cualificar leads</td>
               <td>3-4 semanas</td>
-              <td class="price-cell">2.500 &euro;</td>
+              <td class="price-cell">2.500 &euro; <span class="price-iva">3.025 &euro; con IVA</span></td>
             </tr>
             <tr>
               <td><strong>Elixir complejo</strong></td>
               <td>Automatizar procesos</td>
               <td>5-6 semanas</td>
-              <td class="price-cell">2.500 &euro;</td>
+              <td class="price-cell">2.500 &euro; <span class="price-iva">3.025 &euro; con IVA</span></td>
             </tr>
             <tr>
               <td><strong>Gran preparado</strong></td>
               <td>CRM, derivaci&oacute;n humana, multicanal</td>
               <td>8-12 semanas</td>
-              <td class="price-cell">5.000 &euro;</td>
+              <td class="price-cell">5.000 &euro; <span class="price-iva">6.050 &euro; con IVA</span></td>
             </tr>
           </tbody>
         </table>
@@ -119,19 +119,19 @@ import Footer from '../components/Footer.astro';
               <td><strong>Revisi&oacute;n peri&oacute;dica</strong></td>
               <td>Puntual</td>
               <td>Bots estables, poco tr&aacute;fico</td>
-              <td class="price-cell">190 &euro;/mes</td>
+              <td class="price-cell">190 &euro;/mes <span class="price-iva">229,90 &euro; con IVA</span></td>
             </tr>
             <tr>
               <td><strong>Seguimiento activo</strong></td>
               <td>Semanal</td>
               <td>Bots en crecimiento</td>
-              <td class="price-cell">350 &euro;/mes</td>
+              <td class="price-cell">350 &euro;/mes <span class="price-iva">423,50 &euro; con IVA</span></td>
             </tr>
             <tr>
               <td><strong>Cuidado intensivo</strong></td>
               <td>Continua</td>
               <td>Bots cr&iacute;ticos</td>
-              <td class="price-cell">550 &euro;/mes</td>
+              <td class="price-cell">550 &euro;/mes <span class="price-iva">665,50 &euro; con IVA</span></td>
             </tr>
           </tbody>
         </table>
@@ -161,7 +161,7 @@ import Footer from '../components/Footer.astro';
       </div>
 
       <div class="info-box">
-        <p>Entrega en 1 semana. Desde <strong>90 &euro;/hora</strong> de an&aacute;lisis. <a href="/contacto">Pide presupuesto</a>.</p>
+        <p>Entrega en 1 semana. Desde <strong>90 &euro;/hora</strong> (108,90 &euro; con IVA). <a href="/contacto">Pide presupuesto</a>.</p>
       </div>
     </div>
   </section>
@@ -187,7 +187,7 @@ import Footer from '../components/Footer.astro';
       </div>
 
       <div class="info-box">
-        <p><strong>90 &euro;/hora.</strong> Si despu&eacute;s contratas una f&oacute;rmula, la consultor&iacute;a se descuenta. <a href="/contacto">Agenda tu sesi&oacute;n</a>.</p>
+        <p><strong>90 &euro;/hora</strong> (108,90 &euro; con IVA). Si despu&eacute;s contratas una f&oacute;rmula, la consultor&iacute;a se descuenta. <a href="/contacto">Agenda tu sesi&oacute;n</a>.</p>
       </div>
     </div>
   </section>
@@ -231,7 +231,7 @@ import Footer from '../components/Footer.astro';
       </div>
 
       <div class="info-box info-box--highlight">
-        <p><strong>70 &euro;/hora por participante.</strong> Grupos de 8 a 12 personas. <a href="/formacion/">Ver cursos</a> &middot; <a href="/precios/">Ver todos los precios</a>.</p>
+        <p><strong>70 &euro;/hora por participante</strong> (84,70 &euro; con IVA). Grupos de 8 a 12 personas. <a href="/formacion/">Ver cursos</a> &middot; <a href="/precios/">Ver todos los precios</a>.</p>
       </div>
     </div>
   </section>
@@ -418,6 +418,14 @@ import Footer from '../components/Footer.astro';
 
   .srv-table td strong {
     color: var(--color-text);
+  }
+
+  .price-iva {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    margin-top: 0.15rem;
   }
 
   .price-cell {

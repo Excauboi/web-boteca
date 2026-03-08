@@ -80,10 +80,10 @@ Transparencia: es lo primero.
 
 | Necesidad | Solución | Inversión orientativa |
 |---|---|---|
-| Responder preguntas frecuentes 24/7 | Bot de FAQ con derivación humana | Desde 1.800 € |
-| Captar y cualificar leads | Bot captador con formulario inteligente | Desde 3.200 € |
-| Proceso complejo (reservas, citas, soporte) | Bot con integraciones y lógica de negocio | Desde 5.500 € |
-| Mantenimiento mensual | Revisión, ajustes, actualización de datos | Desde 190 €/mes |
+| Responder preguntas frecuentes 24/7 | Bot de FAQ con derivación humana | Desde 1.800 € (2.178 € con IVA) |
+| Captar y cualificar leads | Bot captador con formulario inteligente | Desde 3.200 € (3.872 € con IVA) |
+| Proceso complejo (reservas, citas, soporte) | Bot con integraciones y lógica de negocio | Desde 5.500 € (6.655 € con IVA) |
+| Mantenimiento mensual | Revisión, ajustes, actualización de datos | Desde 190 €/mes (229,90 € con IVA) |
 
 No hay truco: es lo que cuesta hacerlo bien. Si alguien te ofrece un chatbot personalizado por 200 €, no es personalizado.
 

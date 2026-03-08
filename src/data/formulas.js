@@ -8,7 +8,7 @@ export const formulas = [
     categoriaLabel: "Fórmulas básicas",
     badge: "auto",
     canal: "Web o WhatsApp",
-    precioDesde: "900 €",
+    precioDesde: "900 € (1.089 € con IVA)",
     plazo: "2-3 semanas",
     features: [
       "Responde 20-50 preguntas frecuentes",
@@ -40,7 +40,7 @@ export const formulas = [
     categoriaLabel: "Fórmulas básicas",
     badge: "auto",
     canal: "Web",
-    precioDesde: "2.500 €",
+    precioDesde: "2.500 € (3.025 € con IVA)",
     plazo: "3-4 semanas",
     features: [
       "Recoge datos de contacto",
@@ -73,7 +73,7 @@ export const formulas = [
     categoriaLabel: "Salud y bienestar",
     badge: "auto",
     canal: "Web + WhatsApp",
-    precioDesde: "900 €",
+    precioDesde: "900 € (1.089 € con IVA)",
     plazo: "2-4 semanas",
     features: [
       "FAQ de servicios y especialidades",
@@ -106,7 +106,7 @@ export const formulas = [
     categoriaLabel: "Salud y bienestar",
     badge: "auto",
     canal: "Web + WhatsApp",
-    precioDesde: "900 €",
+    precioDesde: "900 € (1.089 € con IVA)",
     plazo: "2-4 semanas",
     features: [
       "Info tratamientos y precios",
@@ -139,7 +139,7 @@ export const formulas = [
     categoriaLabel: "Salud y bienestar",
     badge: "auto",
     canal: "Web + WhatsApp",
-    precioDesde: "900 €",
+    precioDesde: "900 € (1.089 € con IVA)",
     plazo: "2-3 semanas",
     features: [
       "FAQ vacunas y desparasitación",
@@ -172,7 +172,7 @@ export const formulas = [
     categoriaLabel: "Salud y bienestar",
     badge: "auto",
     canal: "Web + WhatsApp",
-    precioDesde: "900 €",
+    precioDesde: "900 € (1.089 € con IVA)",
     plazo: "2-3 semanas",
     features: [
       "Info tarifas y horarios",
@@ -205,7 +205,7 @@ export const formulas = [
     categoriaLabel: "Salud y bienestar",
     badge: "auto",
     canal: "Web + WhatsApp",
-    precioDesde: "900 €",
+    precioDesde: "900 € (1.089 € con IVA)",
     plazo: "2-3 semanas",
     features: [
       "Catálogo de servicios",
@@ -238,7 +238,7 @@ export const formulas = [
     categoriaLabel: "Salud y bienestar",
     badge: "auto",
     canal: "Web + WhatsApp",
-    precioDesde: "900 €",
+    precioDesde: "900 € (1.089 € con IVA)",
     plazo: "2-4 semanas",
     features: [
       "FAQ lentes, cristales y seguros",
@@ -271,7 +271,7 @@ export const formulas = [
     categoriaLabel: "Servicios profesionales",
     badge: "maint",
     canal: "Web",
-    precioDesde: "2.500 €",
+    precioDesde: "2.500 € (3.025 € con IVA)",
     plazo: "4-6 semanas",
     features: [
       "Filtra por tipo de caso",
@@ -304,7 +304,7 @@ export const formulas = [
     categoriaLabel: "Servicios profesionales",
     badge: "auto",
     canal: "Web + WhatsApp",
-    precioDesde: "900 €",
+    precioDesde: "900 € (1.089 € con IVA)",
     plazo: "2-4 semanas",
     features: [
       "FAQ trámites, plazos y documentación",
@@ -337,7 +337,7 @@ export const formulas = [
     categoriaLabel: "Servicios profesionales",
     badge: "maint",
     canal: "Web + WhatsApp",
-    precioDesde: "2.500 €",
+    precioDesde: "2.500 € (3.025 € con IVA)",
     plazo: "4-6 semanas",
     features: [
       "Filtro zona, presupuesto y características",
@@ -370,7 +370,7 @@ export const formulas = [
     categoriaLabel: "Servicios profesionales",
     badge: "maint",
     canal: "Web o embebido",
-    precioDesde: "2.500 €",
+    precioDesde: "2.500 € (3.025 € con IVA)",
     plazo: "4-6 semanas",
     features: [
       "Conoce tu metodología",
@@ -403,7 +403,7 @@ export const formulas = [
     categoriaLabel: "Hostelería y comercio",
     badge: "auto",
     canal: "Web + WhatsApp",
-    precioDesde: "900 €",
+    precioDesde: "900 € (1.089 € con IVA)",
     plazo: "2-3 semanas",
     features: [
       "Carta, alérgenos y opciones",
@@ -436,7 +436,7 @@ export const formulas = [
     categoriaLabel: "Hostelería y comercio",
     badge: "maint",
     canal: "Web + WhatsApp",
-    precioDesde: "5.000 €",
+    precioDesde: "5.000 € (6.050 € con IVA)",
     plazo: "6-10 semanas",
     features: [
       "Estado de pedidos",
@@ -469,7 +469,7 @@ export const formulas = [
     categoriaLabel: "Educación y formación",
     badge: "auto",
     canal: "Web + WhatsApp",
-    precioDesde: "900 €",
+    precioDesde: "900 € (1.089 € con IVA)",
     plazo: "2-4 semanas",
     features: [
       "Catálogo cursos, horarios y precios",
@@ -502,7 +502,7 @@ export const formulas = [
     categoriaLabel: "Uso interno",
     badge: "maint",
     canal: "Intranet o Teams",
-    precioDesde: "5.000 €",
+    precioDesde: "5.000 € (6.050 € con IVA)",
     plazo: "5-8 semanas",
     features: [
       "Dudas nóminas y vacaciones",
@@ -535,7 +535,7 @@ export const formulas = [
     categoriaLabel: "Especiales",
     badge: "maint",
     canal: "Web privada o intranet",
-    precioDesde: "5.000 €",
+    precioDesde: "5.000 € (6.050 € con IVA)",
     plazo: "8-12 semanas",
     features: [
       "Despliegue en servidor propio",
