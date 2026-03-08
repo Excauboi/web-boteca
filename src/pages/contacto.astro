@@ -132,7 +132,41 @@ import Footer from '../components/Footer.astro';
               </label>
             </div>
             <button type="submit" class="btn btn--primary">Enviar</button>
+            <p class="form-status" id="form-status" style="display:none; margin-top: var(--space-md); font-size: 0.9rem;"></p>
           </form>
+          <script>
+            document.querySelector('form[name="contacto"]').addEventListener('submit', async (e) => {
+              e.preventDefault();
+              const form = e.target;
+              const btn = form.querySelector('button[type="submit"]');
+              const data = Object.fromEntries(new FormData(form));
+              delete data['bot-field'];
+              delete data['form-name'];
+              delete data['privacy'];
+              // Capture UTM parameters from URL
+              const params = new URLSearchParams(window.location.search);
+              ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'].forEach(k => {
+                if (params.get(k)) data[k] = params.get(k);
+              });
+              btn.disabled = true;
+              btn.textContent = 'Enviando...';
+              try {
+                const res = await fetch('https://n8n.ruiberriz.org/webhook/boteca-lead', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify(data),
+                });
+                if (res.ok) {
+                  window.location = '/gracias/';
+                } else {
+                  throw new Error('Error del servidor');
+                }
+              } catch {
+                // Fallback: submit nativo a Netlify
+                form.submit();
+              }
+            });
+          </script>
         </div>
 
         <div class="contact-info">
