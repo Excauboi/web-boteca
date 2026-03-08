@@ -8,6 +8,7 @@ export const formulas = [
     categoriaLabel: "Fórmulas básicas",
     badge: "auto",
     canal: "Web o WhatsApp",
+    precioDesde: "900 €",
     plazo: "2-3 semanas",
     features: [
       "Responde 20-50 preguntas frecuentes",
@@ -39,6 +40,7 @@ export const formulas = [
     categoriaLabel: "Fórmulas básicas",
     badge: "auto",
     canal: "Web",
+    precioDesde: "2.500 €",
     plazo: "3-4 semanas",
     features: [
       "Recoge datos de contacto",
@@ -71,6 +73,7 @@ export const formulas = [
     categoriaLabel: "Salud y bienestar",
     badge: "auto",
     canal: "Web + WhatsApp",
+    precioDesde: "900 €",
     plazo: "2-4 semanas",
     features: [
       "FAQ de servicios y especialidades",
@@ -103,6 +106,7 @@ export const formulas = [
     categoriaLabel: "Salud y bienestar",
     badge: "auto",
     canal: "Web + WhatsApp",
+    precioDesde: "900 €",
     plazo: "2-4 semanas",
     features: [
       "Info tratamientos y precios",
@@ -135,6 +139,7 @@ export const formulas = [
     categoriaLabel: "Salud y bienestar",
     badge: "auto",
     canal: "Web + WhatsApp",
+    precioDesde: "900 €",
     plazo: "2-3 semanas",
     features: [
       "FAQ vacunas y desparasitación",
@@ -167,6 +172,7 @@ export const formulas = [
     categoriaLabel: "Salud y bienestar",
     badge: "auto",
     canal: "Web + WhatsApp",
+    precioDesde: "900 €",
     plazo: "2-3 semanas",
     features: [
       "Info tarifas y horarios",
@@ -199,6 +205,7 @@ export const formulas = [
     categoriaLabel: "Salud y bienestar",
     badge: "auto",
     canal: "Web + WhatsApp",
+    precioDesde: "900 €",
     plazo: "2-3 semanas",
     features: [
       "Catálogo de servicios",
@@ -231,6 +238,7 @@ export const formulas = [
     categoriaLabel: "Salud y bienestar",
     badge: "auto",
     canal: "Web + WhatsApp",
+    precioDesde: "900 €",
     plazo: "2-4 semanas",
     features: [
       "FAQ lentes, cristales y seguros",
@@ -263,6 +271,7 @@ export const formulas = [
     categoriaLabel: "Servicios profesionales",
     badge: "maint",
     canal: "Web",
+    precioDesde: "2.500 €",
     plazo: "4-6 semanas",
     features: [
       "Filtra por tipo de caso",
@@ -295,6 +304,7 @@ export const formulas = [
     categoriaLabel: "Servicios profesionales",
     badge: "auto",
     canal: "Web + WhatsApp",
+    precioDesde: "900 €",
     plazo: "2-4 semanas",
     features: [
       "FAQ trámites, plazos y documentación",
@@ -327,6 +337,7 @@ export const formulas = [
     categoriaLabel: "Servicios profesionales",
     badge: "maint",
     canal: "Web + WhatsApp",
+    precioDesde: "2.500 €",
     plazo: "4-6 semanas",
     features: [
       "Filtro zona, presupuesto y características",
@@ -359,6 +370,7 @@ export const formulas = [
     categoriaLabel: "Servicios profesionales",
     badge: "maint",
     canal: "Web o embebido",
+    precioDesde: "2.500 €",
     plazo: "4-6 semanas",
     features: [
       "Conoce tu metodología",
@@ -391,6 +403,7 @@ export const formulas = [
     categoriaLabel: "Hostelería y comercio",
     badge: "auto",
     canal: "Web + WhatsApp",
+    precioDesde: "900 €",
     plazo: "2-3 semanas",
     features: [
       "Carta, alérgenos y opciones",
@@ -423,6 +436,7 @@ export const formulas = [
     categoriaLabel: "Hostelería y comercio",
     badge: "maint",
     canal: "Web + WhatsApp",
+    precioDesde: "5.000 €",
     plazo: "6-10 semanas",
     features: [
       "Estado de pedidos",
@@ -455,6 +469,7 @@ export const formulas = [
     categoriaLabel: "Educación y formación",
     badge: "auto",
     canal: "Web + WhatsApp",
+    precioDesde: "900 €",
     plazo: "2-4 semanas",
     features: [
       "Catálogo cursos, horarios y precios",
@@ -487,6 +502,7 @@ export const formulas = [
     categoriaLabel: "Uso interno",
     badge: "maint",
     canal: "Intranet o Teams",
+    precioDesde: "5.000 €",
     plazo: "5-8 semanas",
     features: [
       "Dudas nóminas y vacaciones",
@@ -519,6 +535,7 @@ export const formulas = [
     categoriaLabel: "Especiales",
     badge: "maint",
     canal: "Web privada o intranet",
+    precioDesde: "5.000 €",
     plazo: "8-12 semanas",
     features: [
       "Despliegue en servidor propio",
@@ -527,8 +544,8 @@ export const formulas = [
       "RGPD reforzado"
     ],
     metaTitle: "Chatbot privado on-premise — IA sin enviar datos a terceros",
-    metaDescription: "Chatbot con IA desplegado en tu propio servidor. Modelos open-source, sin datos a terceros, RGPD reforzado. Para empresas con requisitos de confidencialidad.",
-    intro: "Tu empresa maneja información sensible: datos de pacientes, expedientes legales, documentación financiera. No puedes enviarla a servidores externos. El Preparado confidencial se despliega en tu propia infraestructura con modelos open-source. Tus datos no salen de tu red.",
+    metaDescription: "Chatbot con IA desplegado en tu propio servidor. Modelos de código abierto, sin datos a terceros, RGPD reforzado. Para empresas con requisitos de confidencialidad.",
+    intro: "Tu empresa maneja información sensible: datos de pacientes, expedientes legales, documentación financiera. No puedes enviarla a servidores externos. El Preparado confidencial se despliega en tu propia infraestructura con modelos de código abierto. Tus datos no salen de tu red.",
     paraTi: [
       "Manejas datos sensibles que no pueden salir de tu organización",
       "Necesitas cumplir normativa estricta de protección de datos",
@@ -536,7 +553,7 @@ export const formulas = [
     ],
     comoFunciona: [
       "Evaluamos tus requisitos de privacidad y capacidad de infraestructura",
-      "Seleccionamos el modelo open-source adecuado para tu caso",
+      "Seleccionamos el modelo de código abierto adecuado para tu caso",
       "Desplegamos en tu servidor: nada sale de tu red",
       "Te formamos para mantener y actualizar el sistema"
     ],
