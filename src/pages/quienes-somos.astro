@@ -4,14 +4,86 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Base title="Qui&eacute;nes somos" description="El equipo detr&aacute;s de La Boteca: Jose Ruib&eacute;rriz, Ferm&iacute;n S&aacute;nchez y Txiki L&oacute;pez. Tres boticarios, un taller en Sevilla.">
+<Base title="Qui&eacute;nes somos" description="La Boteca: un taller de IA en Sevilla. Precios publicados, c&oacute;digo abierto, propiedad total del cliente. Tres boticarios, cero intermediarios.">
   <Header slot="header" />
 
   <!-- Page header -->
   <section class="page-header">
     <div class="container">
-      <h1>Tres boticarios, un taller</h1>
-      <p>Preparamos chatbots que funcionan. Y llevamos a&ntilde;os trabajando con tecnolog&iacute;a, empresas y personas.</p>
+      <h1>Decimos lo que hacemos.<br />Cobramos lo que vale.</h1>
+      <p>No fingimos lo que no somos.</p>
+    </div>
+  </section>
+
+  <!-- Misi&oacute;n -->
+  <section class="section-mission">
+    <div class="container container--narrow">
+      <h2>Lo que hacemos</h2>
+      <p class="mission-statement">Construimos sistemas de IA que funcionan para pymes reales &mdash; bots, automatizaciones, formaci&oacute;n &mdash; con <strong>precios publicados</strong>, <strong>c&oacute;digo abierto</strong> y <strong>propiedad total</strong> del cliente sobre todo lo que hacemos.</p>
+    </div>
+  </section>
+
+  <!-- Valores -->
+  <section class="section-values">
+    <div class="container">
+      <h2>En qu&eacute; creemos</h2>
+
+      <div class="values-grid">
+        <div class="value-card">
+          <h3>Transparencia radical</h3>
+          <p>Publicamos los precios. Explicamos el proceso. Si algo no te hace falta, te lo decimos. No hay letra peque&ntilde;a ni &laquo;depende del proyecto&raquo;.</p>
+        </div>
+
+        <div class="value-card">
+          <h3>Todo lo que construimos es tuyo</h3>
+          <p>El c&oacute;digo, los datos, las automatizaciones, las instrucciones. Si ma&ntilde;ana quieres irte con otro proveedor, te vas con todo. No retenemos rehenes.</p>
+        </div>
+
+        <div class="value-card">
+          <h3>Artesan&iacute;a, no escala</h3>
+          <p>Tres proyectos a la vez, m&aacute;ximo. No es una limitaci&oacute;n &mdash; es una decisi&oacute;n. Cada bot se construye con la informaci&oacute;n real de tu negocio, no con plantillas gen&eacute;ricas.</p>
+        </div>
+
+        <div class="value-card">
+          <h3>Soberan&iacute;a de datos</h3>
+          <p>Instalamos todo en servidores que t&uacute; controlas. Tus datos no pasan por plataformas de terceros. Esto no es una ventaja comercial &mdash; es una posici&oacute;n.</p>
+        </div>
+
+        <div class="value-card">
+          <h3>Honestidad sobre los l&iacute;mites</h3>
+          <p>La IA no resuelve todo. Un chatbot no sustituye a una persona. Si lo que necesitas es contratar a alguien, te lo decimos. Si tu problema no es tecnol&oacute;gico, no te vendemos tecnolog&iacute;a.</p>
+        </div>
+
+        <div class="value-card">
+          <h3>Documentar es respetar</h3>
+          <p>Cada bot tiene 7 entregables de documentaci&oacute;n. No porque lo pida la ley &mdash; porque es lo correcto. Si no puedes entender lo que te entregamos, no te lo hemos entregado bien.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lo que NO somos -->
+  <section class="section-not">
+    <div class="container container--narrow">
+      <h2>Lo que no somos</h2>
+      <ul class="not-list">
+        <li>
+          <strong>No somos una agencia.</strong>
+          <span>No tenemos gestores de cuentas, ni departamento de ventas, ni presentaciones llenas de palabras vac&iacute;as.</span>
+        </li>
+        <li>
+          <strong>No somos baratos.</strong>
+          <span>Somos justos. Publicamos lo que cobramos para que compares con quien quieras.</span>
+        </li>
+        <li>
+          <strong>No somos para todos.</strong>
+          <span>Si buscas &laquo;transformaci&oacute;n digital&raquo; como concepto aspiracional, hay cien consultoras que te vender&aacute;n eso. Nosotros resolvemos problemas concretos.</span>
+        </li>
+        <li>
+          <strong>No competimos en precio.</strong>
+          <span>Competimos en que lo que hacemos funciona, es tuyo y puedes entenderlo.</span>
+        </li>
+      </ul>
     </div>
   </section>
 
@@ -20,8 +92,8 @@ import Footer from '../components/Footer.astro';
     <div class="container container--narrow">
       <div class="highlight highlight--quote">
         <h3>&iquest;Por qu&eacute; &laquo;La Boteca&raquo;?</h3>
-        <p>Una <strong>botica</strong> era la farmacia de antes: un sitio donde el boticario conoc&iacute;a a cada cliente, preparaba f&oacute;rmulas a medida y no te vend&iacute;a lo que no necesitabas. No era una f&aacute;brica de medicamentos gen&eacute;ricos, era un taller de confianza.</p>
-        <p>Eso hacemos nosotros. Pero con chatbots.</p>
+        <p>Una <strong>botica</strong> era la farmacia de antes: un sitio donde el boticario conoc&iacute;a a cada cliente por su nombre, preparaba f&oacute;rmulas a medida y no te vend&iacute;a lo que no necesitabas. No era una f&aacute;brica de medicamentos gen&eacute;ricos &mdash; era un taller de confianza.</p>
+        <p>Eso hacemos nosotros. Pero con bots.</p>
       </div>
     </div>
   </section>
@@ -29,22 +101,20 @@ import Footer from '../components/Footer.astro';
   <!-- Equipo -->
   <section class="section-team">
     <div class="container">
-      <h2>El equipo</h2>
+      <h2>Tres boticarios, un taller</h2>
 
       <div class="team-grid">
-
         <div class="team-card">
           <h3>Jose Ruib&eacute;rriz</h3>
-          <p class="role">El arquitecto de conversaciones</p>
-          <p>Viene de la consultor&iacute;a y la transformaci&oacute;n digital. Lleva a&ntilde;os ayudando a empresas a entender qu&eacute; necesitan de la tecnolog&iacute;a y qu&eacute; no.</p>
-          <p>En La Boteca hace de todo: dise&ntilde;o conversacional, desarrollo, entrenamiento de bots, pruebas, soporte. Las manos en la masa, siempre.</p>
-          <p>Tambi&eacute;n trabaja en <strong>Dise&ntilde;adero</strong>, taller tecnol&oacute;gico Apple en Sevilla.</p>
+          <p class="role">El que prepara las f&oacute;rmulas</p>
+          <p>Viene de la consultor&iacute;a y la cooperaci&oacute;n internacional. Lleva a&ntilde;os ayudando a organizaciones a entender qu&eacute; necesitan de la tecnolog&iacute;a &mdash; y qu&eacute; no.</p>
+          <p>En La Boteca hace de todo: dise&ntilde;o conversacional, desarrollo, entrenamiento de bots, pruebas, soporte. Las manos en la masa.</p>
           <span class="team-location">Sevilla</span>
         </div>
 
         <div class="team-card">
           <h3>Ferm&iacute;n S&aacute;nchez</h3>
-          <p class="role">El conector</p>
+          <p class="role">El que conoce el barrio</p>
           <p>Fundador de <strong>Dise&ntilde;adero</strong>. Conoce el tejido de pymes y comercio de Sevilla como nadie. Sabe qui&eacute;n necesita qu&eacute; y por qu&eacute;.</p>
           <p>Aporta espacio, red de clientes y ojo cl&iacute;nico para detectar qui&eacute;n necesita realmente un chatbot &mdash; y qui&eacute;n no.</p>
           <span class="team-location">Sevilla</span>
@@ -52,54 +122,21 @@ import Footer from '../components/Footer.astro';
 
         <div class="team-card">
           <h3>Txiki L&oacute;pez</h3>
-          <p class="role">El alquimista visual</p>
-          <p>Dise&ntilde;ador gr&aacute;fico. Cre&oacute; la identidad de La Boteca: nombre, logo, concepto visual. Se asegura de que todo lo que sale del taller tenga una presentaci&oacute;n profesional.</p>
+          <p class="role">El que le pone cara</p>
+          <p>Dise&ntilde;ador gr&aacute;fico. Cre&oacute; la identidad de La Boteca: nombre, logo, concepto visual. Se asegura de que todo lo que sale del taller tenga una presentaci&oacute;n a la altura.</p>
           <p>Porque un buen preparado tambi&eacute;n necesita un buen envase.</p>
           <span class="team-location">Sevilla</span>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- Como trabajamos -->
-  <section class="section-philosophy">
-    <div class="container container--narrow">
-      <h2>C&oacute;mo trabajamos</h2>
-
-      <div class="highlight highlight--tip">
-        <ul class="philosophy-list">
-          <li>
-            <strong>Escuchar antes de recetar</strong>
-            <span>Primero entendemos tu problema. Despu&eacute;s &mdash; y solo si tiene sentido &mdash; proponemos soluci&oacute;n.</span>
-          </li>
-          <li>
-            <strong>Transparencia radical</strong>
-            <span>Sabes qu&eacute; pagas, por qu&eacute; y qu&eacute; puedes esperar. Sin letra peque&ntilde;a.</span>
-          </li>
-          <li>
-            <strong>Artesan&iacute;a sobre escala</strong>
-            <span>Solo llevamos 2 proyectos de cliente a la vez. Preferimos hacer pocas cosas bien que muchas a medias.</span>
-          </li>
-          <li>
-            <strong>Slow Tech</strong>
-            <span>No corremos para entregar. Un bot mal hecho es peor que ning&uacute;n bot. M&iacute;nimo 3 semanas para cualquier proyecto.</span>
-          </li>
-          <li>
-            <strong>Se construye contigo</strong>
-            <span>No desaparecemos hasta la entrega. Trabajamos juntos durante todo el proceso: t&uacute; conoces tu negocio, nosotros la tecnolog&iacute;a.</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Un laboratorio de confianza -->
+  <!-- Laboratorio -->
   <section class="section-lab">
     <div class="container container--narrow">
-      <h2>Un laboratorio de confianza</h2>
-      <p>Operamos desde <strong>Dise&ntilde;adero</strong>, un taller tecnol&oacute;gico f&iacute;sico en Sevilla. No somos una web sin cara: tenemos un sitio donde trabajamos, donde puedes venir a vernos y donde siempre hay un bot de demo funcionando.</p>
-      <p>Si quieres probar un chatbot nuestro antes de contratar, el de esta web est&aacute; siempre activo. Y si prefieres verlo en persona, podemos ense&ntilde;&aacute;rtelo en el taller.</p>
+      <h2>Un taller con direcci&oacute;n postal</h2>
+      <p>Operamos desde <strong>Dise&ntilde;adero</strong>, un taller tecnol&oacute;gico f&iacute;sico en Sevilla. No somos una web sin cara: tenemos un sitio donde trabajamos, donde puedes venir a vernos y donde siempre hay un bot funcionando.</p>
+      <p>Si quieres probar un chatbot nuestro antes de contratar, el de esta web est&aacute; siempre activo. Y si prefieres verlo en persona, pasa por el taller.</p>
 
       <div class="address-box">
         <h3>D&oacute;nde estamos</h3>
@@ -113,7 +150,7 @@ import Footer from '../components/Footer.astro';
     </div>
   </section>
 
-  <!-- CTA final -->
+  <!-- CTA -->
   <section class="section-cta">
     <div class="container">
       <div class="cta-box">
@@ -136,7 +173,8 @@ import Footer from '../components/Footer.astro';
   }
 
   .page-header h1 {
-    margin-bottom: var(--space-sm);
+    margin-bottom: var(--space-xs);
+    font-size: 2.2rem;
   }
 
   .page-header p {
@@ -146,9 +184,107 @@ import Footer from '../components/Footer.astro';
     margin: 0 auto;
   }
 
+  /* Mission */
+  .section-mission {
+    padding: var(--space-2xl) 0 var(--space-xl);
+    background: var(--color-bg);
+  }
+
+  .mission-statement {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+  }
+
+  .section-mission h2 {
+    margin-bottom: var(--space-lg);
+  }
+
+  /* Values */
+  .section-values {
+    padding: var(--space-xl) 0 var(--space-2xl);
+    background: var(--color-bg);
+  }
+
+  .section-values h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+  }
+
+  .value-card {
+    padding: var(--space-lg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    transition: box-shadow var(--transition-base);
+  }
+
+  .value-card:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  }
+
+  .value-card h3 {
+    color: var(--color-primary-dark);
+    margin-bottom: var(--space-sm);
+    font-size: 1.05rem;
+  }
+
+  .value-card p {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  /* Not section */
+  .section-not {
+    padding: var(--space-2xl) 0;
+    background: var(--color-bg-alt);
+  }
+
+  .section-not h2 {
+    margin-bottom: var(--space-lg);
+  }
+
+  .not-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .not-list li {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .not-list li:last-child {
+    border-bottom: none;
+  }
+
+  .not-list li strong {
+    font-size: 1.05rem;
+    color: var(--color-text);
+  }
+
+  .not-list li span {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+
   /* Origin section */
   .section-origin {
-    padding: var(--space-2xl) 0 var(--space-xl);
+    padding: var(--space-2xl) 0;
     background: var(--color-bg);
   }
 
@@ -179,7 +315,7 @@ import Footer from '../components/Footer.astro';
   /* Team section */
   .section-team {
     padding: var(--space-xl) 0 var(--space-2xl);
-    background: var(--color-bg);
+    background: var(--color-bg-alt);
   }
 
   .section-team h2 {
@@ -196,6 +332,7 @@ import Footer from '../components/Footer.astro';
     padding: var(--space-lg);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
+    background: var(--color-bg);
     transition: box-shadow var(--transition-base);
   }
 
@@ -232,42 +369,6 @@ import Footer from '../components/Footer.astro';
     background: var(--color-accent);
     padding: var(--space-xs) var(--space-sm);
     border-radius: var(--radius-sm);
-  }
-
-  /* Philosophy section */
-  .section-philosophy {
-    padding: var(--space-2xl) 0;
-    background: var(--color-bg-alt);
-  }
-
-  .section-philosophy h2 {
-    margin-bottom: var(--space-lg);
-  }
-
-  .philosophy-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-md);
-  }
-
-  .philosophy-list li {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-xs);
-  }
-
-  .philosophy-list li strong {
-    font-size: 1rem;
-    color: var(--color-text);
-  }
-
-  .philosophy-list li span {
-    font-size: 0.95rem;
-    color: var(--color-text-secondary);
-    line-height: 1.6;
   }
 
   /* Lab section */
@@ -366,6 +467,14 @@ import Footer from '../components/Footer.astro';
 
   /* Responsive */
   @media (max-width: 768px) {
+    .page-header h1 {
+      font-size: 1.6rem;
+    }
+
+    .values-grid {
+      grid-template-columns: 1fr;
+    }
+
     .team-grid {
       grid-template-columns: 1fr;
     }
