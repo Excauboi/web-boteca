@@ -110,6 +110,7 @@ import Footer from '../components/Footer.astro';
 
       <div class="team-grid">
         <div class="team-card">
+          <img src="/img/retrato-jose.webp" alt="Retrato de Jose Ruib&eacute;rriz" class="team-portrait" width="600" height="804" loading="lazy" />
           <h3>Jose Ruib&eacute;rriz</h3>
           <p class="role">El que conoce los procesos</p>
           <p>Viene de la consultor&iacute;a y la cooperaci&oacute;n internacional. Lleva a&ntilde;os ayudando a organizaciones a entender qu&eacute; necesitan de la tecnolog&iacute;a &mdash; y qu&eacute; no.</p>
@@ -118,6 +119,7 @@ import Footer from '../components/Footer.astro';
         </div>
 
         <div class="team-card">
+          <img src="/img/retrato-fermin.webp" alt="Retrato de Ferm&iacute;n S&aacute;nchez" class="team-portrait" width="600" height="804" loading="lazy" />
           <h3>Ferm&iacute;n S&aacute;nchez</h3>
           <p class="role">El que conoce las m&aacute;quinas</p>
           <p>Fundador de <strong><a href="https://disenadero.com" target="_blank" rel="noopener">Dise&ntilde;adero</a></strong>, el taller Mac de cabecera de media Sevilla. Lleva a&ntilde;os con las manos dentro de los aparatos y conoce el tejido de pymes y comercio de la ciudad como nadie. Conoce las necesidades de las empresas y profesionales de primera mano.</p>
@@ -126,6 +128,7 @@ import Footer from '../components/Footer.astro';
         </div>
 
         <div class="team-card">
+          <img src="/img/retrato-txiki.webp" alt="Retrato de Txiki L&oacute;pez" class="team-portrait" width="600" height="804" loading="lazy" />
           <h3>Txiki L&oacute;pez</h3>
           <p class="role">El que le pone cara</p>
           <p>Ilustrador artesano. Cre&oacute; la identidad de La Boteca: nombre, logo, concepto visual. Se asegura de que todo lo que sale del taller tenga una presentaci&oacute;n a la altura.</p>
@@ -343,6 +346,15 @@ import Footer from '../components/Footer.astro';
 
   .team-card:hover {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  }
+
+  .team-portrait {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-md);
+    aspect-ratio: 600 / 804;
+    object-fit: cover;
   }
 
   .team-card h3 {
