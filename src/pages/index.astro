@@ -4,14 +4,14 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Base title="Inicio" description="La Boteca — Taller de asistentes conversacionales con IA para pymes. Chatbots artesanales en Sevilla.">
+<Base title="Inicio" description="La Boteca — Taller de IA aplicada para organizaciones, empresas y profesionales. Chatbots artesanales en Sevilla.">
   <Fragment slot="schema">
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "@id": "https://laboteca.es/#localbusiness",
       "name": "La Boteca",
-      "description": "Taller de asistentes conversacionales con IA para pymes. Chatbots artesanales a medida en Sevilla.",
+      "description": "Taller de IA aplicada para organizaciones, empresas y profesionales. Chatbots artesanales a medida en Sevilla.",
       "url": "https://laboteca.es",
       "email": "hola@laboteca.es",
       "image": "https://laboteca.es/img/logo-boteca-horizontal.png",
@@ -84,9 +84,7 @@ import Footer from '../components/Footer.astro';
         </div>
       </div>
       <div class="hero__visual hero__fade-in">
-        <video autoplay loop muted playsinline>
-          <source src="/img/boteca-hero.mp4" type="video/mp4" />
-        </video>
+        <img src="/img/logo-boteca-redondo.webp" alt="La Boteca — F&oacute;rmulas, preparados y soluciones de inteligencia artificial" width="400" height="400" />
       </div>
     </div>
   </section>
@@ -208,7 +206,7 @@ import Footer from '../components/Footer.astro';
       <p class="pacientes__intro">Nuestros pacientes ideales:</p>
       <ul class="feature-list">
         <li class="feature-item">
-          <strong>Pymes y comercios</strong> que quieren automatizar la atenci&oacute;n sin perder el trato cercano
+          <strong>Organizaciones y empresas</strong> que quieren automatizar la atenci&oacute;n sin perder el trato cercano
         </li>
         <li class="feature-item">
           <strong>Profesionales y consultoras</strong> que necesitan un asistente digital para su metodolog&iacute;a
@@ -293,11 +291,10 @@ import Footer from '../components/Footer.astro';
     flex-shrink: 0;
   }
 
-  .hero__visual video {
+  .hero__visual img {
     width: 400px;
     height: 400px;
-    border-radius: var(--radius-lg);
-    object-fit: cover;
+    object-fit: contain;
   }
 
   .hero h1 {

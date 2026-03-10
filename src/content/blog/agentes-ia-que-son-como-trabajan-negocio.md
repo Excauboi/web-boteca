@@ -1,6 +1,6 @@
 ---
 title: "Agentes IA: qué son y cómo pueden trabajar para tu negocio"
-description: "Un agente IA no es un chatbot con más funciones. Es un sistema que coordina herramientas para resolver tareas completas. Te explicamos cómo funciona y para qué sirve en una pyme."
+description: "Un agente IA no es un chatbot con más funciones. Es un sistema que coordina herramientas para resolver tareas completas. Te explicamos cómo funciona y para qué sirve en una organización."
 date: "2026-03-01"
 author: "La Boteca"
 keywords: "agentes ia, agentes inteligencia artificial, automatizar negocio con ia, orquestador ia, n8n chatbot, agentes ia para empresas"
@@ -34,7 +34,7 @@ El director de orquesta. Coordina el flujo: primero consulta la base de datos, d
 
 En la práctica, el orquestador es el corazón del sistema. Es lo que convierte una conversación en una resolución.
 
-## Ejemplos reales para pymes
+## Ejemplos reales para organizaciones
 
 No hace falta ser una gran empresa para usar agentes IA. Estos son escenarios que resolvemos en La Boteca:
 
@@ -105,6 +105,6 @@ Sí, y es lo que recomendamos. Empieza con un bot que responda preguntas frecuen
 
 ## En resumen
 
-Un agente IA no es un chatbot con más botones. Es un sistema que entiende, decide y actúa — consultando tus datos reales, ejecutando acciones y coordinando pasos. Para una pyme, eso significa poder atender más, equivocarse menos y liberar a tu equipo de las tareas que se repiten cada día.
+Un agente IA no es un chatbot con más botones. Es un sistema que entiende, decide y actúa — consultando tus datos reales, ejecutando acciones y coordinando pasos. Para una organización, eso significa poder atender más, equivocarse menos y liberar a tu equipo de las tareas que se repiten cada día.
 
 Pero como cualquier herramienta potente, necesita diseño, límites y supervisión. No se enchufa y se olvida. Se diseña, se prueba, se vigila y se mejora.

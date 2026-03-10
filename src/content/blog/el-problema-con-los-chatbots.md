@@ -3,7 +3,7 @@ title: "El problema con los chatbots"
 description: "Cómo funciona la industria de los chatbots para negocios pequeños. Quién paga, quién gana, qué se pierde. Y por qué montamos un taller en Sevilla que funciona con reglas distintas."
 date: "2026-03-08"
 author: "Jose M. Ruibérriz"
-keywords: "chatbots pymes, chatbot peluquería, chatbot despacho, inteligencia artificial negocios pequeños, La Boteca, chatbot ético, soberanía datos"
+keywords: "chatbots organizaciones empresas, chatbot peluquería, chatbot despacho, inteligencia artificial negocios pequeños, La Boteca, chatbot ético, soberanía datos"
 ---
 
 Voy a explicar cómo funciona la industria de los chatbots para negocios pequeños. No la industria de los papers, ni la de las conferencias sobre IA ética, ni la de los hilos de LinkedIn con emojis de cohete. La industria real: la que le vende un bot a una peluquería de barrio, a un despacho laboralista de cuatro personas, a una gestoría fiscal que atiende a autónomos asustados por una carta de Hacienda.
@@ -32,7 +32,7 @@ Lo que el dueño del negocio acaba de hacer, sin saberlo, es lo siguiente:
 
 ## Los números
 
-Una pyme que contrata un chatbot de plataforma paga entre 49 y 200 euros al mes, según el plan. Eso son entre 588 y 2.400 euros al año. Por ese precio obtiene:
+Una organización que contrata un chatbot de plataforma paga entre 49 y 200 euros al mes, según el plan. Eso son entre 588 y 2.400 euros al año. Por ese precio obtiene:
 
 - Un bot que responde preguntas frecuentes con información que el propio negocio ha introducido.
 - Un widget para la web.

@@ -7,7 +7,7 @@ export async function GET(context: APIContext) {
 
   return rss({
     title: 'Blog — La Boteca',
-    description: 'Artículos sobre chatbots, inteligencia artificial y automatización para pymes.',
+    description: 'Artículos sobre chatbots, inteligencia artificial y automatización para organizaciones, empresas y profesionales.',
     site: context.site!,
     items: posts
       .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())

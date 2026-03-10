@@ -29,7 +29,7 @@ export const formulas = [
       "Lo desplegamos en tu web o WhatsApp",
       "Te enseñamos a actualizarlo cuando cambien las respuestas"
     ],
-    keywords: ["chatbot faq", "preguntas frecuentes automatizadas", "bot respuestas automáticas", "chatbot para pymes"]
+    keywords: ["chatbot faq", "preguntas frecuentes automatizadas", "bot respuestas automáticas", "chatbot para organizaciones"]
   },
   {
     slug: "tonico-captador",
@@ -317,7 +317,7 @@ export const formulas = [
     intro: "¿Cuándo es el plazo del IVA? ¿Qué documentos necesito para darme de alta como autónomo? Tu gestoría responde estas preguntas cien veces al mes. El Compuesto gestor las resuelve automáticamente y captura nuevos clientes que buscan asesoría.",
     paraTi: [
       "Tus clientes preguntan siempre por los mismos plazos y trámites",
-      "Quieres capturar autónomos y pymes que buscan gestoría",
+      "Quieres capturar autónomos y organizaciones que buscan gestoría",
       "Necesitas reducir las consultas telefónicas rutinarias"
     ],
     comoFunciona: [
