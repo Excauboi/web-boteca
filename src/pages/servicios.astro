@@ -4,7 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Base title="Servicios" description="Servicios de La Boteca: desarrollo de chatbots a medida, mantenimiento evolutivo, auditoría, consultoría y formación en IA conversacional.">
+<Base title="Servicios" description="Servicios de La Boteca: desarrollo de chatbots a medida, mantenimiento evolutivo, consultoría y formación en IA conversacional.">
   <Header slot="header" />
 
   <!-- Page header -->
@@ -78,7 +78,7 @@ import Footer from '../components/Footer.astro';
 
       <div class="info-box">
         <p><strong>Todo lo que construimos es tuyo.</strong> C&oacute;digo, prompts, flujos, documentaci&oacute;n. Si ma&ntilde;ana quieres cambiar de proveedor, te llevas todo. Sin permanencia, sin ataduras.</p>
-        <p>Los precios son orientativos &mdash; cada caso tiene sus particularidades. Pero no los escondemos. <a href="/contacto">Cu&eacute;ntanos tu caso</a>.</p>
+        <p>Precios de cada f&oacute;rmula. Todas incluyen HITL (derivaci&oacute;n a humano). <a href="/contacto">Cu&eacute;ntanos tu caso</a>.</p>
       </div>
     </div>
   </section>
@@ -139,55 +139,28 @@ import Footer from '../components/Footer.astro';
     </div>
   </section>
 
-  <!-- Diagnóstico — Auditoría de chatbots -->
-  <section class="srv-section reveal srv-section--white" id="diagnostico">
-    <div class="container">
-      <div class="srv-section__header">
-        <h2>Diagnóstico</h2>
-        <p class="srv-section__subtitle">Auditoría de chatbots</p>
-      </div>
-      <p>¿Ya tienes un bot que no funciona como esperabas? Lo examinamos a fondo.</p>
-      <p>Muchas empresas compraron chatbots con Kit Digital u otras subvenciones y ahora están abandonados. Les damos una segunda oportunidad.</p>
-
-      <div class="feature-list">
-        <h3>Qué incluye</h3>
-        <ul class="check-list">
-          <li>Revisión de arquitectura conversacional</li>
-          <li>Análisis de conversaciones reales</li>
-          <li>Detección de patologías y puntos de fuga</li>
-          <li>Informe con problemas priorizados</li>
-          <li>Plan de tratamiento (con o sin nosotros)</li>
-        </ul>
-      </div>
-
-      <div class="info-box">
-        <p>Entrega en 1 semana. <strong>90 &euro;/hora</strong> (108,90 &euro; con IVA). Primera hora de evaluaci&oacute;n gratuita. <a href="/contacto">Cont&aacute;ctanos</a>.</p>
-      </div>
-    </div>
-  </section>
-
   <!-- Consultoría -->
   <section class="srv-section reveal srv-section--alt" id="consultoria">
     <div class="container">
       <div class="srv-section__header">
         <h2>Consultoría</h2>
-        <p class="srv-section__subtitle">Para los que no saben por dónde empezar</p>
+        <p class="srv-section__subtitle">Asesoramiento y diagn&oacute;stico</p>
       </div>
-      <p>No tienes claro qu&eacute; necesitas. Te ayudamos a ver el mapa.</p>
+      <p>No tienes claro qu&eacute; necesitas, o ya tienes un bot que no funciona como esperabas. Te ayudamos a ver el mapa.</p>
 
       <div class="feature-list">
-        <h3>Qué incluye</h3>
+        <h3>Qu&eacute; incluye</h3>
         <ul class="check-list">
-          <li>Sesión de 2 horas (presencial en Sevilla o videollamada)</li>
-          <li>Análisis de tus procesos y puntos de dolor</li>
-          <li>Identificación de oportunidades de automatización</li>
-          <li>Recomendación honesta: bot, otra herramienta, o nada</li>
-          <li>Informe escrito con próximos pasos</li>
+          <li>An&aacute;lisis de tus procesos y puntos de dolor</li>
+          <li>Identificaci&oacute;n de oportunidades de automatizaci&oacute;n</li>
+          <li>Auditor&iacute;a de bot existente (si lo tienes)</li>
+          <li>Recomendaci&oacute;n honesta: bot, otra herramienta, o nada</li>
+          <li>Informe escrito con pr&oacute;ximos pasos</li>
         </ul>
       </div>
 
       <div class="info-box">
-        <p><strong>90 &euro;/hora</strong> (108,90 &euro; con IVA). Si despu&eacute;s contratas una f&oacute;rmula, la consultor&iacute;a se descuenta. <a href="/contacto">Agenda tu sesi&oacute;n</a>.</p>
+        <p><strong>90 &euro;/hora</strong> (108,90 &euro; con IVA). <strong>Primera hora de evaluaci&oacute;n: gratuita.</strong> Si despu&eacute;s contratas una f&oacute;rmula, la consultor&iacute;a se descuenta del presupuesto. <a href="/contacto">Agenda tu sesi&oacute;n</a>.</p>
       </div>
     </div>
   </section>
@@ -199,39 +172,43 @@ import Footer from '../components/Footer.astro';
         <h2>Formación</h2>
         <p class="srv-section__subtitle">Para tu autonomía</p>
       </div>
-      <p>Para que tu equipo aprenda a cuidar el bot &mdash; o a construirlo.</p>
+      <p>Cursos pr&aacute;cticos para que tu equipo entienda la IA y la aplique en su trabajo diario.</p>
 
       <div class="table-wrapper">
         <table class="srv-table">
           <thead>
             <tr>
-              <th>Formato</th>
+              <th>Curso</th>
               <th>Duraci&oacute;n</th>
               <th>Qu&eacute; aprender&aacute;s</th>
+              <th>Precio/persona</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>Primeros auxilios</strong></td>
-              <td>2 h</td>
-              <td>Gestionar KB, editar respuestas</td>
+              <td><strong>Primeros auxilios IA</strong></td>
+              <td>12 h (4 &times; 3 h)</td>
+              <td>Fundamentos, prompting, primeras herramientas</td>
+              <td class="price-cell">1.200 &euro; <span class="price-iva">1.452 &euro; con IVA</span></td>
             </tr>
             <tr>
               <td><strong>Curso de boticario</strong></td>
-              <td>4 h</td>
-              <td>Crear flujos, integraciones b&aacute;sicas</td>
+              <td>12 h (4 &times; 3 h)</td>
+              <td>Construir y orquestar flujos IA</td>
+              <td class="price-cell">1.500 &euro; <span class="price-iva">1.815 &euro; con IVA</span></td>
             </tr>
             <tr>
-              <td><strong>M&aacute;ster en f&oacute;rmulas</strong></td>
-              <td>1 d&iacute;a</td>
-              <td>Dise&ntilde;o conversacional completo</td>
+              <td><strong>Vibe working</strong></td>
+              <td>12 h (4 &times; 3 h)</td>
+              <td>IA como herramienta de trabajo diaria</td>
+              <td class="price-cell">1.200 &euro; <span class="price-iva">1.452 &euro; con IVA</span></td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <div class="info-box info-box--highlight">
-        <p><strong>70 &euro;/hora por participante</strong> (84,70 &euro; con IVA). Grupos de 8 a 12 personas. <a href="/formacion/">Ver cursos</a> &middot; <a href="/precios/">Ver todos los precios</a>.</p>
+        <p><strong>Pack equipo</strong> (misma organizaci&oacute;n): 2 personas -25%, 3-4 personas -37%, 5+ in-company (presupuesto cerrado). <a href="/formacion/">Ver cursos</a> &middot; <a href="/precios/">Ver todos los precios</a>.</p>
       </div>
     </div>
   </section>
@@ -275,7 +252,7 @@ import Footer from '../components/Footer.astro';
   <section class="srv-section reveal srv-section--cta" id="cta">
     <div class="container srv-cta">
       <h2>¿No sabes cuál necesitas?</h2>
-      <p>Hablamos 30 minutos. Sin compromiso, sin coste.</p>
+      <p>La primera hora de evaluaci&oacute;n es gratuita. Sin compromiso.</p>
       <a href="/contacto" class="btn btn--primary btn--lg">Hablemos</a>
     </div>
   </section>
