@@ -182,6 +182,37 @@ const schema = {
         </div>
       </section>
 
+
+      <!-- Lo que no te cuentan -->
+      <section class="section">
+        <h2>Lo que no te cuentan</h2>
+        <p class="comp-intro">Cada opci&oacute;n tiene letra peque&ntilde;a. Aqu&iacute; la ponemos en grande.</p>
+
+        <h3>Plataformas de alquiler</h3>
+        <ul class="no-cuentan-list">
+          <li><strong>Tus datos entrenan su producto.</strong> Cada conversaci&oacute;n que pasa por su sistema mejora su IA. T&uacute; pagas por usarla y adem&aacute;s le das la materia prima gratis.</li>
+          <li><strong>No eres due&ntilde;o de nada.</strong> Si dejas de pagar, pierdes el bot, los flujos, el historial. Empiezas de cero.</li>
+          <li><strong>El precio escala sin avisar.</strong> 29 &euro;/mes es el gancho. Con 3 agentes, IA activada y WhatsApp, est&aacute;s en 200-400 &euro;/mes. Y subiendo.</li>
+          <li><strong>El soporte no conoce tu negocio.</strong> Un ticket es un ticket. Da igual si eres peluquera o despacho de abogados.</li>
+        </ul>
+
+        <h3>Consultoras grandes</h3>
+        <ul class="no-cuentan-list">
+          <li><strong>Quien vende no es quien construye.</strong> El comercial habla de IA de &uacute;ltima generaci&oacute;n. El bot lo monta un equipo que no conoce tu sector.</li>
+          <li><strong>Eres una cuenta peque&ntilde;a.</strong> Si facturas menos de un mill&oacute;n, tu proyecto no es prioridad. Los plazos se alargan, el interlocutor cambia.</li>
+          <li><strong>El c&oacute;digo no es tuyo.</strong> Muchas consultoras retienen la propiedad intelectual o te atan con contratos de mantenimiento obligatorio.</li>
+          <li><strong>Los presupuestos crecen.</strong> El proyecto empieza en 5.000 &euro; y acaba en 15.000 &euro; con &laquo;ampliaciones de alcance&raquo;.</li>
+        </ul>
+
+        <h3>Lo que hacemos diferente en La Boteca</h3>
+        <ul class="no-cuentan-list no-cuentan-list--boteca">
+          <li><strong>Todo lo que construimos es tuyo.</strong> C&oacute;digo, datos, instrucciones, base de conocimiento. Si te vas, te lo llevas.</li>
+          <li><strong>Los precios est&aacute;n publicados.</strong> No hay sorpresas. No hay &laquo;dep&eacute;ndeme del presupuesto&raquo;. <a href="/precios/">Est&aacute;n aqu&iacute;</a>.</li>
+          <li><strong>Quien construye es quien te atiende.</strong> No hay capa comercial. Hablas con Jose, Ferm&iacute;n o Txiki. Directamente.</li>
+          <li><strong>Si no necesitas un bot, te lo decimos.</strong> No vamos a venderte tecnolog&iacute;a para resolver un problema que se arregla con un tel&eacute;fono.</li>
+        </ul>
+      </section>
+
       <!-- Preguntas frecuentes -->
       <section class="section">
         <h2>Preguntas frecuentes</h2>
@@ -345,5 +376,27 @@ const schema = {
 
   @media (max-width: 768px) {
     .pros-cons { grid-template-columns: 1fr; }
+  }
+
+  .no-cuentan-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+  }
+  .no-cuentan-list li {
+    padding: 0.75rem 0 0.75rem 1.5rem;
+    position: relative;
+    line-height: 1.7;
+    border-bottom: 1px solid var(--color-bg-alt);
+  }
+  .no-cuentan-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+  .no-cuentan-list--boteca li::before {
+    content: '✓';
   }
 </style>
