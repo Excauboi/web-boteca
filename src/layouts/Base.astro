@@ -332,16 +332,26 @@ const fullTitle = title === 'Inicio' ? 'La Boteca — IA a medida para organizac
     }
 
     function waitReply(afterId){
-      var n=0;if(pollTimer)clearInterval(pollTimer);
+      var n=0,found=false;if(pollTimer)clearInterval(pollTimer);
       pollTimer=setInterval(function(){
-        n++;if(n>20){clearInterval(pollTimer);pollTimer=null;rmTyping();addMsg("Sin respuesta del bot.","bot");return;}
+        n++;
+        if(n>25){clearInterval(pollTimer);pollTimer=null;rmTyping();if(!found)addMsg("Sin respuesta del bot.","bot");return;}
         api("GET","conversations/"+convId+"/messages").then(function(d){
-          var l=d.payload||[];
+          var l=d.payload||[],newMsgs=[];
           for(var i=0;i<l.length;i++){
-            if(l[i].id>afterId&&l[i].message_type===1&&l[i].content){
-              clearInterval(pollTimer);pollTimer=null;rmTyping();
-              addMsg(l[i].content,"bot");lastMsgId=Math.max(lastMsgId,l[i].id);persist();notify();return;
+            if(l[i].id>lastMsgId&&l[i].message_type===1&&l[i].content){
+              newMsgs.push(l[i]);
             }
+          }
+          if(newMsgs.length>0){
+            rmTyping();
+            newMsgs.sort(function(a,b){return a.id-b.id});
+            for(var j=0;j<newMsgs.length;j++){
+              addMsg(newMsgs[j].content,"bot");
+              lastMsgId=Math.max(lastMsgId,newMsgs[j].id);
+            }
+            found=true;persist();notify();
+            if(n<20)n=20;
           }
         });
       },2000);
@@ -455,6 +465,26 @@ const fullTitle = title === 'Inicio' ? 'La Boteca — IA a medida para organizac
         msgs.scrollTop=msgs.scrollHeight;persist();
       }).catch(function(){});
     }
+    /* --- Background poller: catch unsolicited bot messages --- */
+    setInterval(function(){
+      if(!convId||pollTimer)return;
+      api("GET","conversations/"+convId+"/messages").then(function(d){
+        var l=d.payload||[],newMsgs=[];
+        for(var i=0;i<l.length;i++){
+          if(l[i].id>lastMsgId&&l[i].message_type===1&&l[i].content){
+            newMsgs.push(l[i]);
+          }
+        }
+        if(newMsgs.length>0){
+          newMsgs.sort(function(a,b){return a.id-b.id});
+          for(var j=0;j<newMsgs.length;j++){
+            addMsg(newMsgs[j].content,"bot");
+            lastMsgId=Math.max(lastMsgId,newMsgs[j].id);
+          }
+          persist();notify();
+        }
+      }).catch(function(){});
+    },8000);
   })();
   </script>
 </body>
