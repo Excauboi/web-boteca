@@ -452,116 +452,100 @@ img {
   }
 }
 
+
 /* ============================================
-   Boteca Launcher (widget custom)
+   Widget Chat La Boteca (propio)
    ============================================ */
 
-.boteca-launcher {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 99998;
+/* --- Launcher --- */
+#launcher-wrap{position:fixed;bottom:20px;right:20px;z-index:99998;display:flex;align-items:center;gap:0;transition:all 0.3s ease}
+#launcher-wrap.hidden{transform:scale(0);opacity:0;pointer-events:none}
+#launcher{width:56px;height:56px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 2px 12px rgba(0,169,157,0.35),0 0 0 1px rgba(0,0,0,0.04);transition:all 0.3s ease;border:none;position:relative;padding:0}
+#launcher img{width:38px;height:38px;object-fit:contain}
+#launcher:hover{transform:scale(1.08)}
+#badge{position:absolute;top:-4px;right:-4px;width:20px;height:20px;border-radius:50%;background:#EF4444;color:#fff;font-size:0.65rem;font-weight:700;display:none;align-items:center;justify-content:center;border:2px solid #F7F7F5}
+#badge.show{display:flex}
+#expand-pill{white-space:nowrap;font-size:0.82rem;font-weight:500;color:#1A1A1A;background:#fff;border:1px solid var(--color-primary);border-radius:20px;padding:0.45rem 1rem;margin-right:10px;opacity:0;width:0;overflow:hidden;transition:all 0.4s cubic-bezier(0.4,0,0.2,1);cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.08)}
+#expand-pill.show{opacity:1;width:auto;padding:0.45rem 1rem}
 
-  display: flex;
-  align-items: center;
-  gap: 0;
-  height: 56px;
-  width: 56px;
-  padding: 0 12px;
+/* --- Chat Panel --- */
+#chat{position:fixed;bottom:20px;right:20px;width:380px;height:560px;background:#fff;border:1px solid var(--color-border);border-radius:16px;flex-direction:column;overflow:hidden;z-index:99999;box-shadow:0 8px 40px rgba(0,0,0,0.12);transform:scale(0.5);opacity:0;pointer-events:none;transform-origin:bottom right;transition:transform 0.25s cubic-bezier(0.34,1.56,0.64,1),opacity 0.2s ease;display:flex}
+#chat.open{transform:scale(1);opacity:1;pointer-events:auto}
 
-  background: #fff;
-  color: var(--color-primary);
-  border: none;
-  border-radius: 28px;
-  cursor: pointer;
+/* --- Header --- */
+#chat-header{background:var(--color-primary);padding:0.85rem 1rem;display:flex;align-items:center;justify-content:space-between;color:#fff;border-radius:16px 16px 0 0}
+#chat-header .hdr-left{display:flex;align-items:center;gap:0.6rem}
+#chat-header .hdr-avatar{width:32px;height:32px;border-radius:50%;overflow:hidden;background:var(--color-primary)}
+#chat-header .hdr-avatar img{width:32px;height:32px;border-radius:50%;object-fit:cover}
+#chat-header .hdr-dot{width:8px;height:8px;border-radius:50%;background:#4ADE80;position:absolute;bottom:0;right:0;border:2px solid var(--color-primary);transition:background 0.3s}
+#chat-header .hdr-dot.offline{background:#999}
+#chat-header .hdr-dot.away{background:#F59E0B}
+.hdr-avatar-wrap{position:relative}
+#chat-header .hdr-name{font-weight:600;font-size:0.95rem}
+#chat-header .hdr-status{font-size:0.68rem;opacity:0.85}
+.hdr-actions{display:flex;align-items:center;gap:0.3rem}
+.hdr-btn{background:none;border:none;color:#fff;font-size:1.1rem;cursor:pointer;opacity:0.7;transition:opacity 0.15s;padding:0.2rem}
+.hdr-btn:hover{opacity:1}
 
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-  transition:
-    width 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 0.25s ease,
-    transform 0.25s ease,
-    opacity 0.3s ease;
-  overflow: hidden;
-  white-space: nowrap;
-}
+/* --- Messages --- */
+#chat-messages{flex:1;overflow-y:auto;padding:1rem;display:flex;flex-direction:column;gap:0.5rem;scroll-behavior:smooth;background:#FAFAFA}
+#chat-messages::-webkit-scrollbar{width:4px}
+#chat-messages::-webkit-scrollbar-thumb{background:#DDD;border-radius:2px}
+.msg-row{display:flex;align-items:flex-end;gap:0.4rem;animation:msgIn 0.2s ease}
+.msg-row.bot{align-self:flex-start}
+.msg-row.user{align-self:flex-end;flex-direction:row-reverse}
+@keyframes msgIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.msg-avatar{width:24px;height:24px;border-radius:50%;overflow:hidden;flex-shrink:0;margin-bottom:0.2rem}
+.msg-avatar img{width:100%;height:100%;object-fit:cover}
+.msg-row.user .msg-avatar{display:none}
+.msg{max-width:82%;padding:0.6rem 0.85rem;border-radius:14px;font-size:0.875rem;line-height:1.5;overflow-wrap:break-word;word-break:normal;position:relative;min-width:3rem}
+.msg.bot{background:#fff;color:#1A1A1A;border:1px solid #E8E8E8;border-bottom-left-radius:4px}
+.msg.user{background:var(--color-primary);color:#fff;border-bottom-right-radius:4px}
+.msg.voice{background:var(--color-primary-dark)}
+.msg .time{display:block;font-size:0.58rem;color:#BBB;margin-top:0.2rem}
+.msg.typing{background:transparent;border:none;padding:0.4rem 0.85rem}
+.msg.typing span{display:inline-block;width:6px;height:6px;background:#CCC;border-radius:50%;margin:0 1.5px;animation:bounce 1.4s infinite}
+.msg.typing span:nth-child(2){animation-delay:0.15s}
+.msg.typing span:nth-child(3){animation-delay:0.3s}
+@keyframes bounce{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px)}}
+.msg.bot strong{color:var(--color-primary-dark)}
+.msg.bot a{color:var(--color-primary);text-decoration:underline}
+.msg.bot a:hover{color:#007A6D}
+.msg.bot ul,.msg.bot ol{margin:0.3rem 0 0.3rem 1.2rem}
+.msg.bot li{margin:0.15rem 0}
+.msg.bot code{background:#F0F0F0;padding:0.1rem 0.3rem;border-radius:3px;font-size:0.82rem}
 
-.boteca-launcher:hover {
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
-  transform: scale(1.05);
-}
+/* --- Input --- */
+#chat-input{display:flex;gap:4px;padding:0.5rem;border-top:1px solid #ECECEC;background:#fff;align-items:flex-end}
+#chat-text{flex:1;background:var(--color-bg-alt);border:1px solid var(--color-border);border-radius:12px;padding:0.6rem 0.85rem;color:#1A1A1A;font-size:0.875rem;font-family:inherit;resize:none;outline:none;height:42px;max-height:100px;transition:border-color 0.15s}
+#chat-text:focus{border-color:var(--color-primary)}
+#chat-text::placeholder{color:#AAA}
+.ib{width:42px;height:42px;border-radius:12px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.05rem;transition:all 0.15s;flex-shrink:0}
+#btn-send{background:var(--color-primary);color:#fff}
+#btn-send:hover{background:var(--color-primary-dark)}
+#btn-send:active{transform:scale(0.92)}
+#btn-mic{background:var(--color-bg-alt);color:var(--color-primary);border:1px solid var(--color-border)}
+#btn-mic:hover{background:var(--color-primary);color:#fff}
+#btn-mic.recording{background:#EF4444;color:#fff;border-color:#EF4444;animation:mp 1s infinite}
+@keyframes mp{0%,100%{box-shadow:0 0 0 0 rgba(239,68,68,0.4)}50%{box-shadow:0 0 0 10px rgba(239,68,68,0)}}
 
-.boteca-launcher__icon {
-  width: 32px;
-  height: 32px;
-  flex-shrink: 0;
-  
-  transition: margin 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
+/* --- Footer --- */
+#chat-footer{text-align:center;padding:0.35rem;font-size:0.6rem;color:#BBB;background:#fff;border-top:1px solid #F0F0F0}
+#chat-footer a{color:#999;text-decoration:none}
+#chat-footer a:hover{color:var(--color-primary)}
 
-.boteca-launcher__text {
-  font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: 0.95rem;
-  opacity: 0;
-  max-width: 0;
-  overflow: hidden;
-  transition:
-    opacity 0.3s ease 0s,
-    max-width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
+/* --- Welcome --- */
+.welcome{text-align:center;padding:2rem 1rem;color:#888}
+.welcome .wicon{font-size:2.5rem;margin-bottom:0.5rem}
+.welcome p{font-size:0.85rem;line-height:1.6;color:#666}
+.welcome .quick-btns{display:flex;flex-wrap:wrap;gap:0.4rem;justify-content:center;margin-top:1rem}
+.welcome .qb{background:#fff;border:1px solid var(--color-border);border-radius:20px;padding:0.4rem 0.85rem;font-size:0.78rem;color:var(--color-primary);cursor:pointer;transition:all 0.15s;font-weight:500}
+.welcome .qb:hover{border-color:var(--color-primary);background:var(--color-primary);color:#fff}
 
-/* Expanded state: pill */
-.boteca-launcher.is-expanded {
-  width: 190px;
-  gap: 8px;
-}
-.boteca-launcher.is-expanded .boteca-launcher__text {
-  opacity: 1;
-  max-width: 120px;
-  transition:
-    opacity 0.3s ease 0.15s,
-    max-width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Pulse animation */
-.boteca-launcher.is-pulsing {
-  animation: launcher-pulse 2.5s ease-in-out infinite;
-}
-.boteca-launcher.is-expanded.is-pulsing {
-  animation: none;
-}
-
-@keyframes launcher-pulse {
-  0%, 100% { box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); }
-  50% { box-shadow: 0 4px 20px rgba(0, 169, 157, 0.5); }
-}
-
-/* Hidden when chat is open */
-.boteca-launcher.is-hidden {
-  opacity: 0;
-  pointer-events: none;
-  transform: scale(0.8);
-}
-
-/* Mobile: smaller launcher */
-@media (max-width: 768px) {
-  .boteca-launcher {
-    bottom: 16px;
-    right: 16px;
-    height: 52px;
-    width: 52px;
-    border-radius: 26px;
-  }
-  .boteca-launcher__icon {
-    width: 28px;
-    height: 28px;
-  }
-  .boteca-launcher.is-expanded {
-    width: 175px;
-  }
-  .boteca-launcher__text {
-    font-size: 0.9rem;
-  }
+/* --- Mobile --- */
+@media(max-width:420px){
+  #chat{width:calc(100vw - 16px);right:8px;bottom:8px;height:calc(100vh - 16px);border-radius:12px}
+  #launcher-wrap{bottom:12px;right:12px}
 }
 
 @media (max-width: 768px) {

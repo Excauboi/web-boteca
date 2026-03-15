@@ -102,12 +102,77 @@ const fullTitle = title === 'Inicio' ? 'La Boteca — IA a medida para organizac
   </main>
   <slot name="footer" />
 
-  <!-- Launcher custom La Boteca -->
-  <button id="boteca-launcher" class="boteca-launcher" aria-label="Abrir chat" data-umami-event="chat-open">
-    <img src="/img/animacion-boteca-64.gif" alt="" class="boteca-launcher__icon" width="32" height="32" />
-    <span class="boteca-launcher__text">Pruébame</span>
-  </button>
+  <!-- Widget Chat La Boteca -->
+  <div id="launcher-wrap">
+    <div id="expand-pill">Hablemos</div>
+    <button id="launcher" title="Abrir chat" data-umami-event="chat-open">
+      <img src="/img/animacion-boteca-64.gif" alt="La Boteca">
+      <span id="badge">1</span>
+    </button>
+  </div>
 
+  <div id="chat">
+    <div id="chat-header">
+      <div class="hdr-left">
+        <div class="hdr-avatar-wrap">
+          <div class="hdr-avatar">
+            <img src="/img/animacion-boteca-64.gif" alt="La Boteca">
+          </div>
+          <span class="hdr-dot"></span>
+        </div>
+        <div>
+          <div class="hdr-name">La Boteca</div>
+          <div class="hdr-status">En línea</div>
+        </div>
+      </div>
+      <div class="hdr-actions">
+        <button class="hdr-btn" id="btn-sound" title="Silenciar notificaciones">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+        </button>
+        <button class="hdr-btn" id="btn-new" title="Nueva conversación">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <button class="hdr-btn" id="chat-close" title="Cerrar">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="chat-messages">
+      <div class="welcome">
+        <div class="wicon">
+          <img src="/img/animacion-boteca-64.gif" alt="La Boteca" style="width:48px;height:48px;border-radius:50%">
+        </div>
+        <p>Soy el bot de La Boteca.<br>Pregúntame sobre chatbots para tu negocio.</p>
+        <div class="quick-btns">
+          <span class="qb" data-q="Que haceis?">Qué hacéis?</span>
+          <span class="qb" data-q="Cuanto cuesta un bot?">Precios</span>
+          <span class="qb" data-q="Que incluye un bot?">Qué incluye</span>
+          <span class="qb" data-q="Quiero hablar con el equipo">Hablar con alguien</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="chat-input">
+      <input type="text" id="chat-text" placeholder="Escribe aquí..." autocomplete="off">
+      <button class="ib" id="btn-mic" title="Grabar audio">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v12a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+      </button>
+      <button class="ib" id="btn-send" title="Enviar">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </div>
+
+    <div id="chat-footer">
+      <a href="https://laboteca.es">La Boteca</a> — chatbots a medida
+    </div>
+  </div>
+
+  <audio id="snd" preload="auto">
+    <source src="data:audio/wav;base64,UklGRiYAAABXQVZFZm10IBAAAAABAAEAQB8AAAB9AAACABAAZGF0YQIAAAAAAA==" type="audio/wav">
+  </audio>
+
+  <!-- Reveal animations -->
   <script>
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
@@ -115,108 +180,282 @@ const fullTitle = title === 'Inicio' ? 'La Boteca — IA a medida para organizac
     document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => io.observe(el));
   </script>
 
-  <!-- Chatwoot SDK: is:inline para garantizar orden (settings → SDK → launcher) -->
+  <!-- Widget Chat JS -->
   <script is:inline>
-    window.chatwootSettings = {
-      hideMessageBubble: true,
-      position: "right",
-      locale: "es",
-      type: "standard"
-    };
+  (function(){
+    var INBOX=1,contactId=null,convId=null,lastMsgId=0,pollTimer=null,chatOpen=false,unread=0,soundOn=true;
+    var AVATAR="/img/animacion-boteca-64.gif";
+    var chat=document.getElementById("chat"),msgs=document.getElementById("chat-messages"),input=document.getElementById("chat-text"),launcherWrap=document.getElementById("launcher-wrap"),launcher=document.getElementById("launcher"),badge=document.getElementById("badge"),snd=document.getElementById("snd"),pill=document.getElementById("expand-pill");
 
-    (function(d,t) {
-      var BASE_URL="https://support.ruiberriz.org";
-      var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-      g.src=BASE_URL+"/packs/js/sdk.js";
-      g.defer=true;
-      g.async=true;
-      s.parentNode.insertBefore(g,s);
-      g.onload=function(){
-        window.chatwootSDK.run({
-          websiteToken: 'Bjp3BSyfrxL6L9ZEmvhJJMyF',
-          baseUrl: BASE_URL
-        })
-      }
-    })(document,"script");
-  </script>
+    var saved=localStorage.getItem("boteca-widget");
+    if(saved){try{var p=JSON.parse(saved);contactId=p.c;convId=p.v;lastMsgId=p.m||0}catch(e){}}
 
+    var statusEl=document.querySelector(".hdr-status");
+    var dotEl=document.querySelector(".hdr-dot");
 
-  <!-- Chatwoot: inyectar contexto (URL + UTM) al cargar -->
-  <script is:inline>
-    window.addEventListener("chatwoot:ready", function() {
-      var params = new URLSearchParams(window.location.search);
-      var attrs = { pagina_origen: window.location.pathname };
-      var utm_keys = ["utm_source", "utm_medium", "utm_campaign", "utm_content"];
-      utm_keys.forEach(function(k) {
-        var v = params.get(k);
-        if (v) attrs[k] = v;
-      });
-      if (window.$chatwoot && window.$chatwoot.setConversationCustomAttribute) {
-        window.$chatwoot.setConversationCustomAttribute(attrs);
-      }
-    });
-  </script>
+    /* --- Business hours (L-V 9:00-19:30 Madrid) --- */
+    function isBusinessHours(){
+      var now=new Date(new Date().toLocaleString("en-US",{timeZone:"Europe/Madrid"}));
+      var day=now.getDay(),h=now.getHours(),m=now.getMinutes();
+      if(day<1||day>5)return false;
+      if(h<9)return false;
+      if(h>19||(h===19&&m>=30))return false;
+      return true;
+    }
 
-  <!-- Launcher: expandir, colapsar al scroll, abrir Chatwoot -->
-  <script is:inline>
-    (function() {
-      var launcher = document.getElementById('boteca-launcher');
-      var expanded = false;
-      var expandTimer = null;
-      var scrollTimer = null;
-      var chatOpen = false;
-
-      function expand() {
-        if (chatOpen) return;
-        launcher.classList.add('is-expanded');
-        expanded = true;
-      }
-
-      function collapse() {
-        launcher.classList.remove('is-expanded');
-        expanded = false;
-      }
-
-      // Expandir tras 4 segundos de carga
-      expandTimer = setTimeout(expand, 4000);
-
-      // Pulso suave inicial
-      launcher.classList.add('is-pulsing');
-
-      // Scroll: colapsar inmediatamente, re-expandir 8s después de parar
-      window.addEventListener('scroll', function() {
-        if (expanded) collapse();
-        clearTimeout(scrollTimer);
-        scrollTimer = setTimeout(function() {
-          if (!chatOpen) expand();
-        }, 8000);
-      }, { passive: true });
-
-      // Click: abrir Chatwoot
-      launcher.addEventListener('click', function() {
-        if (window.$chatwoot) {
-          window.$chatwoot.toggle('open');
-          chatOpen = true;
-          launcher.classList.add('is-hidden');
-          clearTimeout(expandTimer);
-          clearTimeout(scrollTimer);
+    /* --- Agent status --- */
+    function updateStatus(){
+      var open=isBusinessHours();
+      fetch("/chatwoot-api/agents",{headers:{"Content-Type":"application/json"}})
+      .then(function(r){return r.json()})
+      .then(function(agents){
+        var online=[];
+        if(Array.isArray(agents)){
+          for(var i=0;i<agents.length;i++){
+            if(agents[i].availability_status==="online"){
+              online.push(agents[i].name||agents[i].available_name||"Agente");
+            }
+          }
+        }
+        if(open&&online.length>0){
+          dotEl.className="hdr-dot";
+          statusEl.textContent=online.join(" y ")+(online.length===1?" disponible":" disponibles");
+        }else if(open){
+          dotEl.className="hdr-dot away";
+          statusEl.textContent="En horario — solo bot";
+        }else{
+          dotEl.className="hdr-dot offline";
+          statusEl.textContent="Fuera de horario — solo bot";
+        }
+      })
+      .catch(function(){
+        if(open){
+          dotEl.className="hdr-dot";
+          statusEl.textContent="En línea";
+        }else{
+          dotEl.className="hdr-dot offline";
+          statusEl.textContent="Fuera de horario";
         }
       });
+    }
+    updateStatus();
+    setInterval(updateStatus,60000);
 
-      // Chatwoot cerrado: mostrar launcher de nuevo
-      window.addEventListener('chatwoot:closed', function() {
-        chatOpen = false;
-        launcher.classList.remove('is-hidden');
-        collapse();
-        scrollTimer = setTimeout(expand, 4000);
-      });
+    /* --- API helper --- */
+    function api(method,path,body){
+      var o={method:method,headers:{"Content-Type":"application/json"}};
+      if(body)o.body=JSON.stringify(body);
+      return fetch("/chatwoot-api/"+path,o).then(function(r){return r.json()});
+    }
 
-      // Chatwoot abierto externamente
-      window.addEventListener('chatwoot:opened', function() {
-        chatOpen = true;
-        launcher.classList.add('is-hidden');
+    function persist(){
+      localStorage.setItem("boteca-widget",JSON.stringify({c:contactId,v:convId,m:lastMsgId}));
+    }
+
+    /* --- Ensure conversation exists + custom attributes --- */
+    function ensureConv(){
+      if(convId)return Promise.resolve();
+      var uid="boteca-"+Math.random().toString(36).substring(2,10);
+      return api("POST","contacts",{name:"Visitante Web",identifier:uid})
+      .then(function(d){contactId=d.payload.contact.id;return api("POST","conversations",{inbox_id:INBOX,contact_id:contactId,status:"pending"})})
+      .then(function(d){
+        convId=d.id;persist();
+        /* Custom attributes: página + UTM */
+        var params=new URLSearchParams(window.location.search);
+        var attrs={pagina_origen:window.location.pathname};
+        ["utm_source","utm_medium","utm_campaign","utm_content"].forEach(function(k){
+          var v=params.get(k);if(v)attrs[k]=v;
+        });
+        api("POST","conversations/"+convId+"/custom_attributes",attrs);
       });
-    })();
+    }
+
+    function timeStr(){
+      var d=new Date();
+      return d.getHours()+":"+(d.getMinutes()<10?"0":"")+d.getMinutes();
+    }
+
+    /* --- Markdown ligero --- */
+    function renderMd(text){
+      text=text.replace(/\*\*(.+?)\*\*/g,"<strong>$1</strong>");
+      text=text.replace(/`([^`]+)`/g,"<code>$1</code>");
+      text=text.replace(/\[([^\]]+)\]\(([^)]+)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>');
+      text=text.replace(/(^|[^"=])(https?:\/\/[^\s<]+)/g,'$1<a href="$2" target="_blank" rel="noopener">$2</a>');
+      text=text.replace(/^[\-\*] (.+)$/gm,"<li>$1</li>");
+      text=text.replace(/^\d+\. (.+)$/gm,"<li>$1</li>");
+      if(text.indexOf("<li>")>-1)text=text.replace(/((?:<li>.*?<\/li>\s*)+)/gs,"<ul>$1</ul>");
+      text=text.replace(/\n/g,"<br>");
+      return text;
+    }
+
+    /* --- Mensajes --- */
+    function addMsg(text,type,extra){
+      var w=msgs.querySelector(".welcome");if(w)w.remove();
+      var row=document.createElement("div");row.className="msg-row "+type;
+      if(type==="bot"&&extra!=="typing"){
+        var av=document.createElement("span");av.className="msg-avatar";av.innerHTML='<img src="'+AVATAR+'" alt="">';row.appendChild(av);
+      }
+      var d=document.createElement("div");d.className="msg "+type+(extra?" "+extra:"");
+      if(type==="bot"&&extra!=="typing"){
+        d.innerHTML=renderMd(text)+"<span class='time'>"+timeStr()+"</span>";
+      }else if(extra==="typing"){
+        d.innerHTML="<span></span><span></span><span></span>";
+        var av2=document.createElement("span");av2.className="msg-avatar";av2.innerHTML='<img src="'+AVATAR+'" alt="">';row.appendChild(av2);
+      }else{
+        d.textContent=text;
+        var t=document.createElement("span");t.className="time";t.textContent=timeStr();d.appendChild(t);
+      }
+      row.appendChild(d);msgs.appendChild(row);msgs.scrollTop=msgs.scrollHeight;return d;
+    }
+
+    function rmTyping(){
+      var t=msgs.querySelector(".typing");if(t)t.closest(".msg-row").remove();
+    }
+
+    function notify(){
+      if(!chatOpen){
+        unread++;badge.textContent=unread;badge.classList.add("show");
+        if(soundOn){try{snd.currentTime=0;snd.play().catch(function(){})}catch(e){}}
+      }
+    }
+
+    /* --- Envío --- */
+    function send(text,isVoice){
+      if(!text.trim())return;
+      addMsg(text,"user",isVoice?"voice":"");input.value="";
+      ensureConv().then(function(){
+        return api("POST","conversations/"+convId+"/messages",{content:text,message_type:0});
+      }).then(function(m){
+        lastMsgId=Math.max(lastMsgId,m.id);persist();
+        addMsg("","bot","typing");waitReply(m.id);
+      }).catch(function(){rmTyping();addMsg("Error al conectar.","bot")});
+    }
+
+    function waitReply(afterId){
+      var n=0;if(pollTimer)clearInterval(pollTimer);
+      pollTimer=setInterval(function(){
+        n++;if(n>20){clearInterval(pollTimer);pollTimer=null;rmTyping();addMsg("Sin respuesta del bot.","bot");return;}
+        api("GET","conversations/"+convId+"/messages").then(function(d){
+          var l=d.payload||[];
+          for(var i=0;i<l.length;i++){
+            if(l[i].id>afterId&&l[i].message_type===1&&l[i].content){
+              clearInterval(pollTimer);pollTimer=null;rmTyping();
+              addMsg(l[i].content,"bot");lastMsgId=Math.max(lastMsgId,l[i].id);persist();notify();return;
+            }
+          }
+        });
+      },2000);
+    }
+
+    /* --- Launcher expand pill --- */
+    setTimeout(function(){pill.classList.add("show")},3000);
+
+    function openChat(){
+      chat.classList.add("open");launcherWrap.classList.add("hidden");chatOpen=true;unread=0;badge.classList.remove("show");pill.classList.remove("show");input.focus();
+    }
+
+    function closeChat(){
+      chat.classList.remove("open");launcherWrap.classList.remove("hidden");chatOpen=false;
+    }
+
+    launcher.addEventListener("click",openChat);
+    pill.addEventListener("click",openChat);
+    document.getElementById("chat-close").addEventListener("click",closeChat);
+    document.addEventListener("keydown",function(e){if(e.key==="Escape"&&chatOpen)closeChat()});
+
+    /* --- Sound toggle --- */
+    document.getElementById("btn-sound").addEventListener("click",function(){
+      soundOn=!soundOn;this.innerHTML=soundOn?'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>':'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>';
+    });
+
+    /* --- New conversation --- */
+    document.getElementById("btn-new").addEventListener("click",function(){
+      localStorage.removeItem("boteca-widget");contactId=null;convId=null;lastMsgId=0;
+      msgs.innerHTML='<div class="welcome"><div class="wicon"><img src="'+AVATAR+'" alt="La Boteca" style="width:48px;height:48px;border-radius:50%"></div><p>Soy el bot de La Boteca.<br>Pregúntame sobre chatbots para tu negocio.</p><div class="quick-btns"><span class="qb" data-q="Que haceis?">Qué hacéis?</span><span class="qb" data-q="Cuanto cuesta un bot?">Precios</span><span class="qb" data-q="Que incluye un bot?">Qué incluye</span><span class="qb" data-q="Quiero hablar con el equipo">Hablar con alguien</span></div></div>';
+      bindQuickBtns();
+    });
+
+    /* --- Send button + Enter --- */
+    document.getElementById("btn-send").addEventListener("click",function(){send(input.value)});
+    input.addEventListener("keydown",function(e){if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();send(input.value)}});
+
+    function bindQuickBtns(){
+      document.querySelectorAll(".qb").forEach(function(b){
+        b.addEventListener("click",function(){send(this.getAttribute("data-q"))});
+      });
+    }
+    bindQuickBtns();
+
+    /* --- Speech-to-text --- */
+    var SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+    if(!SR){
+      document.getElementById("btn-mic").style.display="none";
+    }else{
+      var mic=document.getElementById("btn-mic"),rec=new SR(),on=false,ft="";
+      rec.lang="es-ES";rec.continuous=false;rec.interimResults=true;
+      mic.addEventListener("click",function(){
+        if(on){rec.stop();return;}
+        if(!chatOpen)openChat();
+        ft="";input.value="";input.placeholder="Escuchando...";
+        rec.start();on=true;mic.classList.add("recording");
+      });
+      rec.onresult=function(e){
+        var t="";
+        for(var i=e.resultIndex;i<e.results.length;i++){
+          if(e.results[i].isFinal)ft+=e.results[i][0].transcript;
+          else t+=e.results[i][0].transcript;
+        }
+        input.value=ft+t;
+      };
+      rec.onend=function(){
+        on=false;mic.classList.remove("recording");input.placeholder="Escribe aquí...";
+        var t=(ft||input.value).trim();if(t)send(t,true);
+      };
+      rec.onerror=function(e){
+        on=false;mic.classList.remove("recording");
+        input.placeholder=e.error==="not-allowed"?"Micrófono denegado":"Error: "+e.error;
+        setTimeout(function(){input.placeholder="Escribe aquí..."},2500);
+      };
+    }
+
+    /* --- Campaigns (mensajes proactivos por página) --- */
+    var campaigns={
+      "/precios/":{delay:10000,msg:"¿Tienes dudas sobre los precios? Pregúntame lo que quieras."},
+      "/formulas/":{delay:8000,msg:"¿Quieres saber más sobre nuestras fórmulas?"},
+      "/comparativa/":{delay:12000,msg:"¿Necesitas ayuda para comparar opciones?"}
+    };
+    var path=window.location.pathname;
+    Object.keys(campaigns).forEach(function(p){
+      if(path.indexOf(p)===0&&!chatOpen){
+        setTimeout(function(){
+          if(!chatOpen){
+            addMsg(campaigns[p].msg,"bot");
+            notify();
+          }
+        },campaigns[p].delay);
+      }
+    });
+
+    /* --- Restore messages from existing conversation --- */
+    if(convId){
+      api("GET","conversations/"+convId+"/messages").then(function(d){
+        var l=d.payload||[];l.sort(function(a,b){return a.id-b.id});
+        var w=msgs.querySelector(".welcome");if(l.length>0&&w)w.remove();
+        for(var i=0;i<l.length;i++){
+          if(l[i].content){
+            var type=l[i].message_type===1?"bot":"user";
+            var row=document.createElement("div");row.className="msg-row "+type;
+            if(type==="bot"){var av=document.createElement("span");av.className="msg-avatar";av.innerHTML='<img src="'+AVATAR+'" alt="">';row.appendChild(av)}
+            var div=document.createElement("div");div.className="msg "+type;
+            if(type==="bot"){div.innerHTML=renderMd(l[i].content)}else{div.textContent=l[i].content}
+            row.appendChild(div);msgs.appendChild(row);
+            lastMsgId=Math.max(lastMsgId,l[i].id);
+          }
+        }
+        msgs.scrollTop=msgs.scrollHeight;persist();
+      }).catch(function(){});
+    }
+  })();
   </script>
 </body>
 </html>
