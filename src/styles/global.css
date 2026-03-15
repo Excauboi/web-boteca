@@ -543,9 +543,14 @@ img {
 .welcome .qb:hover{border-color:var(--color-primary);background:var(--color-primary);color:#fff}
 
 /* --- Mobile --- */
-@media(max-width:420px){
-  #chat{width:calc(100vw - 16px);right:8px;bottom:8px;height:calc(100vh - 16px);border-radius:12px}
+@media(max-width:480px){
+  #chat{position:fixed;top:8px;bottom:8px;left:8px;right:8px;width:auto;height:auto;border-radius:12px}
   #launcher-wrap{bottom:12px;right:12px}
+}
+@supports(height:100dvh){
+  @media(max-width:480px){
+    #chat{top:env(safe-area-inset-top,8px);bottom:env(safe-area-inset-bottom,8px)}
+  }
 }
 
 @media (max-width: 768px) {
