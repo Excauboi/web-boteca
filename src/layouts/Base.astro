@@ -372,7 +372,7 @@ const fullTitle = title === 'Inicio' ? 'La Boteca — IA a medida para organizac
         api("GET","conversations/"+convId+"/messages").then(function(d){
           var l=d.payload||[],newMsgs=[];
           for(var i=0;i<l.length;i++){
-            if(l[i].id>lastMsgId&&l[i].message_type===1&&l[i].content){
+            if(l[i].id>lastMsgId&&(l[i].message_type===1||l[i].message_type===3)&&l[i].content){
               newMsgs.push(l[i]);
             }
           }
@@ -486,7 +486,7 @@ const fullTitle = title === 'Inicio' ? 'La Boteca — IA a medida para organizac
         var w=msgs.querySelector(".welcome");if(l.length>0&&w)w.remove();
         for(var i=0;i<l.length;i++){
           if(l[i].content){
-            var type=l[i].message_type===1?"bot":"user";
+            var type=(l[i].message_type===1||l[i].message_type===3)?"bot":"user";
             var row=document.createElement("div");row.className="msg-row "+type;
             if(type==="bot"){var av=document.createElement("span");av.className="msg-avatar";av.innerHTML='<img src="'+AVATAR+'" alt="">';row.appendChild(av)}
             var div=document.createElement("div");div.className="msg "+type;
@@ -504,7 +504,7 @@ const fullTitle = title === 'Inicio' ? 'La Boteca — IA a medida para organizac
       api("GET","conversations/"+convId+"/messages").then(function(d){
         var l=d.payload||[],newMsgs=[];
         for(var i=0;i<l.length;i++){
-          if(l[i].id>lastMsgId&&l[i].message_type===1&&l[i].content){
+          if(l[i].id>lastMsgId&&(l[i].message_type===1||l[i].message_type===3)&&l[i].content){
             newMsgs.push(l[i]);
           }
         }
