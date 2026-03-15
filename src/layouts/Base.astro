@@ -253,20 +253,39 @@ const fullTitle = title === 'Inicio' ? 'La Boteca — IA a medida para organizac
     }
 
     /* --- Ensure conversation exists + custom attributes --- */
-    function ensureConv(){
-      if(convId)return Promise.resolve();
+    function resetConv(){
+      convId=null;contactId=null;lastMsgId=0;
+      localStorage.removeItem("boteca-widget");
+    }
+
+    function createConv(){
       var uid="boteca-"+Math.random().toString(36).substring(2,10);
       return api("POST","contacts",{name:"Visitante Web",identifier:uid})
       .then(function(d){contactId=d.payload.contact.id;return api("POST","conversations",{inbox_id:INBOX,contact_id:contactId,status:"pending"})})
       .then(function(d){
         convId=d.id;persist();
-        /* Custom attributes: página + UTM */
         var params=new URLSearchParams(window.location.search);
         var attrs={pagina_origen:window.location.pathname};
         ["utm_source","utm_medium","utm_campaign","utm_content"].forEach(function(k){
           var v=params.get(k);if(v)attrs[k]=v;
         });
         api("POST","conversations/"+convId+"/custom_attributes",attrs);
+      });
+    }
+
+    function ensureConv(){
+      if(!convId)return createConv();
+      /* Check if existing conversation is still active */
+      return api("GET","conversations/"+convId).then(function(d){
+        var st=d.status||d.payload&&d.payload.status;
+        if(st==="resolved"||st===2){
+          resetConv();
+          return createConv();
+        }
+      }).catch(function(){
+        /* Conversation not found or API error — start fresh */
+        resetConv();
+        return createConv();
       });
     }
 
@@ -335,7 +354,21 @@ const fullTitle = title === 'Inicio' ? 'La Boteca — IA a medida para organizac
       var n=0,found=false;if(pollTimer)clearInterval(pollTimer);
       pollTimer=setInterval(function(){
         n++;
-        if(n>25){clearInterval(pollTimer);pollTimer=null;rmTyping();if(!found)addMsg("Sin respuesta del bot.","bot");return;}
+        if(n>25){
+          clearInterval(pollTimer);pollTimer=null;rmTyping();
+          if(!found){
+            /* Check if conversation was assigned to human (HITL) */
+            api("GET","conversations/"+convId).then(function(d){
+              var st=d.status||d.payload&&d.payload.status;
+              if(st==="resolved"||st===2){
+                addMsg("Conversación cerrada. Escribe de nuevo para empezar.","bot");
+                resetConv();
+              }else{
+                addMsg("El equipo ha recibido tu mensaje. Te responderán pronto.","bot");
+              }
+            }).catch(function(){addMsg("Sin respuesta del bot.","bot");});
+          }
+          return;}
         api("GET","conversations/"+convId+"/messages").then(function(d){
           var l=d.payload||[],newMsgs=[];
           for(var i=0;i<l.length;i++){
@@ -380,7 +413,7 @@ const fullTitle = title === 'Inicio' ? 'La Boteca — IA a medida para organizac
 
     /* --- New conversation --- */
     document.getElementById("btn-new").addEventListener("click",function(){
-      localStorage.removeItem("boteca-widget");contactId=null;convId=null;lastMsgId=0;
+      resetConv();
       msgs.innerHTML='<div class="welcome"><div class="wicon"><img src="'+AVATAR+'" alt="La Boteca" style="width:48px;height:48px;border-radius:50%"></div><p>Soy el bot de La Boteca.<br>Pregúntame sobre chatbots para tu negocio.</p><div class="quick-btns"><span class="qb" data-q="Que haceis?">Qué hacéis?</span><span class="qb" data-q="Cuanto cuesta un bot?">Precios</span><span class="qb" data-q="Que incluye un bot?">Qué incluye</span><span class="qb" data-q="Quiero hablar con el equipo">Hablar con alguien</span></div></div>';
       bindQuickBtns();
     });
