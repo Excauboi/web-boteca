@@ -1,81 +1,89 @@
 ---
-import Base from '../../layouts/Base.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import { formulas, categorias } from '../../data/formulas.js';
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+
+const pageTitle = "Fórmulas";
+const pageDesc = "Tres fórmulas para tres problemas distintos. El sector, el tono y el alcance los decidimos contigo.";
 ---
 
-<Base title="Fórmulas" description="Catálogo de chatbots de La Boteca: fórmulas magistrales por sector y necesidad.">
+<Base title={pageTitle} description={pageDesc}>
   <Header slot="header" />
 
   <section class="page-header">
     <div class="container">
-      <h1>El vademécum de La Boteca</h1>
-      <p>Recetas probadas que adaptamos a tu medida. Cada fórmula es un punto de partida, no un producto de estantería.</p>
+      <h1>Tres fórmulas</h1>
+      <p>Cada negocio tiene su fórmula. Nosotros tenemos tres puntos de partida.<br/>Lo que cambia es el contexto — y eso lo decidimos contigo.</p>
     </div>
   </section>
 
   <div class="page-content">
-    <div class="container">
+    <div class="container formulas-container">
 
-      {categorias.map(cat => {
-        const items = formulas.filter(f => f.categoria === cat.id);
-        if (items.length === 0) return null;
-        return (
-          <section class="section">
-            <h2>{cat.label}</h2>
-            <div class="cards reveal-stagger">
-              {items.map(f => {
-                const badgeClass = f.badge === 'auto' ? 'badge--auto' : 'badge--maint';
-                const badgeText = f.badge === 'auto' ? '🔓 Autogestionable' : '🔧 Mantenimiento recomendado';
-                return (
-                  <article class="card">
-                    <a href={`/formulas/${f.slug}/`} class="card-link">
-                      <h3>{f.emoji} {f.nombre}</h3>
-                    </a>
-                    <p class="card__subtitle">{f.subtitulo}</p>
-                    <span class={`badge ${badgeClass}`}>{badgeText}</span>
-                    <ul>
-                      {f.features.map(feat => <li>✓ {feat}</li>)}
-                    </ul>
-                    <div class="card__meta">
-                      <span><strong>Canal:</strong> {f.canal}</span>
-                      <span><strong>Plazo:</strong> {f.plazo}</span>
-                      <span><strong>Setup:</strong> {f.precioDesde}</span>
-                    </div>
-                    <a href={`/formulas/${f.slug}/`} class="btn btn--primary btn--sm">Ver detalle</a>
-                  </article>
-                );
-              })}
-            </div>
-          </section>
-        );
-      })}
-
-      <section class="section">
-        <div class="highlight highlight--tip">
-          <h3>Tipos de fórmula</h3>
-          <ul class="legend-list">
-            <li>
-              <span class="badge badge--auto">🔓 Autogestionable</span>
-              <p>Te entregamos el bot funcionando y puedes gestionarlo tú. Mantenimiento opcional.</p>
-            </li>
-            <li>
-              <span class="badge badge--maint">🔧 Mantenimiento recomendado</span>
-              <p>Bot más complejo, evoluciona con tu negocio. Recomendamos tratamiento continuado.</p>
-            </li>
-          </ul>
+      <!-- Remedio -->
+      <section class="formula">
+        <div class="formula__header">
+          <h2>Remedio</h2>
+          <span class="formula__precio">900 &euro;</span>
         </div>
+        <p class="formula__problema">Tu equipo responde las mismas preguntas una y otra vez. Horarios, precios, cómo llegar, qué incluye el servicio.</p>
+        <p class="formula__solucion">El Remedio absorbe tu documentación y responde por ti. Cuando no sabe, pasa a tu equipo. Tú lo gestionas.</p>
+        <ul class="formula__lista">
+          <li>Responde 20-50 preguntas frecuentes</li>
+          <li>Aprende de tu documentación real</li>
+          <li>Deriva a humano cuando no sabe</li>
+          <li>Web o WhatsApp &middot; 2-3 semanas</li>
+          <li>Te lo entregamos funcionando. El mantenimiento es opcional.</li>
+        </ul>
+      </section>
+
+      <!-- Tónico -->
+      <section class="formula">
+        <div class="formula__header">
+          <h2>Tónico</h2>
+          <span class="formula__precio">2.500 &euro;</span>
+        </div>
+        <p class="formula__problema">Llegan personas a tu web, preguntan, y se van sin dejar rastro. O peor: llegan fuera de horario y no hay nadie. O hay procesos que tu equipo repite a mano cada día.</p>
+        <p class="formula__solucion">El Tónico responde, pero también actúa. Identifica quién necesita qué, recoge datos, filtra por urgencia o presupuesto, y avisa a tu equipo con contexto. Si hay procesos repetitivos, los automatiza.</p>
+        <ul class="formula__lista">
+          <li>Captación y cualificación de contactos</li>
+          <li>Automatización de procesos repetitivos</li>
+          <li>Integración con tu CRM, email o calendario</li>
+          <li>Web o WhatsApp &middot; 3-6 semanas</li>
+        </ul>
+      </section>
+
+      <!-- Preparado -->
+      <section class="formula">
+        <div class="formula__header">
+          <h2>Preparado</h2>
+          <span class="formula__precio">5.000 &euro;</span>
+        </div>
+        <p class="formula__problema">Tus datos no pueden salir de tu infraestructura. O el volumen justifica un despliegue dedicado. O necesitas un SLA.</p>
+        <p class="formula__solucion">El Preparado se instala en tu servidor, usa los modelos que tú elijas, y no envía datos a terceros.</p>
+        <ul class="formula__lista">
+          <li>Despliegue en tu infraestructura</li>
+          <li>Modelos open-source o comerciales, a tu elección</li>
+          <li>RGPD reforzado, multicanal, SLA</li>
+          <li>8-12 semanas</li>
+        </ul>
+      </section>
+
+      <!-- Cierre -->
+      <section class="formula-cierre">
+        <p>Mantenimiento desde 190 &euro;/mes. Primera evaluación gratuita (1 hora).<br/>Todo lo que construimos es tuyo: código, datos, documentación.</p>
+        <p class="formula-cierre__link"><a href="/precios/">Ver precios detallados &rarr;</a></p>
       </section>
 
     </div>
   </div>
 
-  <section class="cta-section cta-section--dark reveal">
+  <!-- CTA -->
+  <section class="cta-section cta-section--dark">
     <div class="container">
-      <h2>¿No encaja ninguna?</h2>
-      <p>Preparamos fórmula a medida. Cuéntanos tu caso y diseñamos algo que funcione para ti.</p>
-      <a href="/contacto" class="btn btn--primary btn--lg">Contactar</a>
+      <h2>&iquest;No estás seguro de cuál necesitas?</h2>
+      <p>Normal. Hablamos, miramos tu caso, y te decimos cuál encaja. O si no necesitas ninguna.</p>
+      <a href="/contacto/" class="btn btn--primary btn--lg">Contactar</a>
     </div>
   </section>
 
@@ -83,64 +91,137 @@ import { formulas, categorias } from '../../data/formulas.js';
 </Base>
 
 <style>
-  .card__subtitle {
-    font-size: 0.9rem;
-    color: var(--color-text-secondary);
-    font-style: italic;
-    margin-bottom: var(--space-sm);
+  .formulas-container {
+    max-width: 720px;
   }
-  .btn--sm { padding: 0.5rem 1.25rem; font-size: 0.85rem; }
-  .btn--lg { padding: 1rem 2.5rem; font-size: 1.1rem; }
-  .card .btn { margin-top: var(--space-sm); }
-  .card__meta {
+
+  /* Each formula block */
+  .formula {
+    padding: var(--space-2xl) 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .formula:last-of-type {
+    border-bottom: none;
+  }
+
+  .formula__header {
     display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-sm) var(--space-md);
+    align-items: baseline;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-lg);
   }
-  .card__meta span {
-    font-size: 0.85rem;
+
+  .formula__header h2 {
+    margin-bottom: 0;
+    font-size: 2rem;
+  }
+
+  .formula__precio {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    white-space: nowrap;
+  }
+
+  .formula__problema {
+    font-size: 1.05rem;
+    line-height: 1.7;
     color: var(--color-text-secondary);
-    background: var(--color-bg-alt);
-    padding: var(--space-xs) var(--space-sm);
-    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-md);
   }
-  .card-link {
-    text-decoration: none;
-    color: inherit;
+
+  .formula__solucion {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--color-text);
+    margin-bottom: var(--space-lg);
   }
-  .card-link:hover h3 { color: var(--color-primary); }
-  .legend-list {
+
+  .formula__lista {
     list-style: none;
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: var(--space-md);
+    gap: var(--space-sm);
   }
-  .legend-list li {
-    display: flex;
-    align-items: center;
-    gap: var(--space-md);
-  }
-  .legend-list li p {
-    margin-bottom: 0;
-    font-size: 0.9rem;
+
+  .formula__lista li {
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 0.95rem;
+    line-height: 1.6;
     color: var(--color-text-secondary);
   }
-  .legend-list .badge { flex-shrink: 0; }
+
+  .formula__lista li::before {
+    content: "\2014";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  /* Cierre */
+  .formula-cierre {
+    padding: var(--space-xl) 0;
+  }
+
+  .formula-cierre p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+  }
+
+  .formula-cierre__link {
+    margin-top: var(--space-md);
+  }
+
+  .formula-cierre__link a {
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  .formula-cierre__link a:hover {
+    color: var(--color-primary-dark);
+  }
+
+  /* CTA */
   .cta-section--dark {
     background: var(--color-bg-dark);
     padding: var(--space-2xl) 0;
+    text-align: center;
   }
-  .cta-section--dark h2 { color: var(--color-bg); }
+
+  .cta-section--dark h2 {
+    color: var(--color-bg);
+    margin-bottom: var(--space-sm);
+  }
+
   .cta-section--dark p {
-    color: rgba(255,255,255,0.7);
-    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
     max-width: 500px;
+    margin: 0 auto var(--space-lg);
   }
-  @media (max-width: 768px) {
-    .legend-list li {
+
+  .btn--lg {
+    padding: 1rem 2.5rem;
+    font-size: 1.05rem;
+  }
+
+  @media (max-width: 600px) {
+    .formula__header {
       flex-direction: column;
-      align-items: flex-start;
+      gap: var(--space-xs);
+    }
+
+    .formula__header h2 {
+      font-size: 1.5rem;
+    }
+
+    .formula__precio {
+      font-size: 1.25rem;
     }
   }
 </style>
