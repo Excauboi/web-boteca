@@ -28,6 +28,13 @@ import Footer from '../components/Footer.astro';
 
   <!-- Hero -->
   <section class="rx-hero">
+    <!-- Círculos entrelazados (motivo Spiritualized) -->
+    <svg class="rx-circles" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="280" cy="200" r="140" fill="none" stroke="#8fa3ba" stroke-width="1" opacity="0.12" />
+      <circle cx="400" cy="180" r="180" fill="none" stroke="#8fa3ba" stroke-width="1" opacity="0.08" />
+      <circle cx="520" cy="220" r="120" fill="none" stroke="#8fa3ba" stroke-width="1.5" opacity="0.10" />
+      <circle cx="360" cy="250" r="90" fill="none" stroke="#8fa3ba" stroke-width="1" opacity="0.06" />
+    </svg>
     <div class="container rx-hero__inner">
       <p class="rx-hero__lab">Del laboratorio de La Boteca</p>
       <h1>Prospecto</h1>
@@ -40,6 +47,8 @@ import Footer from '../components/Footer.astro';
       </div>
     </div>
   </section>
+
+  <div class="rx-cross-separator" aria-hidden="true"><span>+</span></div>
 
   <!-- 1. Indicaciones -->
   <section class="rx-section">
@@ -124,6 +133,8 @@ import Footer from '../components/Footer.astro';
     </div>
   </section>
 
+  <div class="rx-cross-separator" aria-hidden="true"><span>+</span></div>
+
   <!-- 5. Precio -->
   <section class="rx-section">
     <div class="container">
@@ -169,32 +180,37 @@ import Footer from '../components/Footer.astro';
     <div class="container">
       <h2 class="rx-heading">6. &Aacute;mbito terap&eacute;utico</h2>
       <p class="rx-sectors-intro">7 sectores nacionales</p>
-      <div class="rx-blister">
-        <span class="rx-pill">Audiovisual</span>
-        <span class="rx-pill">Turismo</span>
-        <span class="rx-pill">Cooperaci&oacute;n</span>
-        <span class="rx-pill">Cultura</span>
-        <span class="rx-pill">Formaci&oacute;n</span>
-        <span class="rx-pill">Empleo</span>
-        <span class="rx-pill">Econom&iacute;a Social</span>
+      <div class="rx-blister-grid">
+        <span class="rx-blister-cell">Audiovisual</span>
+        <span class="rx-blister-cell">Turismo</span>
+        <span class="rx-blister-cell">Cooperaci&oacute;n</span>
+        <span class="rx-blister-cell">Cultura</span>
+        <span class="rx-blister-cell">Formaci&oacute;n</span>
+        <span class="rx-blister-cell">Empleo</span>
+        <span class="rx-blister-cell">Econom&iacute;a Social</span>
       </div>
       <p class="rx-sectors-intro">9 programas europeos</p>
-      <div class="rx-blister">
-        <span class="rx-pill rx-pill--eu">Horizon Europe</span>
-        <span class="rx-pill rx-pill--eu">CERV</span>
-        <span class="rx-pill rx-pill--eu">Erasmus+</span>
-        <span class="rx-pill rx-pill--eu">ESF+</span>
-        <span class="rx-pill rx-pill--eu">FEDER</span>
-        <span class="rx-pill rx-pill--eu">Interreg</span>
-        <span class="rx-pill rx-pill--eu">NDICI</span>
-        <span class="rx-pill rx-pill--eu">LIFE</span>
-        <span class="rx-pill rx-pill--eu">Creative Europe</span>
+      <div class="rx-blister-grid rx-blister-grid--eu">
+        <span class="rx-blister-cell rx-blister-cell--eu">Horizon Europe</span>
+        <span class="rx-blister-cell rx-blister-cell--eu">CERV</span>
+        <span class="rx-blister-cell rx-blister-cell--eu">Erasmus+</span>
+        <span class="rx-blister-cell rx-blister-cell--eu">ESF+</span>
+        <span class="rx-blister-cell rx-blister-cell--eu">FEDER</span>
+        <span class="rx-blister-cell rx-blister-cell--eu">Interreg</span>
+        <span class="rx-blister-cell rx-blister-cell--eu">NDICI</span>
+        <span class="rx-blister-cell rx-blister-cell--eu">LIFE</span>
+        <span class="rx-blister-cell rx-blister-cell--eu">Creative Europe</span>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
   <section class="rx-cta">
+    <svg class="rx-circles rx-circles--cta" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="650" cy="150" r="160" fill="none" stroke="#8fa3ba" stroke-width="1" opacity="0.08" />
+      <circle cx="150" cy="180" r="120" fill="none" stroke="#8fa3ba" stroke-width="1" opacity="0.06" />
+      <circle cx="720" cy="80" r="80" fill="none" stroke="#8fa3ba" stroke-width="1.5" opacity="0.10" />
+    </svg>
     <div class="container container--narrow rx-cta__inner">
       <h2>&iquest;Gestionas financiaci&oacute;n p&uacute;blica?</h2>
       <p>Acceso anticipado abierto. Te ense&ntilde;amos el sistema en 30 minutos, sin presentaci&oacute;n.</p>
@@ -224,6 +240,37 @@ import Footer from '../components/Footer.astro';
     --rx-rule: #8fa3ba;
   }
 
+  /* ---- Circles motif (Spiritualized cover) ---- */
+  .rx-circles {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .rx-circles--cta {
+    height: 100%;
+  }
+
+  /* ---- Cross separator (+) ---- */
+  .rx-cross-separator {
+    text-align: center;
+    padding: var(--space-md) 0;
+    line-height: 1;
+  }
+
+  .rx-cross-separator span {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: var(--rx-border);
+    letter-spacing: 0;
+  }
+
   /* ---- Hero: pure typography, Farrow-style ---- */
   .rx-hero {
     padding: var(--space-2xl) 0;
@@ -231,11 +278,15 @@ import Footer from '../components/Footer.astro';
     color: var(--rx-white);
     border-bottom: 3px solid var(--rx-rule);
     text-align: center;
+    position: relative;
+    overflow: hidden;
   }
 
   .rx-hero__inner {
     max-width: 680px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
   }
 
   .rx-hero__lab {
@@ -515,7 +566,7 @@ import Footer from '../components/Footer.astro';
     color: var(--rx-text-secondary);
   }
 
-  /* ---- Ámbito terapéutico (pills) ---- */
+  /* ---- Ámbito terapéutico (blister grid) ---- */
   .rx-sectors-intro {
     font-size: 0.75rem;
     font-weight: 600;
@@ -525,28 +576,38 @@ import Footer from '../components/Footer.astro';
     margin-bottom: var(--space-sm) !important;
   }
 
-  .rx-blister {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-xs);
+  .rx-blister-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
     margin-bottom: var(--space-lg);
+    max-width: 600px;
   }
 
-  .rx-pill {
-    display: inline-block;
-    padding: 0.3rem 0.85rem;
-    border-radius: 20px;
-    font-size: 0.78rem;
+  .rx-blister-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem 0.5rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
     font-weight: 500;
+    letter-spacing: 0.02em;
+    text-align: center;
     background: var(--rx-blue);
     color: var(--rx-white);
-    letter-spacing: 0.02em;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.15);
   }
 
-  .rx-pill--eu {
-    background: transparent;
-    border: 1px solid var(--rx-blue);
+  .rx-blister-cell--eu {
+    background: var(--rx-white);
     color: var(--rx-blue);
+    border: 1px solid var(--rx-border);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.06);
+  }
+
+  .rx-blister-grid--eu {
+    grid-template-columns: repeat(5, 1fr);
   }
 
   /* ---- CTA ---- */
@@ -556,6 +617,13 @@ import Footer from '../components/Footer.astro';
     color: var(--rx-white);
     text-align: center;
     border-top: 3px solid var(--rx-rule);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .rx-cta__inner {
+    position: relative;
+    z-index: 1;
   }
 
   .rx-cta h2 {
@@ -574,6 +642,8 @@ import Footer from '../components/Footer.astro';
   @media (max-width: 768px) {
     .rx-hero h1 { font-size: 2.8rem; }
     .rx-indications { grid-template-columns: 1fr; }
-    .rx-blister { justify-content: center; }
+    .rx-blister-grid { grid-template-columns: repeat(2, 1fr); }
+    .rx-blister-grid--eu { grid-template-columns: repeat(3, 1fr); }
+    .rx-circles { display: none; }
   }
 </style>
