@@ -4,14 +4,14 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Base title="Inicio" description="La Boteca — Taller de IA aplicada para organizaciones, empresas y profesionales. Chatbots artesanales en Sevilla.">
+<Base title="Inicio" description="La Boteca — Taller y laboratorio de IA aplicada. Chatbots, herramientas propias y formación para organizaciones y empresas.">
   <Fragment slot="schema">
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "@id": "https://laboteca.es/#localbusiness",
       "name": "La Boteca",
-      "description": "Taller de IA aplicada para organizaciones, empresas y profesionales. Chatbots artesanales a medida en Sevilla.",
+      "description": "Taller y laboratorio de IA aplicada. Investigación, chatbots artesanales y herramientas propias para organizaciones y empresas.",
       "url": "https://laboteca.es",
       "email": "hola@laboteca.es",
       "image": "https://laboteca.es/img/logo-boteca-horizontal.png",
@@ -70,7 +70,7 @@ import Footer from '../components/Footer.astro';
     <div class="container hero__inner">
       <div class="hero__text hero__fade-up">
         <h1>Bots, sistemas y<br />formaci&oacute;n en IA</h1>
-        <p class="hero__subtitle">Cada negocio tiene su f&oacute;rmula.</p>
+        <p class="hero__subtitle">Taller y laboratorio de IA aplicada. Cada negocio tiene su f&oacute;rmula.</p>
         <div class="hero__cta">
           <a href="/contacto" class="btn btn--primary" data-umami-event="cta-hablemos" data-umami-event-page="home-hero">Hablemos</a>
           <a href="/formulas" class="btn btn--outline" data-umami-event="cta-formulas" data-umami-event-page="home-hero">Ver f&oacute;rmulas</a>
@@ -116,6 +116,11 @@ import Footer from '../components/Footer.astro';
           <p>No sabes si necesitas un bot ni por d&oacute;nde empezar. Te ayudamos a ver el mapa.</p>
           <span class="card__action">Ver m&aacute;s &rarr;</span>
         </a>
+        <a href="/blog/" class="card card--link">
+          <h3>Laboratorio</h3>
+          <p>Estudiamos c&oacute;mo falla la IA en organizaciones reales y construimos herramientas que no lo hagan. De aqu&iacute; salen ensayos, productos y las f&oacute;rmulas que aplicamos.</p>
+          <span class="card__action">Qu&eacute; estamos investigando &rarr;</span>
+        </a>
       </div>
     </div>
   </section>
@@ -123,11 +128,11 @@ import Footer from '../components/Footer.astro';
   <!-- Artesanos -->
   <section class="artesanos reveal">
     <div class="container container--narrow">
-      <h2>Artesanos, no una f&aacute;brica</h2>
+      <h2>Artesan&iacute;a con laboratorio</h2>
       <p class="artesanos__intro">Las grandes consultoras tienen oficinas en tres pa&iacute;ses y cientos de clientes. Nosotros somos un taller.</p>
       <ul class="feature-list">
         <li class="feature-item">
-          <strong>3 proyectos de cliente a la vez</strong> &mdash; atenci&oacute;n de boticario, no de supermercado
+          <strong>3 proyectos de cliente a la vez</strong> &mdash; atenci&oacute;n de botica, no de supermercado
         </li>
         <li class="feature-item">
           <strong>Sin intermediarios</strong> &mdash; hablas directamente con quien prepara la f&oacute;rmula
@@ -137,6 +142,9 @@ import Footer from '../components/Footer.astro';
         </li>
         <li class="feature-item">
           <strong>Honestidad radical</strong> &mdash; si no necesitas un bot, te lo decimos
+        </li>
+        <li class="feature-item">
+          <strong>Investigaci&oacute;n propia</strong> &mdash; lo que construimos se basa en lo que estudiamos, no en lo que nos venden
         </li>
       </ul>
       

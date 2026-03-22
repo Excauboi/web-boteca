@@ -1,0 +1,579 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Base title="Prospecto — Copiloto de financiaci&oacute;n p&uacute;blica" description="Prospecto rastrea convocatorias de BDNS y programas europeos, eval&uacute;a tu encaje y te ayuda a formular. 1.200+ convocatorias actualizadas a diario. Un producto del laboratorio de La Boteca.">
+  <Fragment slot="schema">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Prospecto",
+      "description": "Copiloto de financiación pública con IA. Rastrea convocatorias de BDNS y programas europeos, evalúa el encaje de tu organización y te ayuda a formular solicitudes.",
+      "url": "https://laboteca.es/prospecto/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "EUR",
+        "lowPrice": "190",
+        "highPrice": "550",
+        "offerCount": "3"
+      },
+      "creator": { "@id": "https://laboteca.es/#organization" }
+    })} />
+  </Fragment>
+  <Header slot="header" />
+
+  <!-- Hero -->
+  <section class="rx-hero">
+    <div class="container rx-hero__inner">
+      <div class="rx-hero__text">
+        <p class="rx-hero__lab">Del laboratorio de La Boteca</p>
+        <h1>Prospecto</h1>
+        <p class="rx-hero__tagline">Copiloto de financiaci&oacute;n p&uacute;blica</p>
+        <p class="rx-hero__desc">Rastrea convocatorias, eval&uacute;a tu encaje y te ayuda a formular. 1.200+ convocatorias de BDNS y programas europeos, actualizadas a diario.</p>
+        <div class="rx-hero__cta">
+          <a href="/contacto/" class="rx-btn" data-umami-event="prospecto-solicitar-acceso">Solicitar acceso</a>
+        </div>
+      </div>
+      <div class="rx-hero__visual">
+        <img src="/img/fondea-dashboard.webp" alt="Prospecto — Radar de convocatorias de financiaci&oacute;n p&uacute;blica" width="1400" height="900" loading="eager" />
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. Indicaciones -->
+  <section class="rx-section">
+    <div class="container container--narrow">
+      <h2 class="rx-heading">1. Indicaciones</h2>
+      <p>Para organizaciones que gestionan financiaci&oacute;n p&uacute;blica y no quieren depender de quien se la gestione.</p>
+      <div class="rx-indications">
+        <div class="rx-indication">
+          <h3>Miles de convocatorias, poco tiempo</h3>
+          <p>Encontrar la convocatoria adecuada para tu organizaci&oacute;n es un trabajo a jornada completa. Mientras buscas, los plazos se cierran.</p>
+        </div>
+        <div class="rx-indication">
+          <h3>Requisitos opacos</h3>
+          <p>40 p&aacute;ginas de bases para saber si cualificas. Criterios de valoraci&oacute;n que no siempre dicen lo que parecen.</p>
+        </div>
+        <div class="rx-indication">
+          <h3>Formulaci&oacute;n agotadora</h3>
+          <p>Memorias t&eacute;cnicas que nadie quiere escribir y todo el mundo necesita. Presupuestos por partidas. Justificaciones que se repiten.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Composición -->
+  <section class="rx-section rx-section--alt">
+    <div class="container container--narrow">
+      <h2 class="rx-heading">2. Composici&oacute;n</h2>
+      <p class="rx-composition-intro">Cada dosis contiene:</p>
+      <div class="rx-steps">
+        <div class="rx-step">
+          <span class="rx-step__num">I</span>
+          <div>
+            <h3>Datos</h3>
+            <p>1.200+ convocatorias indexadas de BDNS y programas europeos. Actualizaci&oacute;n diaria autom&aacute;tica.</p>
+          </div>
+        </div>
+        <div class="rx-step">
+          <span class="rx-step__num">II</span>
+          <div>
+            <h3>Inteligencia</h3>
+            <p>Scoring de encaje (0-100%). Alertas curadas: lo que importa y lo que hay que vigilar. Cada sector con sus propios criterios.</p>
+          </div>
+        </div>
+        <div class="rx-step">
+          <span class="rx-step__num">III</span>
+          <div>
+            <h3>Acci&oacute;n</h3>
+            <p>Agente de formulaci&oacute;n que te ayuda a redactar la memoria, el presupuesto y la justificaci&oacute;n t&eacute;cnica. Con el contexto de tu organizaci&oacute;n.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Posología -->
+  <section class="rx-section">
+    <div class="container container--narrow">
+      <h2 class="rx-heading">3. Posolog&iacute;a</h2>
+      <ul class="rx-list">
+        <li>Radar de convocatorias filtrado por tu perfil</li>
+        <li>Informe de alineamiento con scoring por criterio</li>
+        <li>Agente de formulaci&oacute;n con contexto de tu organizaci&oacute;n</li>
+        <li>Alertas de nuevas convocatorias por sector</li>
+        <li>Seguimiento y justificaci&oacute;n post-concesi&oacute;n</li>
+        <li>Integraci&oacute;n nativa con tu ERP (Odoo 19)</li>
+        <li>Actualizaci&oacute;n diaria desde BDNS, semanal desde programas europeos</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 4. Advertencias -->
+  <section class="rx-section rx-section--alt">
+    <div class="container container--narrow">
+      <h2 class="rx-heading">4. Advertencias y precauciones</h2>
+      <div class="rx-warnings">
+        <p>Los precios est&aacute;n publicados. Si algo cuesta 350&nbsp;&euro;/mes, lo dice aqu&iacute; abajo.</p>
+        <p>Tus datos viven en tu ERP, no en una plataforma externa. Si ma&ntilde;ana dejas de usarlo, te llevas todo.</p>
+        <p>No hay lista de espera. Hay un sistema que funciona y que te ense&ntilde;amos en 30 minutos.</p>
+        <p>La justificaci&oacute;n post-concesi&oacute;n es parte del producto, no un extra.</p>
+        <p>Pensado en espa&ntilde;ol, con convocatorias espa&ntilde;olas y europeas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Precio -->
+  <section class="rx-section">
+    <div class="container">
+      <h2 class="rx-heading">5. Precio</h2>
+      <div class="rx-table-wrapper">
+        <table class="rx-table">
+          <thead>
+            <tr>
+              <th>F&oacute;rmula</th>
+              <th>Qu&eacute; incluye</th>
+              <th>Setup</th>
+              <th>Mensual</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Remedio</strong></td>
+              <td>1 sector, alertas, scoring b&aacute;sico</td>
+              <td class="rx-price">900 &euro; <span class="rx-iva">1.089 &euro; con IVA</span></td>
+              <td class="rx-price">190 &euro;/mes <span class="rx-iva">229,90 &euro; con IVA</span></td>
+            </tr>
+            <tr>
+              <td><strong>T&oacute;nico</strong></td>
+              <td>Multi-sector, alertas curadas, formulaci&oacute;n</td>
+              <td class="rx-price">2.500 &euro; <span class="rx-iva">3.025 &euro; con IVA</span></td>
+              <td class="rx-price">350 &euro;/mes <span class="rx-iva">423,50 &euro; con IVA</span></td>
+            </tr>
+            <tr>
+              <td><strong>Preparado</strong></td>
+              <td>Todo + acompa&ntilde;amiento + intel completo</td>
+              <td class="rx-price">5.000 &euro; <span class="rx-iva">6.050 &euro; con IVA</span></td>
+              <td class="rx-price">550 &euro;/mes <span class="rx-iva">665,50 &euro; con IVA</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="rx-note">Precios sin IVA. IVA 21% desglosado en factura. Lanzamiento Q2 2026.</p>
+    </div>
+  </section>
+
+  <!-- 6. Ámbito terapéutico -->
+  <section class="rx-section rx-section--alt">
+    <div class="container">
+      <h2 class="rx-heading">6. &Aacute;mbito terap&eacute;utico</h2>
+      <p class="rx-sectors-intro">7 sectores nacionales</p>
+      <div class="rx-blister">
+        <span class="rx-pill">Audiovisual</span>
+        <span class="rx-pill">Turismo</span>
+        <span class="rx-pill">Cooperaci&oacute;n</span>
+        <span class="rx-pill">Cultura</span>
+        <span class="rx-pill">Formaci&oacute;n</span>
+        <span class="rx-pill">Empleo</span>
+        <span class="rx-pill">Econom&iacute;a Social</span>
+      </div>
+      <p class="rx-sectors-intro">9 programas europeos</p>
+      <div class="rx-blister">
+        <span class="rx-pill rx-pill--eu">Horizon Europe</span>
+        <span class="rx-pill rx-pill--eu">CERV</span>
+        <span class="rx-pill rx-pill--eu">Erasmus+</span>
+        <span class="rx-pill rx-pill--eu">ESF+</span>
+        <span class="rx-pill rx-pill--eu">FEDER</span>
+        <span class="rx-pill rx-pill--eu">Interreg</span>
+        <span class="rx-pill rx-pill--eu">NDICI</span>
+        <span class="rx-pill rx-pill--eu">LIFE</span>
+        <span class="rx-pill rx-pill--eu">Creative Europe</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="rx-cta">
+    <div class="container container--narrow rx-cta__inner">
+      <h2>&iquest;Gestionas financiaci&oacute;n p&uacute;blica?</h2>
+      <p>Acceso anticipado abierto. Te ense&ntilde;amos el sistema en 30 minutos, sin presentaci&oacute;n.</p>
+      <a href="/contacto/" class="rx-btn rx-btn--lg" data-umami-event="prospecto-solicitar-demo">Solicitar acceso</a>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Base>
+
+<style>
+  /* ========================================
+     PROSPECTO — Pharmaceutical aesthetic
+     Spiritualized x La Boteca
+     Palette: pharmaceutical blue + white
+     ======================================== */
+
+  :root {
+    --rx-blue: #1a3a5c;
+    --rx-blue-light: #2c5282;
+    --rx-blue-pale: #e8eef5;
+    --rx-blue-dark: #0f2440;
+    --rx-white: #ffffff;
+    --rx-border: #c5d1de;
+    --rx-text: #1a1a1a;
+    --rx-text-secondary: #4a5568;
+    --rx-rule: #8fa3ba;
+  }
+
+  /* ---- Hero ---- */
+  .rx-hero {
+    padding: var(--space-2xl) 0;
+    background: var(--rx-blue-dark);
+    color: var(--rx-white);
+    border-bottom: 3px solid var(--rx-rule);
+  }
+
+  .rx-hero__inner {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xl);
+  }
+
+  .rx-hero__text { flex: 1; }
+
+  .rx-hero__lab {
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--rx-rule);
+    margin-bottom: var(--space-md);
+  }
+
+  .rx-hero h1 {
+    color: var(--rx-white);
+    font-size: 3.2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-xs);
+    line-height: 1;
+  }
+
+  .rx-hero__tagline {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--rx-rule);
+    margin-bottom: var(--space-lg);
+    letter-spacing: 0.02em;
+  }
+
+  .rx-hero__desc {
+    font-size: 0.95rem;
+    color: #ccc;
+    line-height: 1.7;
+    max-width: 500px;
+    margin-bottom: var(--space-xl);
+  }
+
+  .rx-hero__visual { flex: 1.2; }
+
+  .rx-hero__visual img {
+    width: 100%;
+    height: auto;
+    border-radius: 2px;
+    border: 1px solid var(--rx-rule);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .rx-hero__cta {
+    display: flex;
+    gap: var(--space-md);
+  }
+
+  /* ---- Button ---- */
+  .rx-btn {
+    display: inline-block;
+    padding: 0.7rem 2rem;
+    background: var(--rx-white);
+    color: var(--rx-blue-dark);
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border: 2px solid var(--rx-white);
+    border-radius: 0;
+    transition: all var(--transition-base);
+    text-decoration: none;
+  }
+
+  .rx-btn:hover {
+    background: transparent;
+    color: var(--rx-white);
+  }
+
+  .rx-btn--lg {
+    padding: 0.85rem 2.5rem;
+    font-size: 0.9rem;
+  }
+
+  /* ---- Sections ---- */
+  .rx-section {
+    padding: var(--space-xl) 0;
+    border-bottom: 1px solid var(--rx-border);
+  }
+
+  .rx-section--alt {
+    background: var(--rx-blue-pale);
+  }
+
+  .rx-heading {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--rx-blue);
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-xs);
+    border-bottom: 2px solid var(--rx-blue);
+    display: inline-block;
+  }
+
+  .rx-section > .container > p,
+  .rx-section p {
+    font-size: 0.92rem;
+    color: var(--rx-text-secondary);
+    line-height: 1.7;
+  }
+
+  /* ---- Indicaciones ---- */
+  .rx-indications {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+  }
+
+  .rx-indication {
+    padding: var(--space-md);
+    border: 1px solid var(--rx-border);
+    border-radius: 0;
+    background: var(--rx-white);
+  }
+
+  .rx-indication h3 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--rx-blue);
+    margin-bottom: var(--space-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .rx-indication p {
+    font-size: 0.85rem;
+    margin-bottom: 0;
+  }
+
+  /* ---- Composición ---- */
+  .rx-composition-intro {
+    font-style: italic;
+    margin-bottom: var(--space-lg) !important;
+  }
+
+  .rx-steps {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .rx-step {
+    display: flex;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    border: 1px solid var(--rx-border);
+    background: var(--rx-white);
+    align-items: flex-start;
+  }
+
+  .rx-step__num {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--rx-blue);
+    min-width: 2.5rem;
+    text-align: center;
+    line-height: 1;
+    padding-top: 0.15rem;
+  }
+
+  .rx-step h3 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--rx-blue);
+    margin-bottom: var(--space-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .rx-step p { font-size: 0.85rem; margin-bottom: 0; }
+
+  /* ---- Posología ---- */
+  .rx-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .rx-list li {
+    padding: var(--space-sm) 0 var(--space-sm) 1.5rem;
+    position: relative;
+    font-size: 0.9rem;
+    color: var(--rx-text-secondary);
+    line-height: 1.6;
+    border-bottom: 1px solid var(--rx-border);
+  }
+
+  .rx-list li:last-child { border-bottom: none; }
+
+  .rx-list li::before {
+    content: "\2014";
+    position: absolute;
+    left: 0;
+    color: var(--rx-blue);
+    font-weight: 700;
+  }
+
+  /* ---- Advertencias ---- */
+  .rx-warnings p {
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid var(--rx-border);
+    font-size: 0.9rem;
+  }
+
+  .rx-warnings p:last-child { border-bottom: none; }
+
+  /* ---- Precio ---- */
+  .rx-table-wrapper {
+    overflow-x: auto;
+    border: 1px solid var(--rx-border);
+    margin-bottom: var(--space-md);
+  }
+
+  .rx-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 500px;
+    font-size: 0.88rem;
+  }
+
+  .rx-table thead {
+    background: var(--rx-blue);
+    color: var(--rx-white);
+  }
+
+  .rx-table th {
+    padding: 0.7rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+  }
+
+  .rx-table td {
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid var(--rx-border);
+    color: var(--rx-text-secondary);
+  }
+
+  .rx-table tbody tr:last-child td { border-bottom: none; }
+  .rx-table tbody tr:hover { background: var(--rx-blue-pale); }
+  .rx-table td strong { color: var(--rx-text); }
+
+  .rx-price {
+    font-weight: 700;
+    color: var(--rx-blue) !important;
+    white-space: nowrap;
+  }
+
+  .rx-iva {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: var(--rx-text-secondary);
+    margin-top: 0.1rem;
+  }
+
+  .rx-note {
+    font-size: 0.78rem;
+    font-style: italic;
+    color: var(--rx-text-secondary);
+  }
+
+  /* ---- Ámbito terapéutico (pills) ---- */
+  .rx-sectors-intro {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--rx-blue);
+    margin-bottom: var(--space-sm) !important;
+  }
+
+  .rx-blister {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-lg);
+  }
+
+  .rx-pill {
+    display: inline-block;
+    padding: 0.3rem 0.85rem;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    background: var(--rx-blue);
+    color: var(--rx-white);
+    letter-spacing: 0.02em;
+  }
+
+  .rx-pill--eu {
+    background: transparent;
+    border: 1px solid var(--rx-blue);
+    color: var(--rx-blue);
+  }
+
+  /* ---- CTA ---- */
+  .rx-cta {
+    padding: var(--space-2xl) 0;
+    background: var(--rx-blue-dark);
+    color: var(--rx-white);
+    text-align: center;
+    border-top: 3px solid var(--rx-rule);
+  }
+
+  .rx-cta h2 {
+    color: var(--rx-white);
+    margin-bottom: var(--space-md);
+  }
+
+  .rx-cta p {
+    font-size: 1rem;
+    color: var(--rx-rule) !important;
+    margin: 0 auto var(--space-xl);
+    max-width: 500px;
+  }
+
+  /* ---- Responsive ---- */
+  @media (max-width: 768px) {
+    .rx-hero__inner { flex-direction: column; }
+    .rx-hero h1 { font-size: 2.4rem; }
+    .rx-hero__visual { order: -1; }
+    .rx-indications { grid-template-columns: 1fr; }
+    .rx-blister { justify-content: center; }
+  }
+</style>
