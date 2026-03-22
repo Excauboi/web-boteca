@@ -29,17 +29,14 @@ import Footer from '../components/Footer.astro';
   <!-- Hero -->
   <section class="rx-hero">
     <div class="container rx-hero__inner">
-      <div class="rx-hero__text">
-        <p class="rx-hero__lab">Del laboratorio de La Boteca</p>
-        <h1>Prospecto</h1>
-        <p class="rx-hero__tagline">Copiloto de financiaci&oacute;n p&uacute;blica</p>
-        <p class="rx-hero__desc">Rastrea convocatorias, eval&uacute;a tu encaje y te ayuda a formular. 1.200+ convocatorias de BDNS y programas europeos, actualizadas a diario.</p>
-        <div class="rx-hero__cta">
-          <a href="/contacto/" class="rx-btn" data-umami-event="prospecto-solicitar-acceso">Solicitar acceso</a>
-        </div>
-      </div>
-      <div class="rx-hero__visual">
-        <img src="/img/fondea-dashboard.webp" alt="Prospecto — Radar de convocatorias de financiaci&oacute;n p&uacute;blica" width="1400" height="900" loading="eager" />
+      <p class="rx-hero__lab">Del laboratorio de La Boteca</p>
+      <h1>Prospecto</h1>
+      <div class="rx-hero__rule"></div>
+      <p class="rx-hero__tagline">Copiloto de financiaci&oacute;n p&uacute;blica</p>
+      <p class="rx-hero__desc">Rastrea convocatorias, eval&uacute;a tu encaje y te ayuda a formular.<br />1.200+ convocatorias de BDNS y programas europeos, actualizadas a diario.</p>
+      <p class="rx-hero__dose">1 dosis diaria &middot; 7 sectores &middot; 9 programas europeos</p>
+      <div class="rx-hero__cta">
+        <a href="/contacto/" class="rx-btn" data-umami-event="prospecto-solicitar-acceso">Solicitar acceso</a>
       </div>
     </div>
   </section>
@@ -227,68 +224,73 @@ import Footer from '../components/Footer.astro';
     --rx-rule: #8fa3ba;
   }
 
-  /* ---- Hero ---- */
+  /* ---- Hero: pure typography, Farrow-style ---- */
   .rx-hero {
     padding: var(--space-2xl) 0;
     background: var(--rx-blue-dark);
     color: var(--rx-white);
     border-bottom: 3px solid var(--rx-rule);
+    text-align: center;
   }
 
   .rx-hero__inner {
-    display: flex;
-    align-items: center;
-    gap: var(--space-xl);
+    max-width: 680px;
+    margin: 0 auto;
   }
 
-  .rx-hero__text { flex: 1; }
-
   .rx-hero__lab {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.15em;
     color: var(--rx-rule);
-    margin-bottom: var(--space-md);
+    margin-bottom: var(--space-lg);
   }
 
   .rx-hero h1 {
     color: var(--rx-white);
-    font-size: 3.2rem;
+    font-size: 4.5rem;
     font-weight: 700;
-    letter-spacing: -0.02em;
-    margin-bottom: var(--space-xs);
+    letter-spacing: -0.03em;
+    margin-bottom: var(--space-md);
     line-height: 1;
   }
 
+  .rx-hero__rule {
+    width: 80px;
+    height: 2px;
+    background: var(--rx-rule);
+    margin: 0 auto var(--space-md);
+  }
+
   .rx-hero__tagline {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 400;
     color: var(--rx-rule);
-    margin-bottom: var(--space-lg);
-    letter-spacing: 0.02em;
+    margin-bottom: var(--space-xl);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
   }
 
   .rx-hero__desc {
-    font-size: 0.95rem;
-    color: #ccc;
-    line-height: 1.7;
-    max-width: 500px;
-    margin-bottom: var(--space-xl);
+    font-size: 0.92rem;
+    color: #a0aec0;
+    line-height: 1.8;
+    margin-bottom: var(--space-lg);
   }
 
-  .rx-hero__visual { flex: 1.2; }
-
-  .rx-hero__visual img {
-    width: 100%;
-    height: auto;
-    border-radius: 2px;
-    border: 1px solid var(--rx-rule);
-    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+  .rx-hero__dose {
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--rx-rule);
+    margin-bottom: var(--space-xl);
   }
 
   .rx-hero__cta {
     display: flex;
+    justify-content: center;
     gap: var(--space-md);
   }
 
@@ -570,9 +572,7 @@ import Footer from '../components/Footer.astro';
 
   /* ---- Responsive ---- */
   @media (max-width: 768px) {
-    .rx-hero__inner { flex-direction: column; }
-    .rx-hero h1 { font-size: 2.4rem; }
-    .rx-hero__visual { order: -1; }
+    .rx-hero h1 { font-size: 2.8rem; }
     .rx-indications { grid-template-columns: 1fr; }
     .rx-blister { justify-content: center; }
   }
