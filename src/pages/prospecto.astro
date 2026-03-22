@@ -30,10 +30,10 @@ import Footer from '../components/Footer.astro';
   <section class="rx-hero">
     <!-- Círculos entrelazados (motivo Spiritualized) -->
     <svg class="rx-circles" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <circle cx="280" cy="200" r="140" fill="none" stroke="#8fa3ba" stroke-width="1" opacity="0.12" />
-      <circle cx="400" cy="180" r="180" fill="none" stroke="#8fa3ba" stroke-width="1" opacity="0.08" />
-      <circle cx="520" cy="220" r="120" fill="none" stroke="#8fa3ba" stroke-width="1.5" opacity="0.10" />
-      <circle cx="360" cy="250" r="90" fill="none" stroke="#8fa3ba" stroke-width="1" opacity="0.06" />
+      <circle cx="280" cy="200" r="140" fill="none" stroke="#6a9e96" stroke-width="1" opacity="0.12" />
+      <circle cx="400" cy="180" r="180" fill="none" stroke="#6a9e96" stroke-width="1" opacity="0.08" />
+      <circle cx="520" cy="220" r="120" fill="none" stroke="#6a9e96" stroke-width="1.5" opacity="0.10" />
+      <circle cx="360" cy="250" r="90" fill="none" stroke="#6a9e96" stroke-width="1" opacity="0.06" />
     </svg>
     <div class="container rx-hero__inner">
       <p class="rx-hero__lab">Del laboratorio de La Boteca</p>
@@ -207,9 +207,9 @@ import Footer from '../components/Footer.astro';
   <!-- CTA -->
   <section class="rx-cta">
     <svg class="rx-circles rx-circles--cta" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <circle cx="650" cy="150" r="160" fill="none" stroke="#8fa3ba" stroke-width="1" opacity="0.08" />
-      <circle cx="150" cy="180" r="120" fill="none" stroke="#8fa3ba" stroke-width="1" opacity="0.06" />
-      <circle cx="720" cy="80" r="80" fill="none" stroke="#8fa3ba" stroke-width="1.5" opacity="0.10" />
+      <circle cx="650" cy="150" r="160" fill="none" stroke="#6a9e96" stroke-width="1" opacity="0.08" />
+      <circle cx="150" cy="180" r="120" fill="none" stroke="#6a9e96" stroke-width="1" opacity="0.06" />
+      <circle cx="720" cy="80" r="80" fill="none" stroke="#6a9e96" stroke-width="1.5" opacity="0.10" />
     </svg>
     <div class="container container--narrow rx-cta__inner">
       <h2>&iquest;Gestionas financiaci&oacute;n p&uacute;blica?</h2>
@@ -229,15 +229,15 @@ import Footer from '../components/Footer.astro';
      ======================================== */
 
   :root {
-    --rx-blue: #1a3a5c;
-    --rx-blue-light: #2c5282;
-    --rx-blue-pale: #e8eef5;
-    --rx-blue-dark: #0f2440;
+    --rx-teal: #0D4F4A;
+    --rx-teal-light: #1a6b63;
+    --rx-teal-pale: #e6f2f0;
+    --rx-teal-dark: #082e2b;
     --rx-white: #ffffff;
-    --rx-border: #c5d1de;
+    --rx-border: #b8cec9;
     --rx-text: #1a1a1a;
     --rx-text-secondary: #4a5568;
-    --rx-rule: #8fa3ba;
+    --rx-rule: #6a9e96;
   }
 
   /* ---- Circles motif (Spiritualized cover) ---- */
@@ -274,7 +274,7 @@ import Footer from '../components/Footer.astro';
   /* ---- Hero: pure typography, Farrow-style ---- */
   .rx-hero {
     padding: var(--space-2xl) 0;
-    background: var(--rx-blue-dark);
+    background: var(--rx-teal-dark);
     color: var(--rx-white);
     border-bottom: 3px solid var(--rx-rule);
     text-align: center;
@@ -350,7 +350,7 @@ import Footer from '../components/Footer.astro';
     display: inline-block;
     padding: 0.7rem 2rem;
     background: var(--rx-white);
-    color: var(--rx-blue-dark);
+    color: var(--rx-teal-dark);
     font-weight: 600;
     font-size: 0.85rem;
     letter-spacing: 0.06em;
@@ -378,7 +378,7 @@ import Footer from '../components/Footer.astro';
   }
 
   .rx-section--alt {
-    background: var(--rx-blue-pale);
+    background: var(--rx-teal-pale);
   }
 
   .rx-heading {
@@ -386,10 +386,10 @@ import Footer from '../components/Footer.astro';
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--rx-blue);
+    color: var(--rx-teal);
     margin-bottom: var(--space-lg);
     padding-bottom: var(--space-xs);
-    border-bottom: 2px solid var(--rx-blue);
+    border-bottom: 2px solid var(--rx-teal);
     display: inline-block;
   }
 
@@ -418,7 +418,7 @@ import Footer from '../components/Footer.astro';
   .rx-indication h3 {
     font-size: 0.85rem;
     font-weight: 600;
-    color: var(--rx-blue);
+    color: var(--rx-teal);
     margin-bottom: var(--space-xs);
     text-transform: uppercase;
     letter-spacing: 0.03em;
@@ -453,7 +453,7 @@ import Footer from '../components/Footer.astro';
   .rx-step__num {
     font-size: 1.4rem;
     font-weight: 700;
-    color: var(--rx-blue);
+    color: var(--rx-teal);
     min-width: 2.5rem;
     text-align: center;
     line-height: 1;
@@ -463,7 +463,7 @@ import Footer from '../components/Footer.astro';
   .rx-step h3 {
     font-size: 0.85rem;
     font-weight: 600;
-    color: var(--rx-blue);
+    color: var(--rx-teal);
     margin-bottom: var(--space-xs);
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -494,7 +494,7 @@ import Footer from '../components/Footer.astro';
     content: "\2014";
     position: absolute;
     left: 0;
-    color: var(--rx-blue);
+    color: var(--rx-teal);
     font-weight: 700;
   }
 
@@ -522,7 +522,7 @@ import Footer from '../components/Footer.astro';
   }
 
   .rx-table thead {
-    background: var(--rx-blue);
+    background: var(--rx-teal);
     color: var(--rx-white);
   }
 
@@ -543,12 +543,12 @@ import Footer from '../components/Footer.astro';
   }
 
   .rx-table tbody tr:last-child td { border-bottom: none; }
-  .rx-table tbody tr:hover { background: var(--rx-blue-pale); }
+  .rx-table tbody tr:hover { background: var(--rx-teal-pale); }
   .rx-table td strong { color: var(--rx-text); }
 
   .rx-price {
     font-weight: 700;
-    color: var(--rx-blue) !important;
+    color: var(--rx-teal) !important;
     white-space: nowrap;
   }
 
@@ -572,7 +572,7 @@ import Footer from '../components/Footer.astro';
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: var(--rx-blue);
+    color: var(--rx-teal);
     margin-bottom: var(--space-sm) !important;
   }
 
@@ -594,14 +594,14 @@ import Footer from '../components/Footer.astro';
     font-weight: 500;
     letter-spacing: 0.02em;
     text-align: center;
-    background: var(--rx-blue);
+    background: var(--rx-teal);
     color: var(--rx-white);
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.15);
   }
 
   .rx-blister-cell--eu {
     background: var(--rx-white);
-    color: var(--rx-blue);
+    color: var(--rx-teal);
     border: 1px solid var(--rx-border);
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.06);
   }
@@ -613,7 +613,7 @@ import Footer from '../components/Footer.astro';
   /* ---- CTA ---- */
   .rx-cta {
     padding: var(--space-2xl) 0;
-    background: var(--rx-blue-dark);
+    background: var(--rx-teal-dark);
     color: var(--rx-white);
     text-align: center;
     border-top: 3px solid var(--rx-rule);
