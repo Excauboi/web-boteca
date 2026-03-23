@@ -4,6 +4,7 @@ description: "Un estudio con 27 pymes demuestra que adoptar IA no es subir una e
 date: "2026-03-23"
 author: "Jose M. Ruibérriz"
 keywords: "adopción IA pymes, transformación digital, madurez digital, desajuste productivo, sistemas sociotécnicos, consultoría IA, La Boteca, micro-pilotos IA"
+image: "/img/desajuste-productivo.svg"
 ---
 
 Hay una idea que circula por las consultorías, los planes de digitalización y las convocatorias públicas: que adoptar inteligencia artificial es un proceso lineal. Diagnóstico, piloto, implementación, escala. Como subir una escalera. Si te paras en el tercer peldaño, has fracasado.
@@ -11,8 +12,6 @@ Hay una idea que circula por las consultorías, los planes de digitalización y 
 Un estudio reciente publicado en *Information Systems Management* (Amanollahnejad et al., 2026) desmonta esta ficción con datos. Me lo pasó Samuel Barco, de [SOKIO](https://sokio.coop), que además de ser amigo tiene el buen hábito de compartir lo que lee cuando sabe que te va a remover algo. Los investigadores entrevistaron a 27 directivos de pymes del norte de Inglaterra durante un año y encontraron algo que cualquiera que trabaje con organizaciones pequeñas reconoce: **la adopción de IA no es una escalera. Es un bucle.**
 
 Los que trabajamos en esto lo vemos cada semana. Lo que dice el paper, lo confirma el terreno.
-
-<img src="/img/desajuste-productivo.svg" alt="Diagrama de alineación sociotécnica: tres subsistemas (técnico, social, entorno) en negociación recursiva permanente" style="max-width:100%;margin:3rem auto;display:block" />
 
 ---
 

@@ -9,9 +9,13 @@ interface Props {
   date: string;
   author: string;
   keywords?: string;
+  image?: string;
+  readingTime?: number;
+  prevPost?: { title: string; slug: string } | null;
+  nextPost?: { title: string; slug: string } | null;
 }
 
-const { title, description, date, author, keywords } = Astro.props;
+const { title, description, date, author, keywords, image, readingTime, prevPost, nextPost } = Astro.props;
 
 const formattedDate = new Date(date).toLocaleDateString('es-ES', {
   year: 'numeric',
@@ -20,7 +24,7 @@ const formattedDate = new Date(date).toLocaleDateString('es-ES', {
 });
 ---
 
-<Base title={title} description={description}>
+<Base title={title} description={description} image={image}>
   <Fragment slot="schema">
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
@@ -28,6 +32,7 @@ const formattedDate = new Date(date).toLocaleDateString('es-ES', {
       "headline": title,
       "description": description,
       "datePublished": date,
+      ...(image ? { "image": `https://laboteca.es${image}` } : {}),
       "author": {
         "@type": "Organization",
         "name": author,
@@ -50,17 +55,53 @@ const formattedDate = new Date(date).toLocaleDateString('es-ES', {
         <div class="blog-post__meta">
           <time datetime={date}>{formattedDate}</time>
           <span class="blog-post__author">{author}</span>
+          {readingTime && <span class="blog-post__reading-time">{readingTime} min de lectura</span>}
         </div>
       </div>
     </header>
 
-    <div class="blog-post__content">
-      <div class="container container--narrow">
-        <slot />
+    {image && (
+      <div class="blog-post__hero">
+        <div class="container container--narrow">
+          <img src={image} alt={title} class="blog-post__hero-img" loading="eager" />
+        </div>
+      </div>
+    )}
+
+    <div class="blog-post__body-wrapper">
+      <aside class="blog-post__toc" id="toc-aside" aria-label="Índice de contenidos">
+        <nav id="toc-nav"></nav>
+      </aside>
+
+      <div class="blog-post__content">
+        <div class="container container--narrow">
+          <slot />
+        </div>
       </div>
     </div>
   </article>
 
+  <!-- Prev/Next navigation -->
+  {(prevPost || nextPost) && (
+    <nav class="blog-post__nav" aria-label="Navegación entre artículos">
+      <div class="container container--narrow">
+        <div class="nav__links">
+          {prevPost ? (
+            <a href={`/blog/${prevPost.slug}/`} class="nav__link nav__link--prev">
+              <span class="nav__label">&larr; Anterior</span>
+              <span class="nav__title">{prevPost.title}</span>
+            </a>
+          ) : <div />}
+          {nextPost ? (
+            <a href={`/blog/${nextPost.slug}/`} class="nav__link nav__link--next">
+              <span class="nav__label">Siguiente &rarr;</span>
+              <span class="nav__title">{nextPost.title}</span>
+            </a>
+          ) : <div />}
+        </div>
+      </div>
+    </nav>
+  )}
 
   <!-- Share -->
   <aside class="blog-post__share">
@@ -108,6 +149,44 @@ const formattedDate = new Date(date).toLocaleDateString('es-ES', {
     });
   </script>
 
+  <!-- TOC generation + scroll highlight -->
+  <script is:inline>
+  (function() {
+    var content = document.querySelector('.blog-post__content');
+    var tocNav = document.getElementById('toc-nav');
+    var tocAside = document.getElementById('toc-aside');
+    if (!content || !tocNav || !tocAside) return;
+
+    var headings = content.querySelectorAll('h2');
+    if (headings.length < 3) {
+      tocAside.style.display = 'none';
+      return;
+    }
+
+    var html = '<p class="toc__title">En este artículo</p><ul class="toc__list">';
+    headings.forEach(function(h, i) {
+      if (!h.id) h.id = 'h2-' + i;
+      html += '<li><a href="#' + h.id + '" class="toc__link" data-target="' + h.id + '">' + h.textContent + '</a></li>';
+    });
+    html += '</ul>';
+    tocNav.innerHTML = html;
+
+    // IntersectionObserver for active highlight
+    var links = tocNav.querySelectorAll('.toc__link');
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          links.forEach(function(l) { l.classList.remove('is-active'); });
+          var active = tocNav.querySelector('[data-target="' + entry.target.id + '"]');
+          if (active) active.classList.add('is-active');
+        }
+      });
+    }, { rootMargin: '0px 0px -70% 0px', threshold: 0 });
+
+    headings.forEach(function(h) { observer.observe(h); });
+  })();
+  </script>
+
   <!-- CTA post -->
   <section class="cta-section cta-section--dark reveal">
     <div class="container">
@@ -145,7 +224,8 @@ const formattedDate = new Date(date).toLocaleDateString('es-ES', {
 
   .blog-post__meta {
     display: flex;
-    gap: var(--space-md);
+    flex-wrap: wrap;
+    gap: var(--space-sm) var(--space-md);
     font-size: 0.9rem;
     color: var(--color-text-secondary);
   }
@@ -155,8 +235,104 @@ const formattedDate = new Date(date).toLocaleDateString('es-ES', {
     margin-right: var(--space-md);
   }
 
+  .blog-post__reading-time::before {
+    content: "·";
+    margin-right: var(--space-md);
+  }
+
+  /* Hero image */
+  .blog-post__hero {
+    padding: var(--space-lg) 0 0;
+    background: var(--color-bg-alt);
+  }
+
+  .blog-post__hero-img {
+    width: 100%;
+    max-height: 480px;
+    object-fit: contain;
+    display: block;
+    border-radius: var(--radius-lg);
+  }
+
+  /* Body wrapper: TOC + content */
+  .blog-post__body-wrapper {
+    position: relative;
+  }
+
+  .blog-post__toc {
+    display: none;
+  }
+
   .blog-post__content {
     padding: var(--space-xl) 0 var(--space-2xl);
+  }
+
+  @media (min-width: 1280px) {
+    .blog-post__body-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+
+    .blog-post__toc {
+      display: block;
+      width: 220px;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .blog-post__toc :global(#toc-nav) {
+      position: sticky;
+      top: 2rem;
+      padding-top: var(--space-xl);
+    }
+
+    .blog-post__toc :global(.toc__title) {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-sm);
+    }
+
+    .blog-post__toc :global(.toc__list) {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border-left: 1px solid var(--color-border);
+    }
+
+    .blog-post__toc :global(.toc__list li) {
+      margin: 0;
+    }
+
+    .blog-post__toc :global(.toc__link) {
+      display: block;
+      padding: 0.35rem 0 0.35rem 0.85rem;
+      font-size: 0.8rem;
+      line-height: 1.35;
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      border-left: 2px solid transparent;
+      margin-left: -1px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    .blog-post__toc :global(.toc__link:hover) {
+      color: var(--color-text);
+    }
+
+    .blog-post__toc :global(.toc__link.is-active) {
+      color: var(--color-primary-dark);
+      border-left-color: var(--color-primary);
+      font-weight: 500;
+    }
+
+    .blog-post__content {
+      flex: 1;
+      min-width: 0;
+      max-width: calc(var(--max-width-narrow) + 2 * var(--space-lg));
+    }
   }
 
   /* Prose styles for markdown content */
@@ -264,6 +440,40 @@ const formattedDate = new Date(date).toLocaleDateString('es-ES', {
     display: block;
   }
 
+  /* Sources section: everything after the last <hr> */
+  .blog-post__content :global(.sources-section) {
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-lg);
+    margin-top: var(--space-xl);
+  }
+
+  .blog-post__content :global(.sources-section p),
+  .blog-post__content :global(.sources-section li) {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: var(--color-text-secondary);
+  }
+
+  .blog-post__content :global(.sources-section strong) {
+    font-weight: 600;
+    color: var(--color-text-secondary);
+  }
+
+  .blog-post__content :global(.sources-section blockquote) {
+    border-left-color: var(--color-border);
+    background: transparent;
+  }
+
+  .blog-post__content :global(.sources-section blockquote p) {
+    font-style: normal;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+  }
+
+  .blog-post__content :global(.sources-section hr) {
+    display: none;
+  }
+
   .blog-post__content table {
     width: 100%;
     border-collapse: collapse;
@@ -293,6 +503,59 @@ const formattedDate = new Date(date).toLocaleDateString('es-ES', {
 
   .blog-post__content a:hover {
     color: var(--color-primary-dark);
+  }
+
+  /* Prev/Next navigation */
+  .blog-post__nav {
+    padding: var(--space-lg) 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .nav__links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+  }
+
+  .nav__link {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: var(--space-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+
+  .nav__link:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    color: inherit;
+  }
+
+  .nav__link--next {
+    text-align: right;
+  }
+
+  .nav__label {
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+  }
+
+  .nav__title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.3;
+  }
+
+  @media (max-width: 600px) {
+    .nav__links {
+      grid-template-columns: 1fr;
+    }
   }
 
   /* Dark CTA section */
@@ -361,3 +624,28 @@ const formattedDate = new Date(date).toLocaleDateString('es-ES', {
   .share__btn--linkedin:hover { border-color: #0a66c2; }
   .share__btn--x:hover { border-color: #000; }
 </style>
+
+<!-- Sources section detection -->
+<script is:inline>
+(function() {
+  var content = document.querySelector('.blog-post__content .container--narrow');
+  if (!content) return;
+  var hrs = content.querySelectorAll('hr');
+  if (hrs.length === 0) return;
+  var lastHr = hrs[hrs.length - 1];
+  // Wrap everything after the last hr in a .sources-section div
+  var wrapper = document.createElement('div');
+  wrapper.className = 'sources-section';
+  var sibling = lastHr.nextSibling;
+  while (sibling) {
+    var next = sibling.nextSibling;
+    wrapper.appendChild(sibling);
+    sibling = next;
+  }
+  if (wrapper.childNodes.length > 0) {
+    lastHr.parentNode.insertBefore(wrapper, lastHr.nextSibling);
+    // Hide the last hr since the sources section has its own border
+    lastHr.style.display = 'none';
+  }
+})();
+</script>
