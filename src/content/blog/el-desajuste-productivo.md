@@ -12,6 +12,8 @@ Un estudio reciente publicado en *Information Systems Management* (Amanollahneja
 
 Los que trabajamos en esto lo vemos cada semana. Lo que dice el paper, lo confirma el terreno.
 
+<img src="/img/desajuste-productivo.svg" alt="Diagrama de alineación sociotécnica: tres subsistemas (técnico, social, entorno) en negociación recursiva permanente" style="max-width:100%;margin:3rem auto;display:block" />
+
 ---
 
 ## El mito de la madurez
