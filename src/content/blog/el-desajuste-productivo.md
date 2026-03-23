@@ -4,7 +4,7 @@ description: "Un estudio con 27 pymes demuestra que adoptar IA no es subir una e
 date: "2026-03-23"
 author: "Jose M. Ruibérriz"
 keywords: "adopción IA pymes, transformación digital, madurez digital, desajuste productivo, sistemas sociotécnicos, consultoría IA, La Boteca, micro-pilotos IA"
-image: "/img/desajuste-productivo.svg"
+image: "/img/desajuste-productivo.webp"
 ---
 
 Hay una idea que circula por las consultorías, los planes de digitalización y las convocatorias públicas: que adoptar inteligencia artificial es un proceso lineal. Diagnóstico, piloto, implementación, escala. Como subir una escalera. Si te paras en el tercer peldaño, has fracasado.
