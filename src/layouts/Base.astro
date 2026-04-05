@@ -30,7 +30,7 @@ const fullTitle = title === 'Inicio' ? 'La Boteca — IA a medida para organizac
   <meta property="og:image" content={image ? `${Astro.site}${image.startsWith('/') ? image.slice(1) : image}` : `${Astro.site}img/logo-boteca-horizontal.png`} />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:alt" content={image ? title : "La Boteca — Taller de asistentes conversacionales"} />
-  <meta name="twitter:card" content={image ? "summary_large_image" : "summary"} />
+  <meta name="twitter:card" content="summary_large_image" />
 
   <title>{fullTitle}</title>
 
